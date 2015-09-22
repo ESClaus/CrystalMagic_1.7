@@ -1,0 +1,16 @@
+[
+{
+  "modid": "cm",
+  "name": "Crystal Magic",
+  "description": "This mod adds crystals which have various magical properties.",
+  "version": "0.0.1",
+  "mcversion": "1.7.10",
+  "url": "http://www.ClausGames.com/",
+  "updateUrl": "",
+  "authorList": ["WeiseGamer","Claus"],
+  "credits": "Thank you to Forge",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

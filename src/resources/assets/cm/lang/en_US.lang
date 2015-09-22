@@ -1,0 +1,23 @@
+< en_US.lang - English localization file for the Crystal Magic >
+
+//Items
+item.ItemRoughCrystal.name=Rough Crystal
+item.ItemCrystalFragment.name=Crystal Fragment
+
+//Tools and Weapons
+item.ItemFlintPickaxe.name=Flint Pickaxe
+item.ItemFlintAxe.name=Flint Axe
+item.ItemFlintShovel.name=Flint Shovel
+item.ItemFlintHoe.name=Flint Hoe
+item.ItemFlintSword.name=Flint Sword
+
+item.ItemApprenticeHood.name=Apprentice Hood
+item.ItemApprenticeRobe.name=Apprentice Robe
+item.ItemApprenticeLeggings.name=Apprentice Leggings
+item.ItemApprenticeBoots.name=Apprentice Boots
+
+//Block Names
+tile.BlockCrystal.name=Crystal
+
+/Creative Tab
+itemGroup.tabCrystalMagic=Crystal Magic
