@@ -30,3 +30,13 @@ Thumbs.db
 ## Jars
 *.jar
 !/gradle/wrapper/gradle-wrapper.jar
+world/
+logs/
+eula.txt
+ops.json
+server.properties
+usercache.json
+whitelist.json
+banned-ips.json
+banned-players.json
+config/
