@@ -31,6 +31,7 @@ public class ModItems
 	//Declaration of Materials
 	//Example Tool Material: public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
 	public static ToolMaterial flintToolMaterial = EnumHelper.addToolMaterial("flintToolMaterial", 1, 131, 4.0F, 1.0F, 5);
+	
 	//Example Armor Material: public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("NAME", durability, damageReduction[], enchantability);
 	public static ArmorMaterial apprenticeArmorMaterial = EnumHelper.addArmorMaterial("apprenticeArmor", 5, new int[] {1, 3, 2, 1}, 15);	
 	
@@ -49,5 +50,13 @@ public class ModItems
 		GameRegistry.registerItem(itemFlintShovel = new ItemFlintShovel("itemFlintShovel", flintToolMaterial), "itemFlintShovel");
 		GameRegistry.registerItem(itemFlintHoe = new ItemFlintHoe("itemFlintHoe", flintToolMaterial), "itemFlintHoe");
 		GameRegistry.registerItem(itemFlintSword = new ItemFlintSword("itemFlintSword", flintToolMaterial), "itemFlintSword");
+		
+		//Register of Each Piece of Armor
+		//Apprentice Armor
+		GameRegistry.registerItem(apprenticeHood = new ItemApprenticeArmor("ItemApprenticeHood", apprenticeArmorMaterial, "apprenticeArmor", 0), "ItemApprenticeHood"); //0 for Helm
+		GameRegistry.registerItem(apprenticeRobe = new ItemApprenticeArmor("ItemApprenticeRobe", apprenticeArmorMaterial, "apprenticeArmor", 1), "ItemApprenticeRobe"); // 1 for Chestplate
+		GameRegistry.registerItem(apprenticeLeggings = new ItemApprenticeArmor("ItemApprenticeLeggings", apprenticeArmorMaterial, "apprenticeArmor", 2), "ItemApprenticeLeggings"); // 2 for Leggings
+		GameRegistry.registerItem(apprenticeBoots = new ItemApprenticeArmor("ItemApprenticeBoots", apprenticeArmorMaterial, "apprenticeArmor", 3), "ItemApprenticeBoots"); // 3 for Boots
+		
 	}
 }

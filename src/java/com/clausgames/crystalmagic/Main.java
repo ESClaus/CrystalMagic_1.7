@@ -44,21 +44,7 @@ public class Main
 	public void preInit(FMLPreInitializationEvent event) {
 		//Item/Block init and registering
 		//Config handling
-		
-		//Armor
-		apprenticeHood = new ItemApprenticeArmor(apprenticeArmorMaterial, 0, 0).setUnlocalizedName("ItemApprenticeHood").setTextureName("cm:itemApprenticeHood").setCreativeTab(tabCrystalMagic);
-		apprenticeRobe = new ItemApprenticeArmor(apprenticeArmorMaterial, 0, 1).setUnlocalizedName("ItemApprenticeRobe").setTextureName("cm:itemApprenticeRobe").setCreativeTab(tabCrystalMagic);
-		apprenticeLeggings = new ItemApprenticeArmor(apprenticeArmorMaterial, 0, 2).setUnlocalizedName("ItemApprenticeLeggings").setTextureName("cm:itemApprenticeLeggings").setCreativeTab(tabCrystalMagic);
-		apprenticeBoots = new ItemApprenticeArmor(apprenticeArmorMaterial, 0, 3).setUnlocalizedName("ItemApprenticeBoots").setTextureName("cm:itemApprenticeBoots").setCreativeTab(tabCrystalMagic);
-		
-		//GameRegistry
-			
-		//Armor
-		GameRegistry.registerItem(apprenticeHood, apprenticeHood.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(apprenticeRobe, apprenticeRobe.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(apprenticeLeggings, apprenticeLeggings.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(apprenticeBoots, apprenticeBoots.getUnlocalizedName().substring(5));
-		
+				
 		//OreGen
 		GameRegistry.registerWorldGenerator(new CrystalGeneration(), 0); //Registering World Gen with blockCrystal Gen
 	}*/
