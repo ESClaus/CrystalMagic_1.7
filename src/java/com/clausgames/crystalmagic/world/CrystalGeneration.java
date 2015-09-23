@@ -43,7 +43,7 @@ public class CrystalGeneration implements IWorldGenerator
 		
 	}
 	public void generateOre(Block block, World world, Random random, int chunkX, int chunkZ, int minVeinSize, int maxVeinSize, int chance, int minY, int maxY, Block generateIn)
-	{ //Block we araae spawning, world, rand, x, z, min Vein, Max Vein, chance it will occur, y level min, y level max, what block types it generates in (stone, grass/dirt, etc).
+	{ //Block we are spawning, world, rand, x, z, min Vein, Max Vein, chance it will occur, y level min, y level max, what block types it generates in (stone, grass/dirt, etc).
 		int veinSize = minVeinSize + random.nextInt(maxVeinSize - minVeinSize); //How many will occur together.
 		int heightRange = maxY - minY; //Y Level Generates at in world.
 		WorldGenMinable gen = new WorldGenMinable(block, veinSize, generateIn);
