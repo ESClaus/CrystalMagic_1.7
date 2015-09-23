@@ -13,13 +13,16 @@ public class ModCrafting
 	{
 		//Insert Crafting/Smelting Recipes Here
 		
-		//Crystal Block Recipe, C = Cobble, S = Sand, R = Rough Crystal
+		//Rough Crystal Recipe, C = itemCrystalFragement
+		GameRegistry.addRecipe(new ItemStack(ModItems.itemRoughCrystal), "CC","CC", 'C', ModItems.itemCrystalFragment);
+		
+		//Crystal Block Recipe, C = Cobble, S = Sand, R = itemRoughCrystal
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockCrystal), "CSC","SRS","CSC", 'C', Blocks.cobblestone, 'S', Blocks.sand, 'R', ModItems.itemRoughCrystal);
 				
 		//Apprentice Armor Recipes, Placeholder, W = Wool, S = String
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeHood), new Object[]{"WWW","W W", 'W', Blocks.wool});
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeRobe), new Object[]{"W W","WWW","WWW", 'W', Blocks.wool});
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeLeggings), new Object[]{"WWW","W W","W W", 'W', Blocks.wool});
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeBoots), new Object[]{"W W","W W", 'W', Blocks.wool});
+		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeHood), "WWW","W W", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeRobe), "W W","WWW","WWW", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeLeggings), "WWW","W W","W W", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeBoots), "W W","W W", 'W', Blocks.wool);
 	}
 }
