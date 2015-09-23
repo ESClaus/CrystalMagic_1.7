@@ -4,6 +4,7 @@ Thumbs.db
 ## gradle
 /.gradle
 /build
+!/gradle/wrapper/gradle-wrapper.jar
 
 ## ForgeGradle
 /run
@@ -29,16 +30,18 @@ Thumbs.db
 
 ## Jars
 *.jar
-!/gradle/wrapper/gradle-wrapper.jar
-logs/
-eula.txt
-ops.json
-server.properties
-usercache.json
-whitelist.json
-banned-ips.json
-banned-players.json
-config/
-saves/
-options.txt
-usernamecache.json
+
+## Minecraft
+/logs
+/eula.txt
+/ops.json
+/server.properties
+/usercache.json
+/whitelist.json
+/banned-ips.json
+/banned-players.json
+/config
+/saves
+/options.txt
+/usernamecache.json
+/world
