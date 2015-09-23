@@ -68,7 +68,7 @@ public class CrystalBlock extends Block
 	public int quantityDropped(int meta, int fortune, Random random)
 	{
 	    if (this.least_quantity >= this.most_quantity)
-	        return this.least_quantity;
-	    return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
+			return this.least_quantity;
+		return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
 	}
 }
