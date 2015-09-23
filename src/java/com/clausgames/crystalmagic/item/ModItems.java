@@ -28,8 +28,7 @@ public class ModItems
 	// Example: public static ToolMaterial flintToolMaterial = EnumHelper.addToolMaterial("flintToolMaterial", 1, 131, 4.0F, 1.0F, 5);
 
 	// Example Armor Material: public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("NAME", durability, damageReduction[], enchantability);
-	public static ArmorMaterial apprenticeArmorMaterial = EnumHelper.addArmorMaterial("apprenticeArmor", 5, new int[]
-	{ 1, 3, 2, 1 }, 15);
+	public static ArmorMaterial apprenticeArmorMaterial = EnumHelper.addArmorMaterial("apprenticeArmor", 5, new int[] { 1, 3, 2, 1 }, 15);
 
 	public static final void init()
 	{
