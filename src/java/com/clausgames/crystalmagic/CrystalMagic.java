@@ -41,13 +41,6 @@ public class CrystalMagic
 	}
 
 	/*
-	 * @EventHandler public void preInit(FMLPreInitializationEvent event) {
-	 * //Item/Block init and registering //Config handling
-	 * 
-	 * //OreGen GameRegistry.registerWorldGenerator(new CrystalGeneration(), 0);
-	 * //Registering World Gen with blockCrystal Gen }
-	 */
-	/*
 	 * public static CreativeTabs tabCrystalMagic = new
 	 * CreativeTabs("tabCrystalMagic"){
 	 * 
