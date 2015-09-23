@@ -46,17 +46,20 @@ public class CrystalBlock extends Block
 	    this(unlocalizedName, mat, drop, 1, 1);
 	}
 	@Override
-	public Item getItemDropped(int meta, Random random, int fortune) {
+	public Item getItemDropped(int meta, Random random, int fortune)
+	{
 	    return this.drop;
 	}
 
 	@Override
-	public int damageDropped(int metadata) {
+	public int damageDropped(int metadata)
+	{
 	    return this.meta;
 	}
 
 	@Override
-	public int quantityDropped(int meta, int fortune, Random random) {
+	public int quantityDropped(int meta, int fortune, Random random)
+	{
 	    if (this.least_quantity >= this.most_quantity)
 	        return this.least_quantity;
 	    return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
