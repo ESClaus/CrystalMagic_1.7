@@ -40,3 +40,4 @@ whitelist.json
 banned-ips.json
 banned-players.json
 config/
+saves/
