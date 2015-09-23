@@ -6,9 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class CrystalBlock extends Block {
+public class CrystalBlock extends Block
+{
 
-	protected CrystalBlock(String unlocalizedName, Material material) {
+	protected CrystalBlock(String unlocalizedName, Material material)
+	{
 		super(material);
 		this.setBlockName(unlocalizedName); //Name of block
 		this.setBlockTextureName(Main.MODID + ":" + unlocalizedName); //Name of texture of block
@@ -20,7 +22,8 @@ public class CrystalBlock extends Block {
 		this.setStepSound(soundTypeGlass); //Sets sound of stepping on block. (Default: depends on material type chosen)
 	}
 	@Override
-	public boolean isOpaqueCube(){
+	public boolean isOpaqueCube()
+	{
 		return false;
 	}
 }

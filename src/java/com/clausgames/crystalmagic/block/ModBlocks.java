@@ -13,5 +13,4 @@ public class ModBlocks
 	{
 		GameRegistry.registerBlock(blockCrystal = new CrystalBlock("BlockCrystal", Material.rock), "blockCrystal");
 	}
-
 }
