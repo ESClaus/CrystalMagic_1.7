@@ -48,25 +48,7 @@ public class Main
 		//OreGen
 		GameRegistry.registerWorldGenerator(new CrystalGeneration(), 0); //Registering World Gen with blockCrystal Gen
 	}*/
-	
-	/*@EventHandler
-	public void init(FMLInitializationEvent event){
-		//Proxy, TileEntity, entity, GUI and Packet Registering
-		
-		//Crafting Recipes
-		
-		//Apprentice Armor Recipes, Placeholder, W = Wool, S = String
-		GameRegistry.addRecipe(new ItemStack(apprenticeHood), new Object[]{"WWW","W W", 'W', Blocks.wool});
-		GameRegistry.addRecipe(new ItemStack(apprenticeRobe), new Object[]{"W W","WWW","WWW", 'W', Blocks.wool});
-		GameRegistry.addRecipe(new ItemStack(apprenticeLeggings), new Object[]{"WWW","W W","W W", 'W', Blocks.wool});
-		GameRegistry.addRecipe(new ItemStack(apprenticeBoots), new Object[]{"W W","W W", 'W', Blocks.wool});
-	}*/
-	
-	/*@EventHandler
-	public void postInit(FMLPostInitializationEvent event){
-		
-	}
-	
+	/*
 	public static CreativeTabs tabCrystalMagic = new CreativeTabs("tabCrystalMagic"){
 		@Override
 		public Item getTabIconItem(){
