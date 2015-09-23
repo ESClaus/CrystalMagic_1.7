@@ -41,3 +41,5 @@ banned-ips.json
 banned-players.json
 config/
 saves/
+options.txt
+usernamecache.json
