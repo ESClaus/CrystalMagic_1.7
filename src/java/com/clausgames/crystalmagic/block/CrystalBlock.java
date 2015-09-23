@@ -2,7 +2,7 @@ package com.clausgames.crystalmagic.block;
 
 import java.util.Random;
 
-import com.clausgames.crystalmagic.Main;
+import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.item.ModItems;
 
 import net.minecraft.block.Block;
@@ -30,7 +30,7 @@ public class CrystalBlock extends Block
 	    this.least_quantity = least_quantity;
 	    this.most_quantity = most_quantity;
 		this.setBlockName(unlocalizedName); //Name of block
-		this.setBlockTextureName(Main.MODID + ":" + unlocalizedName); //Name of texture of block
+		this.setBlockTextureName(CrystalMagic.MODID + ":" + unlocalizedName); //Name of texture of block
 		this.setCreativeTab(CreativeTabs.tabBlock); //Sets creative tab to display block in (Default: tabBlock)
 		this.setHardness(2.0f); //Sets how long it takes to break block (Default: Depends on material; stone:1.5f; obsidian:50.0f) 
 		this.setResistance(6.0f); //Sets block's resistance to explosions (TNT, Creeper, Etc) (Default: Depends on material; stone:10.0f; obsidian:2000.0f)
