@@ -5,6 +5,7 @@ import java.util.Random;
 import com.clausgames.crystalmagic.block.ModBlocks;
 
 import cpw.mods.fml.common.IWorldGenerator;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -16,7 +17,7 @@ public class CrystalGeneration implements IWorldGenerator
 
 	public CrystalGeneration()
 	{
-		this.genCrystalBlock = new WorldGenMinable(ModBlocks.blockCrystal, 5);
+		this.genCrystalBlock = new WorldGenMinable(ModBlocks.blockCrystal, 5, Blocks.stone);
 	}
 
 	@Override
@@ -25,7 +26,7 @@ public class CrystalGeneration implements IWorldGenerator
 		switch (world.provider.dimensionId)
 		{
 		case 0: // Overworld
-			this.runGenerator(this.genCrystalBlock, world, random, chunkX, chunkZ, 50, 0, 40);
+			this.runGenerator(this.genCrystalBlock, world, random, chunkX, chunkZ, 4, 0, 40);
 			break;
 		case -1: // Nether
 

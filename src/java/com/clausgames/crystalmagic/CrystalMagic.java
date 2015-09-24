@@ -21,7 +21,7 @@ public class CrystalMagic
 
 	@SidedProxy(clientSide = "com.clausgames.crystalmagic.ClientProxy", serverSide = "com.clausgames.crystalmagic.ServerProxy")
 	public static CommonProxy proxy;
-
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
