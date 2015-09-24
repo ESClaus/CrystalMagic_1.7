@@ -12,7 +12,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CrystalMagic
 {
-	public static final String MODID = "cm";
+	public static final String MODID = "cg_crystalmagic";
 	public static final String MODNAME = "Crystal Magic";
 	public static final String VERSION = "0.0.1";
 

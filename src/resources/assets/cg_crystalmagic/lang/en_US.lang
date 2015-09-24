@@ -15,5 +15,5 @@ item.ItemApprenticeBoots.name=Apprentice Boots
 //Block Names
 tile.BlockCrystal.name=Crystal
 
-/Creative Tab
+//Creative Tab
 itemGroup.tabCrystalMagic=Crystal Magic
