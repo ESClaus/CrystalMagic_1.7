@@ -12,5 +12,6 @@ public class ItemCrystalEdgedPickaxe extends ItemPickaxe
 		super(material);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setTextureName(CrystalMagic.MODID + ":" + unlocalizedName);
+		this.setCreativeTab(CrystalMagic.tabCrystalMagic);
 	}
 }
