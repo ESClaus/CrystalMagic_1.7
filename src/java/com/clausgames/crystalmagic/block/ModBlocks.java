@@ -1,5 +1,6 @@
 package com.clausgames.crystalmagic.block;
 
+import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.item.ModItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -13,6 +14,6 @@ public class ModBlocks
 
 	public static final void init()
 	{
-		GameRegistry.registerBlock(blockCrystal = new CrystalBlock("BlockCrystal", Material.rock, ModItems.itemRoughCrystal, 0, 1, 4), "BlockCrystal");
+		GameRegistry.registerBlock(blockCrystal = new CrystalBlock("BlockCrystal", Material.rock, ModItems.itemRoughCrystal, 0, 1, 4), "BlockCrystal").setCreativeTab(CrystalMagic.tabCrystalMagic);
 	}
 }

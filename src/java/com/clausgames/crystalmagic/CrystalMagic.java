@@ -1,5 +1,7 @@
 package com.clausgames.crystalmagic;
 
+import com.clausgames.crystalmagic.item.ModItems;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -7,6 +9,9 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 @Mod(modid = CrystalMagic.MODID, name = CrystalMagic.MODNAME, version = CrystalMagic.VERSION)
 
@@ -21,7 +26,7 @@ public class CrystalMagic
 
 	@SidedProxy(clientSide = "com.clausgames.crystalmagic.ClientProxy", serverSide = "com.clausgames.crystalmagic.ServerProxy")
 	public static CommonProxy proxy;
-	
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
@@ -40,12 +45,12 @@ public class CrystalMagic
 		proxy.postInit(e);
 	}
 
-	/*
-	 * public static CreativeTabs tabCrystalMagic = new
-	 * CreativeTabs("tabCrystalMagic"){
-	 * 
-	 * @Override public Item getTabIconItem(){ return new
-	 * ItemStack(itemRoughCrystal).getItem(); //setting tab's icon to that of
-	 * the item inside the ItemStack param } };
-	 */
+	public static CreativeTabs tabCrystalMagic = new CreativeTabs("tabCrystalMagic")
+	{
+		@Override
+		public Item getTabIconItem()
+		{
+			return new ItemStack(ModItems.itemCrystalFragment).getItem();
+		}
+	};
 }

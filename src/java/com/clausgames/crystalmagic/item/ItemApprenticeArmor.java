@@ -18,6 +18,7 @@ public class ItemApprenticeArmor extends ItemArmor
 		this.textureName = textureName;
 		this.setUnlocalizedName(unlocalizedName);
 		this.setTextureName(CrystalMagic.MODID + ":" + unlocalizedName);
+		this.setCreativeTab(CrystalMagic.tabCrystalMagic);
 	}
 
 	@Override
