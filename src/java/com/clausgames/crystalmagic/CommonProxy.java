@@ -22,7 +22,7 @@ public class CommonProxy
 
 	public void init(FMLInitializationEvent e)
 	{
-		//WorldGen
+		// WorldGen
 		GameRegistry.registerWorldGenerator(new CrystalGeneration(), 0);
 	}
 

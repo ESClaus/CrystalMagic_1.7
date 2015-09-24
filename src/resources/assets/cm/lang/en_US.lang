@@ -5,11 +5,7 @@ item.ItemRoughCrystal.name=Rough Crystal
 item.ItemCrystalFragment.name=Crystal Fragment
 
 //Tools and Weapons
-item.ItemFlintPickaxe.name=Flint Pickaxe
-item.ItemFlintAxe.name=Flint Axe
-item.ItemFlintShovel.name=Flint Shovel
-item.ItemFlintHoe.name=Flint Hoe
-item.ItemFlintSword.name=Flint Sword
+item.itemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
 
 item.ItemApprenticeHood.name=Apprentice Hood
 item.ItemApprenticeRobe.name=Apprentice Robe

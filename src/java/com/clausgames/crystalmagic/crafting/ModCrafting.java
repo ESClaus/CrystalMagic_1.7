@@ -5,6 +5,7 @@ import com.clausgames.crystalmagic.item.ModItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class ModCrafting
@@ -13,11 +14,11 @@ public class ModCrafting
 	{
 		// Insert Crafting/Smelting Recipes Here
 
-		// Rough Crystal Recipe, C = itemCrystalFragement
-		GameRegistry.addRecipe(new ItemStack(ModItems.itemRoughCrystal), "CC", "CC", 'C', ModItems.itemCrystalFragment);
-
 		// Crystal Block Recipe, C = Cobble, S = Sand, R = itemRoughCrystal
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockCrystal), "CSC", "SRS", "CSC", 'C', Blocks.cobblestone, 'S', Blocks.sand, 'R', ModItems.itemRoughCrystal);
+
+		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, C = Cobble, S = Stick
+		GameRegistry.addRecipe(new ItemStack(ModItems.itemCrystalEdgedPickaxe), "FCF", " S ", " S ", 'F', ModItems.itemCrystalFragment, 'C', Blocks.cobblestone, 'S', Items.stick);
 
 		// Apprentice Armor Recipes, Placeholder, W = Wool, S = String
 		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeHood), "WWW", "W W", 'W', Blocks.wool);
