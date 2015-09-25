@@ -1,6 +1,7 @@
 package com.clausgames.crystalmagic.item;
 
 import com.clausgames.crystalmagic.CrystalMagic;
+import com.clausgames.crystalmagic.lib.LibMisc;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
@@ -34,8 +35,8 @@ public class ModItems
 	public static final void init()
 	{
 		// Instance of Each Item
-		itemRoughCrystal = new Item().setUnlocalizedName("ItemRoughCrystal").setTextureName(CrystalMagic.MODID + ":itemRoughCrystal").setCreativeTab(CrystalMagic.tabCrystalMagic);
-		itemCrystalFragment = new Item().setUnlocalizedName("ItemCrystalFragment").setTextureName(CrystalMagic.MODID + ":itemCrystalFragment").setCreativeTab(CrystalMagic.tabCrystalMagic);
+		itemRoughCrystal = new Item().setUnlocalizedName("ItemRoughCrystal").setTextureName(LibMisc.MODID + ":itemRoughCrystal").setCreativeTab(CrystalMagic.tabCrystalMagic);
+		itemCrystalFragment = new Item().setUnlocalizedName("ItemCrystalFragment").setTextureName(LibMisc.MODID + ":itemCrystalFragment").setCreativeTab(CrystalMagic.tabCrystalMagic);
 
 		// Register of Each Item
 		GameRegistry.registerItem(itemRoughCrystal, "ItemRoughCrystal");

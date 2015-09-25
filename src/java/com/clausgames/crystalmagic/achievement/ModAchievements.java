@@ -13,19 +13,17 @@ public final class ModAchievements
 	public static AchievementPage crystalmagicPage;
 	public static int pageIndex;
 	
-	public static Achievement achievementCrystalFragment;
-	public static Achievement achievementRoughCrystal;
+	public static Achievement crystalFragment;
+	public static Achievement roughCrystal;
 	
 	public static final void init()
 	{
-		achievementCrystalFragment = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT, 0, 4, ModItems.itemCrystalFragment, null);
-		achievementRoughCrystal = new AchievementMod(LibAchievementNames.ROUGHCRYSTAL, 1, 5, ModItems.itemRoughCrystal, null);
+		crystalFragment = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT, 0, 4, ModItems.itemCrystalFragment, null);
+		roughCrystal = new AchievementMod(LibAchievementNames.ROUGHCRYSTAL, 1, 5, ModItems.itemRoughCrystal, crystalFragment);
 		
 		pageIndex = AchievementPage.getAchievementPages().size();
-		crystalmagicPage = new AchievementPage("Crystal Magic",new Achievement[] {ModAchievements.achievementCrystalFragment, ModAchievements.achievementRoughCrystal}); 
+		crystalmagicPage = new AchievementPage("Crystal Magic", AchievementMod.achievements.toArray(new Achievement[AchievementMod.achievements.size()])); 
 		AchievementPage.registerAchievementPage(crystalmagicPage);
-		achievementCrystalFragment.registerStat();
-		achievementRoughCrystal.registerStat();
 		
 		FMLCommonHandler.instance().bus().register(new AchievementTriggerer());
 	}

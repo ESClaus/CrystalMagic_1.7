@@ -19,7 +19,7 @@ tile.BlockCrystal.name=Crystal
 itemGroup.tabCrystalMagic=Crystal Magic
 
 //Achievements
-achievement.crystalfragment=Do You Believe In Magic
-achievement.crystalfragment.desc=Found a crystal fragment
-achievement.roughcrystal=Abracadabra, I want to reach out and grab you
-achievement.roughcrystal.desc=Found a rough crystal
+achievement.crystalmagic:crystalFragment=Do You Believe In Magic
+achievement.crystalmagic:crystalFragment.desc=Found a crystal fragment
+achievement.crystalmagic:roughCrystal=Abracadabra, I want to reach out and grab you
+achievement.crystalmagic:roughCrystal.desc=Found a rough crystal
