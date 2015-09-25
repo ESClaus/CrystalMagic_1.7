@@ -53,7 +53,7 @@ public class CrystalBlock extends Block
 	public Item getItemDropped(int meta, Random random, int fortune)
 	{
 		String toolUsed = harvesters.get().getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-		if (toolUsed.equals("itemCrystalEdgedPickaxe"))
+		if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
 		{
 			this.drop = ModItems.itemRoughCrystal;
 			return this.drop;
