@@ -1,4 +1,4 @@
-﻿< en_US.lang - English localization file for the Crystal Magic >
+< en_US.lang - English localization file for the Crystal Magic >
 
 //Items
 item.ItemRoughCrystal.name=Rough Crystal
@@ -15,5 +15,5 @@ item.ItemApprenticeBoots.name=Apprentice Boots
 //Block Names
 tile.BlockCrystal.name=Crystal
 
-/Creative Tab
+//Creative Tab
 itemGroup.tabCrystalMagic=Crystal Magic
