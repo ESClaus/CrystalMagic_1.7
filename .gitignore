@@ -59,3 +59,4 @@ config/
 /usernamecache.json
 /world
 >>>>>>> 8ebf0b7c9542e8a41a77eff39c74962913c64a5e
+crash-reports/

@@ -1,22 +1,32 @@
 package com.clausgames.crystalmagic.achievement;
 
 import com.clausgames.crystalmagic.item.ModItems;
+import com.clausgames.crystalmagic.lib.LibAchievementNames;
 
+import cpw.mods.fml.common.FMLCommonHandler;
+import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 
-public class ModAchievements
+public final class ModAchievements
 {
-	public static Achievement achievementCrystalFragment = new Achievement("achievement.crystalfragment", "crystalfragment", 0, 0, ModItems.itemCrystalFragment, (Achievement)null);
-	public static Achievement achievementRoughCrystal = new Achievement("achievement.roughcrystal", "roughcrystal", 2, 1, ModItems.itemRoughCrystal, (Achievement)null);
+	public static AchievementPage crystalmagicPage;
+	public static int pageIndex;
+	
+	public static Achievement achievementCrystalFragment;
+	public static Achievement achievementRoughCrystal;
 	
 	public static final void init()
 	{
+		achievementCrystalFragment = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT, 0, 4, ModItems.itemCrystalFragment, null);
+		achievementRoughCrystal = new AchievementMod(LibAchievementNames.ROUGHCRYSTAL, 1, 5, ModItems.itemRoughCrystal, null);
+		
+		pageIndex = AchievementPage.getAchievementPages().size();
+		crystalmagicPage = new AchievementPage("Crystal Magic",new Achievement[] {ModAchievements.achievementCrystalFragment, ModAchievements.achievementRoughCrystal}); 
+		AchievementPage.registerAchievementPage(crystalmagicPage);
 		achievementCrystalFragment.registerStat();
 		achievementRoughCrystal.registerStat();
-		AchievementPage.registerAchievementPage(
-				new AchievementPage("Crystal Magic",
-						new Achievement[] {ModAchievements.achievementCrystalFragment, ModAchievements.achievementRoughCrystal}));
 		
+		FMLCommonHandler.instance().bus().register(new AchievementTriggerer());
 	}
 }
