@@ -26,7 +26,6 @@ public class ModItems
 
 	// Declaration of Materials
 	// Example Tool Material: public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
-	// Example: public static ToolMaterial flintToolMaterial = EnumHelper.addToolMaterial("flintToolMaterial", 1, 131, 4.0F, 1.0F, 5);
 	public static ToolMaterial crystalEdgedToolMaterial = EnumHelper.addToolMaterial("crystalEdgedToolMaterial", 2, 131, 4.0f, 1.0f, 5); // Placeholder crystalEdgedToolMaterial
 
 	// Example Armor Material: public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("NAME", durability, damageReduction[], enchantability);
@@ -41,7 +40,7 @@ public class ModItems
 		// Register of Each Item
 		GameRegistry.registerItem(itemRoughCrystal, "ItemRoughCrystal");
 		GameRegistry.registerItem(itemCrystalFragment, "ItemCrystalFragment");
-		GameRegistry.registerItem(itemCrystalEdgedPickaxe = new ItemCrystalEdgedPickaxe("itemCrystalEdgedPickaxe", crystalEdgedToolMaterial), "itemCrystalEdgedPickaxe");
+		GameRegistry.registerItem(itemCrystalEdgedPickaxe = new ItemCrystalEdgedPickaxe("ItemCrystalEdgedPickaxe", crystalEdgedToolMaterial), "ItemCrystalEdgedPickaxe");
 
 		// Register of Each Piece of Armor
 		// Apprentice Armor
