@@ -12,7 +12,7 @@ import net.minecraftforge.common.util.EnumHelper;
 public class ModItems
 {
 	// Declaration of Items
-	public static Item itemRoughCrystal;
+	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
 	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
 
 	// Declaration of Tools/Weapons
@@ -34,9 +34,6 @@ public class ModItems
 
 	public static final void init()
 	{
-		// Instance of Each Item
-		itemRoughCrystal = new Item().setUnlocalizedName("ItemRoughCrystal").setTextureName(LibMisc.MODID + ":itemRoughCrystal").setCreativeTab(CrystalMagic.tabCrystalMagic);
-
 		// Register of Each Item
 		GameRegistry.registerItem(itemRoughCrystal, "ItemRoughCrystal");
 		GameRegistry.registerItem(itemCrystalFragment, "ItemCrystalFragment");

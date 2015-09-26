@@ -8,17 +8,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 
-public class ItemCrystalFragment extends ItemCrystalMagic implements IPickupAchievement
+public class ItemRoughCrystal extends ItemCrystalMagic implements IPickupAchievement
 {
-    public ItemCrystalFragment()
+    public ItemRoughCrystal()
     {
         super();
-        this.setUnlocalizedName("ItemCrystalFragment");
+        this.setUnlocalizedName("ItemRoughCrystal");
         this.setCreativeTab(CrystalMagic.tabCrystalMagic);
     }
 
     @Override
     public Achievement getAchievementOnPickup(ItemStack stack, EntityPlayer player, EntityItem item) {
-        return stack.getItemDamage() == 0 ? ModAchievements.crystalFragment : null;
+        return stack.getItemDamage() == 0 ? ModAchievements.roughCrystal : null;
     }
 }
