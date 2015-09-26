@@ -1,8 +1,11 @@
 package com.clausgames.crystalmagic.achievement;
 
+import com.clausgames.crystalmagic.item.ModItems;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.stats.Achievement;
 import net.minecraft.item.ItemStack;
 
@@ -19,7 +22,7 @@ public class AchievementTriggerer
 				event.player.addStat(achievement, 1);
 		}
 	}
-	
+
 	@SubscribeEvent
 	public void onItemCrafted(ItemCraftedEvent event)
 	{

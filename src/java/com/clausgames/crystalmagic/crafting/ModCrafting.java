@@ -18,7 +18,7 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockCrystal), "CSC", "SRS", "CSC", 'C', Blocks.cobblestone, 'S', Blocks.sand, 'R', ModItems.itemRoughCrystal);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron, S = Stick
-		GameRegistry.addRecipe(new ItemStack(ModItems.itemCrystalEdgedPickaxe), "FIF", " S ", " S ", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_ingot, 'S', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModItems.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);
 
 		// Apprentice Armor Recipes, Placeholder, W = Wool, S = String
 		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeHood), "WWW", "W W", 'W', Blocks.wool);

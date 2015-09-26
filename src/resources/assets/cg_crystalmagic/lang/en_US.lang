@@ -1,22 +1,22 @@
 < en_US.lang - English localization file for the Crystal Magic >
 
 //Items
-item.ItemRoughCrystal.name=Rough Crystal
-item.ItemCrystalFragment.name=Crystal Fragment
+item.cg_crystalmagic:ItemRoughCrystal.name=Rough Crystal
+item.cg_crystalmagic:ItemCrystalFragment.name=Crystal Fragment
 
 //Tools and Weapons
-item.ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
+item.ItemCrystalEdgedPickaxe:name=Crystal Edged Pickaxe
 
-item.ItemApprenticeHood.name=Apprentice Hood
-item.ItemApprenticeRobe.name=Apprentice Robe
-item.ItemApprenticeLeggings.name=Apprentice Leggings
-item.ItemApprenticeBoots.name=Apprentice Boots
+item.ItemApprenticeHood:name=Apprentice Hood
+item.ItemApprenticeRobe:name=Apprentice Robe
+item.ItemApprenticeLeggings:name=Apprentice Leggings
+item.ItemApprenticeBoots:name=Apprentice Boots
 
 //Block Names
-tile.BlockCrystal.name=Crystal
+tile.BlockCrystal:name=Crystal
 
 //Creative Tab
-itemGroup.tabCrystalMagic=Crystal Magic
+itemGroup:tabCrystalMagic=Crystal Magic
 
 //Achievements
 achievement.crystalmagic:crystalFragment=Do You Believe In Magic

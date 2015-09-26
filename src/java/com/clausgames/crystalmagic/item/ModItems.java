@@ -13,7 +13,7 @@ public class ModItems
 {
 	// Declaration of Items
 	public static Item itemRoughCrystal;
-	public static Item itemCrystalFragment;
+	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
 
 	// Declaration of Tools/Weapons
 	// Example: public static Item itemFlintPickaxe;
@@ -30,13 +30,12 @@ public class ModItems
 	public static ToolMaterial crystalEdgedToolMaterial = EnumHelper.addToolMaterial("crystalEdgedToolMaterial", 2, 131, 4.0f, 1.0f, 5); // Placeholder crystalEdgedToolMaterial
 
 	// Example Armor Material: public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("NAME", durability, damageReduction[], enchantability);
-	public static ArmorMaterial apprenticeArmorMaterial = EnumHelper.addArmorMaterial("apprenticeArmor", 5, new int[] { 1, 3, 2, 1 }, 15);
+	public static ArmorMaterial apprenticeArmorMaterial = EnumHelper.addArmorMaterial("apprenticeArmor", 5, new int[]{1, 3, 2, 1}, 15);
 
 	public static final void init()
 	{
 		// Instance of Each Item
 		itemRoughCrystal = new Item().setUnlocalizedName("ItemRoughCrystal").setTextureName(LibMisc.MODID + ":itemRoughCrystal").setCreativeTab(CrystalMagic.tabCrystalMagic);
-		itemCrystalFragment = new Item().setUnlocalizedName("ItemCrystalFragment").setTextureName(LibMisc.MODID + ":itemCrystalFragment").setCreativeTab(CrystalMagic.tabCrystalMagic);
 
 		// Register of Each Item
 		GameRegistry.registerItem(itemRoughCrystal, "ItemRoughCrystal");
@@ -49,6 +48,5 @@ public class ModItems
 		GameRegistry.registerItem(apprenticeRobe = new ItemApprenticeArmor("ItemApprenticeRobe", apprenticeArmorMaterial, "apprenticeArmor", 1), "ItemApprenticeRobe"); // 1 for Chestplate
 		GameRegistry.registerItem(apprenticeLeggings = new ItemApprenticeArmor("ItemApprenticeLeggings", apprenticeArmorMaterial, "apprenticeArmor", 2), "ItemApprenticeLeggings"); // 2 for Leggings
 		GameRegistry.registerItem(apprenticeBoots = new ItemApprenticeArmor("ItemApprenticeBoots", apprenticeArmorMaterial, "apprenticeArmor", 3), "ItemApprenticeBoots"); // 3 for Boots
-
 	}
 }
