@@ -16,7 +16,7 @@ item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
 tile.cg_crystalmagic:BlockCrystal.name=Crystal
 
 //Creative Tab
-itemGroup.tabCrystalMagic=Crystal Magic
+itemGroup.cg_crystalmagic=Crystal Magic
 
 //Achievements
 achievement.crystalmagic:crystalFragment=Do You Believe In Magic

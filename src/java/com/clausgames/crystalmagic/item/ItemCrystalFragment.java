@@ -1,6 +1,5 @@
 package com.clausgames.crystalmagic.item;
 
-import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.achievement.IPickupAchievement;
 import com.clausgames.crystalmagic.achievement.ModAchievements;
 import net.minecraft.entity.item.EntityItem;
@@ -14,7 +13,6 @@ public class ItemCrystalFragment extends ItemCrystalMagic implements IPickupAchi
     {
         super();
         this.setUnlocalizedName("ItemCrystalFragment");
-        this.setCreativeTab(CrystalMagic.tabCrystalMagic);
     }
 
     @Override

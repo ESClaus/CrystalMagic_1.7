@@ -4,7 +4,6 @@ import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.lib.LibAchievementNames;
 
 import cpw.mods.fml.common.FMLCommonHandler;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
@@ -17,7 +16,7 @@ public final class ModAchievements
 	public static Achievement crystalFragment;
 	public static Achievement roughCrystal;
 	
-	public static final void init()
+	public static void init()
 	{
 		crystalFragment = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT, 0, 4, new ItemStack(ModItems.itemCrystalFragment), null);
 		roughCrystal = new AchievementMod(LibAchievementNames.ROUGHCRYSTAL, 1, 5, new ItemStack(ModItems.itemRoughCrystal), crystalFragment);

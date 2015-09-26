@@ -1,6 +1,6 @@
 package com.clausgames.crystalmagic.item;
 
-import com.clausgames.crystalmagic.CrystalMagic;
+import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
 import net.minecraft.entity.Entity;
@@ -19,7 +19,7 @@ public class ItemApprenticeArmor extends ItemArmor
 		this.textureName = textureName;
 		this.setUnlocalizedName(unlocalizedName);
 		this.setTextureName(LibMisc.MODID + ":" + unlocalizedName);
-		this.setCreativeTab(CrystalMagic.tabCrystalMagic);
+		this.setCreativeTab(CreativeTabCrystalMagic.tabCrystalMagic);
 		this.setMaxStackSize(1);
 	}
 

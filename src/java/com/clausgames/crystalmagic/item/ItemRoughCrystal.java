@@ -1,6 +1,5 @@
 package com.clausgames.crystalmagic.item;
 
-import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.achievement.IPickupAchievement;
 import com.clausgames.crystalmagic.achievement.ModAchievements;
 import net.minecraft.entity.item.EntityItem;
@@ -14,7 +13,6 @@ public class ItemRoughCrystal extends ItemCrystalMagic implements IPickupAchieve
     {
         super();
         this.setUnlocalizedName("ItemRoughCrystal");
-        this.setCreativeTab(CrystalMagic.tabCrystalMagic);
     }
 
     @Override

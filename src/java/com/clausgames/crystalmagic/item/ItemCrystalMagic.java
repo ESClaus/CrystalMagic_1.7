@@ -1,5 +1,6 @@
 package com.clausgames.crystalmagic.item;
 
+import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,6 +13,7 @@ public class ItemCrystalMagic extends Item
     public ItemCrystalMagic()
     {
         super();
+        this.setCreativeTab(CreativeTabCrystalMagic.tabCrystalMagic);
     }
 
     @Override

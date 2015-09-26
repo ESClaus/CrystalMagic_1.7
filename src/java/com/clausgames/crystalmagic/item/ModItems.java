@@ -1,6 +1,5 @@
 package com.clausgames.crystalmagic.item;
 
-import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
 import cpw.mods.fml.common.registry.GameRegistry;
