@@ -20,5 +20,6 @@ public class ItemCrystalEdgedPickaxe extends ItemPickaxe
 		this.setUnlocalizedName(unlocalizedName);
 		this.setTextureName(LibMisc.MODID + ":" + unlocalizedName);
 		this.setCreativeTab(CrystalMagic.tabCrystalMagic);
+		this.setMaxStackSize(1);
 	}
 }

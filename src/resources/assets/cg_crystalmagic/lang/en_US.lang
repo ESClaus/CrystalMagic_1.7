@@ -5,18 +5,18 @@ item.cg_crystalmagic:ItemRoughCrystal.name=Rough Crystal
 item.cg_crystalmagic:ItemCrystalFragment.name=Crystal Fragment
 
 //Tools and Weapons
-item.ItemCrystalEdgedPickaxe:name=Crystal Edged Pickaxe
+item.cg_crystalmagic:ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
 
-item.ItemApprenticeHood:name=Apprentice Hood
-item.ItemApprenticeRobe:name=Apprentice Robe
-item.ItemApprenticeLeggings:name=Apprentice Leggings
-item.ItemApprenticeBoots:name=Apprentice Boots
+item.cg_crystalmagic:ItemApprenticeHood.name=Apprentice Hood
+item.cg_crystalmagic:ItemApprenticeRobe.name=Apprentice Robe
+item.cg_crystalmagic:ItemApprenticeLeggings.name=Apprentice Leggings
+item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
 
 //Block Names
-tile.BlockCrystal:name=Crystal
+tile.cg_crystalmagic:BlockCrystal.name=Crystal
 
 //Creative Tab
-itemGroup:tabCrystalMagic=Crystal Magic
+itemGroup.tabCrystalMagic=Crystal Magic
 
 //Achievements
 achievement.crystalmagic:crystalFragment=Do You Believe In Magic

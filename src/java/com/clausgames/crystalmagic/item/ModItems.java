@@ -9,11 +9,12 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
+@GameRegistry.ObjectHolder(LibMisc.MODID)
 public class ModItems
 {
 	// Declaration of Items
-	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
-	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
+	public static final ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
+	public static final ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
 
 	// Declaration of Tools/Weapons
 	// Example: public static Item itemFlintPickaxe;
@@ -32,7 +33,7 @@ public class ModItems
 	// Example Armor Material: public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("NAME", durability, damageReduction[], enchantability);
 	public static ArmorMaterial apprenticeArmorMaterial = EnumHelper.addArmorMaterial("apprenticeArmor", 5, new int[]{1, 3, 2, 1}, 15);
 
-	public static final void init()
+	public static void init()
 	{
 		// Register of Each Item
 		GameRegistry.registerItem(itemRoughCrystal, "ItemRoughCrystal");

@@ -18,7 +18,6 @@ public class ItemCrystalMagic extends Item
     public String getUnlocalizedName()
     {
         return String.format("item.%s%s", LibMisc.MODID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-        //itemCrystalFragment = new Item().setUnlocalizedName("ItemCrystalFragment").setTextureName(LibMisc.MODID + ":itemCrystalFragment").setCreativeTab(CrystalMagic.tabCrystalMagic);
     }
 
     @Override
