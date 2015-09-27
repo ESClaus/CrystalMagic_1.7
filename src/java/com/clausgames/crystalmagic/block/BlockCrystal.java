@@ -1,9 +1,18 @@
 package com.clausgames.crystalmagic.block;
 
+import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import net.minecraft.item.Item;
+
+import java.util.Random;
 
 public class BlockCrystal extends BlockCrystalMagic
 {
+	private Item drop;
+	private int meta;
+	private int least_quantity;
+	private int most_quantity;
+
 	public BlockCrystal()
 	{
 		super();
@@ -15,12 +24,18 @@ public class BlockCrystal extends BlockCrystalMagic
 		this.setHarvestLevel("pickaxe", 2); // Sets the tool and tool level required to break the block. If you don't use this the block destruction is set by material type chosen. (Tool: Pickaxe, Axe, Shovel. Level: 0=Wood; 1=Stone; 2=Iron; 3=Diamond)
 		this.setStepSound(soundTypeStone); // Sets sound of stepping on block. (Default: depends on material type chosen)
 	}
-	/*
+
+	@Override
+	public boolean isOpaqueCube()
+	{
+		return false;
+	}
+
 	@Override
 	public Item getItemDropped(int meta, Random random, int fortune)
 	{
 		String toolUsed = harvesters.get().getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-		if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+		if (toolUsed.equals("cg_crystalmagic:ItemCrystalEdgedPickaxe"))
 		{
 			this.drop = ModItems.itemRoughCrystal;
 			return this.drop;
@@ -54,5 +69,4 @@ public class BlockCrystal extends BlockCrystalMagic
 			return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
 		}
 	}
-	*/
 }
