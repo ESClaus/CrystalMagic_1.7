@@ -2,8 +2,6 @@ package com.clausgames.crystalmagic.armor;
 
 import com.clausgames.crystalmagic.lib.LibMisc;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemArmor;
-import net.minecraftforge.common.util.EnumHelper;
 
 @GameRegistry.ObjectHolder(LibMisc.MODID)
 public class ModArmor
