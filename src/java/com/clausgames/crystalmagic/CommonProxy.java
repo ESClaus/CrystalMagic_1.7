@@ -7,8 +7,8 @@ import com.clausgames.crystalmagic.crafting.ModCrafting;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.network.CrystalMagicGuiHandler;
 import com.clausgames.crystalmagic.item.tool.ModTools;
-import com.clausgames.crystalmagic.world.CrystalGeneration;
 
+import com.clausgames.crystalmagic.world.gen.WorldGeneratorCrystals;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -33,7 +33,7 @@ public class CommonProxy
 		// GuiHandler Registration
 		NetworkRegistry.INSTANCE.registerGuiHandler(CrystalMagic.instance, new CrystalMagicGuiHandler());
 		// WorldGen
-		GameRegistry.registerWorldGenerator(new CrystalGeneration(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGeneratorCrystals(), 0);
 	}
 
 	public void postInit(FMLPostInitializationEvent e)
