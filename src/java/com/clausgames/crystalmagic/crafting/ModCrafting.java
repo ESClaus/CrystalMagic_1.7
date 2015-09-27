@@ -1,5 +1,6 @@
 package com.clausgames.crystalmagic.crafting;
 
+import com.clausgames.crystalmagic.armor.ModArmor;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.item.ModItems;
 
@@ -21,9 +22,9 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModItems.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);
 
 		// Apprentice Armor Recipes, Placeholder, W = Wool, S = String
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeHood), "WWW", "W W", 'W', Blocks.wool);
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeRobe), "W W", "WWW", "WWW", 'W', Blocks.wool);
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeLeggings), "WWW", "W W", "W W", 'W', Blocks.wool);
-		GameRegistry.addRecipe(new ItemStack(ModItems.apprenticeBoots), "W W", "W W", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModArmor.apprenticeHood), "WWW", "W W", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModArmor.apprenticeRobe), "W W", "WWW", "WWW", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModArmor.apprenticeLeggings), "WWW", "W W", "W W", 'W', Blocks.wool);
+		GameRegistry.addRecipe(new ItemStack(ModArmor.apprenticeBoots), "W W", "W W", 'W', Blocks.wool);
 	}
 }

@@ -1,6 +1,7 @@
 package com.clausgames.crystalmagic;
 
 import com.clausgames.crystalmagic.achievement.ModAchievements;
+import com.clausgames.crystalmagic.armor.ModArmor;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
 import com.clausgames.crystalmagic.item.ModItems;
@@ -20,6 +21,7 @@ public class CommonProxy
 		// Initialize each class' init.
 		ModItems.init();
 		ModBlocks.init();
+		ModArmor.init();
 		ModCrafting.init();
 		ModAchievements.init();
 	}
