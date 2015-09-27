@@ -6,6 +6,7 @@ import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.network.CrystalMagicGuiHandler;
+import com.clausgames.crystalmagic.tools.ModTools;
 import com.clausgames.crystalmagic.world.CrystalGeneration;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -21,6 +22,7 @@ public class CommonProxy
 		// Initialize each class' init.
 		ModItems.init();
 		ModBlocks.init();
+		ModTools.init();
 		ModArmor.init();
 		ModCrafting.init();
 		ModAchievements.init();

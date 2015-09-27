@@ -4,6 +4,7 @@ import com.clausgames.crystalmagic.armor.ModArmor;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.item.ModItems;
 
+import com.clausgames.crystalmagic.tools.ModTools;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -19,7 +20,7 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockCrystal), "CSC", "SRS", "CSC", 'C', Blocks.cobblestone, 'S', Blocks.sand, 'R', ModItems.itemRoughCrystal);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
-		GameRegistry.addRecipe(new ItemStack(ModItems.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);
+		GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);
 
 		// Apprentice Armor Recipes, Placeholder, W = Wool, S = String
 		GameRegistry.addRecipe(new ItemStack(ModArmor.apprenticeHood), "WWW", "W W", 'W', Blocks.wool);

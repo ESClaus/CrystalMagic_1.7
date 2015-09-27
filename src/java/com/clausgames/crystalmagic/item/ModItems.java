@@ -14,18 +14,11 @@ public class ModItems
 	public static final ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
 	public static final ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal();
 
-	// Declaration of Tools/Weapons
-	// Example: public static Item itemFlintPickaxe;
-	public static Item itemCrystalEdgedPickaxe;
-
 	public static void init()
 	{
 		// Register of Each Item
 		GameRegistry.registerItem(itemRoughCrystal, "ItemRoughCrystal");
 		GameRegistry.registerItem(itemCrystalFragment, "ItemCrystalFragment");
 		GameRegistry.registerItem(itemNatureCrystal, "ItemNatureCrystal");
-
-		//Register of Tools
-		GameRegistry.registerItem(itemCrystalEdgedPickaxe = new ItemCrystalEdgedPickaxe("ItemCrystalEdgedPickaxe", LibMaterial.Tools.crystalEdgedToolMaterial), "ItemCrystalEdgedPickaxe");
 	}
 }
