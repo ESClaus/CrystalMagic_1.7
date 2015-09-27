@@ -1,4 +1,4 @@
-package com.clausgames.crystalmagic.armor;
+package com.clausgames.crystalmagic.item.armor;
 
 import com.clausgames.crystalmagic.lib.LibMisc;
 import cpw.mods.fml.relauncher.Side;

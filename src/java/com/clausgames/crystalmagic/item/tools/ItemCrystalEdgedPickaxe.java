@@ -1,4 +1,4 @@
-package com.clausgames.crystalmagic.tools;
+package com.clausgames.crystalmagic.item.tools;
 
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;

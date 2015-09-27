@@ -1,10 +1,10 @@
 package com.clausgames.crystalmagic.crafting;
 
-import com.clausgames.crystalmagic.armor.ModArmor;
+import com.clausgames.crystalmagic.item.armor.ModArmor;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.item.ModItems;
 
-import com.clausgames.crystalmagic.tools.ModTools;
+import com.clausgames.crystalmagic.item.tools.ModTools;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
