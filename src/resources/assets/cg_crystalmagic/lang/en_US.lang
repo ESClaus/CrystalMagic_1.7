@@ -1,6 +1,6 @@
 < en_US.lang - English localization file for the Crystal Magic >
 
-//Items
+# Items
 item.cg_crystalmagic:ItemRoughCrystal.name=Rough Crystal
 item.cg_crystalmagic:ItemCrystalFragment.name=Crystal Fragment
 item.cg_crystalmagic:ItemNatureCrystal.name=Nature Crystal
@@ -10,23 +10,23 @@ item.cg_crystalmagic:ItemAirCrystal.name=Air Crystal
 item.cg_crystalmagic:ItemLightCrystal.name=Light Crystal
 item.cg_crystalmagic:ItemDarkCrystal.name=Dark Crystal
 
-//Tools and Weapons
+# Tools and Weapons
 item.cg_crystalmagic:ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
 
-//Armor
+# Armor
 item.cg_crystalmagic:ItemApprenticeHood.name=Apprentice Hood
 item.cg_crystalmagic:ItemApprenticeRobe.name=Apprentice Robe
 item.cg_crystalmagic:ItemApprenticeLeggings.name=Apprentice Leggings
 item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
 
-//Block Names
+# Block Names
 tile.cg_crystalmagic:BlockCrystal.name=Crystal
 
-//Creative Tab
+# Creative Tab
 itemGroup.cg_crystalmagic=Crystal Magic
 
-//Achievements
-achievement.crystalmagic:crystalFragment=Do You Believe In Magic
-achievement.crystalmagic:crystalFragment.desc=Found a crystal fragment
-achievement.crystalmagic:roughCrystal=Abracadabra, I want to reach out and grab you
-achievement.crystalmagic:roughCrystal.desc=Found a rough crystal
+# Achievements
+achievement.crystalmagic:crystalFragment=Do You Believe In Magic?
+achievement.crystalmagic:crystalFragment.desc=Find a crystal fragment.
+achievement.crystalmagic:roughCrystal=Abracadabra, I want to reach out and grab ya!
+achievement.crystalmagic:roughCrystal.desc=Find a rough crystal.
