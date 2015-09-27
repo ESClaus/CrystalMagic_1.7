@@ -6,7 +6,7 @@ import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.network.CrystalMagicGuiHandler;
-import com.clausgames.crystalmagic.item.tools.ModTools;
+import com.clausgames.crystalmagic.item.tool.ModTools;
 import com.clausgames.crystalmagic.world.CrystalGeneration;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;

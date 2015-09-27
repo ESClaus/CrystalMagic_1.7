@@ -1,4 +1,4 @@
-package com.clausgames.crystalmagic.item.tools;
+package com.clausgames.crystalmagic.item.tool;
 
 import com.clausgames.crystalmagic.lib.LibMaterial;
 import cpw.mods.fml.common.registry.GameRegistry;
