@@ -3,10 +3,17 @@
 //Items
 item.cg_crystalmagic:ItemRoughCrystal.name=Rough Crystal
 item.cg_crystalmagic:ItemCrystalFragment.name=Crystal Fragment
+item.cg_crystalmagic:ItemNatureCrystal.name=Nature Crystal
+item.cg_crystalmagic:ItemFireCrystal.name=Fire Crystal
+item.cg_crystalmagic:ItemWaterCrystal.name=Water Crystal
+item.cg_crystalmagic:ItemAirCrystal.name=Air Crystal
+item.cg_crystalmagic:ItemLightCrystal.name=Light Crystal
+item.cg_crystalmagic:ItemDarkCrystal.name=Dark Crystal
 
 //Tools and Weapons
 item.cg_crystalmagic:ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
 
+//Armor
 item.cg_crystalmagic:ItemApprenticeHood.name=Apprentice Hood
 item.cg_crystalmagic:ItemApprenticeRobe.name=Apprentice Robe
 item.cg_crystalmagic:ItemApprenticeLeggings.name=Apprentice Leggings
