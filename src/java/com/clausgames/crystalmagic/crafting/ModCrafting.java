@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 public class ModCrafting
 {
-	public static final void init()
+	public static void init()
 	{
 		// Insert Crafting/Smelting Recipes Here
 
