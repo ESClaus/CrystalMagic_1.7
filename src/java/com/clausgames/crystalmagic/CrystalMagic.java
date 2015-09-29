@@ -9,6 +9,7 @@ import com.clausgames.crystalmagic.item.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
 import com.clausgames.crystalmagic.proxy.IProxy;
+import com.clausgames.crystalmagic.tile.ModTileEntities;
 import com.clausgames.crystalmagic.world.gen.WorldGeneratorCrystals;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -38,6 +39,10 @@ public class CrystalMagic
 		ModTools.init();
 		ModArmor.init();
 		ModAchievements.init();
+		ModTileEntities.init();
+
+		//Renderers
+		proxy.registerRenderThings();
 	}
 
 	@EventHandler

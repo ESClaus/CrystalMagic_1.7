@@ -16,7 +16,7 @@ public class WorldGeneratorCrystals implements IWorldGenerator
 
     public WorldGeneratorCrystals()
     {
-        this.genCrystalBlock = new WorldGenMinable(ModBlocks.blockCrystal, 5, Blocks.stone);
+        this.genCrystalBlock = new WorldGenMinable(ModBlocks.blockCrystalOre, 5, Blocks.stone);
     }
 
     @Override

@@ -20,7 +20,7 @@ item.cg_crystalmagic:ItemApprenticeLeggings.name=Apprentice Leggings
 item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
 
 # Block Names
-tile.cg_crystalmagic:BlockCrystal.name=Crystal
+tile.cg_crystalmagic:BlockCrystalOre.name=Crystal Ore
 
 # Creative Tab
 itemGroup.cg_crystalmagic=Crystal Magic
