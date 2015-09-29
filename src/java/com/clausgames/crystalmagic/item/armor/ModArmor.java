@@ -16,9 +16,9 @@ public class ModArmor
     {
         // Register of Each Piece of Armor
         // Apprentice Armor
-        GameRegistry.registerItem(apprenticeHood, "ItemApprenticeHood");
-        GameRegistry.registerItem(apprenticeRobe, "ItemApprenticeRobe");
-        GameRegistry.registerItem(apprenticeLeggings, "ItemApprenticeLeggings");
-        GameRegistry.registerItem(apprenticeBoots, "ItemApprenticeBoots");
+        GameRegistry.registerItem(apprenticeHood, "apprenticeHood");
+        GameRegistry.registerItem(apprenticeRobe, "apprenticeRobe");
+        GameRegistry.registerItem(apprenticeLeggings, "apprenticeLeggings");
+        GameRegistry.registerItem(apprenticeBoots, "apprenticeBoots");
     }
 }
