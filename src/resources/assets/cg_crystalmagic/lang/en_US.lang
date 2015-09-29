@@ -1,5 +1,8 @@
 < en_US.lang - English localization file for the Crystal Magic >
 
+# Book
+item.cg_crystalmagic:ItemCrystalCodex.name=Crystal Codex
+
 # Items
 item.cg_crystalmagic:ItemRoughCrystal.name=Rough Crystal
 item.cg_crystalmagic:ItemCrystalFragment.name=Crystal Fragment

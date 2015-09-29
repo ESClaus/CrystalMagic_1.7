@@ -15,6 +15,8 @@ public class ModCrafting
 	public static void init()
 	{
 		// Insert Crafting/Smelting Recipes Here
+		//Crystal Codex Recipe, Shapless, Crystal Fragment + Book
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCrystalCodex), ModItems.itemCrystalFragment, Items.book);
 
 		// Crystal Block Recipe, C = Cobble, S = Sand, R = itemRoughCrystal
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockCrystal), "CSC", "SRS", "CSC", 'C', Blocks.cobblestone, 'S', Blocks.sand, 'R', ModItems.itemRoughCrystal);

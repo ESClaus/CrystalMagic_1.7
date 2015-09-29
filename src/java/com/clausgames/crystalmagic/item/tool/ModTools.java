@@ -13,6 +13,6 @@ public class ModTools
     public static void init()
     {
         //Registration of Tools
-        GameRegistry.registerItem(itemCrystalEdgedPickaxe, "ItemCrystalEdgedPickaxe");
+        GameRegistry.registerItem(itemCrystalEdgedPickaxe, "itemCrystalEdgedPickaxe");
     }
 }
