@@ -25,7 +25,7 @@ public class ClientProxy extends CommonProxy
 	}
 
 	@Override
-	public ClientProxy getClientProxy()
+	public com.clausgames.crystalmagic.proxy.ClientProxy getClientProxy()
 	{
 		return this;
 	}

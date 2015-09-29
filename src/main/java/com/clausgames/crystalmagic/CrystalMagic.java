@@ -25,7 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class CrystalMagic
 {
 	@Instance(LibMisc.MODID)
-	public static CrystalMagic instance;
+	public static com.clausgames.crystalmagic.CrystalMagic instance;
 
 	@SidedProxy(clientSide = LibMisc.PROXY_CLIENT, serverSide = LibMisc.PROXY_SERVER)
 	public static IProxy proxy;
