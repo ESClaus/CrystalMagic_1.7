@@ -10,7 +10,7 @@ import com.clausgames.crystalmagic.lib.LibMisc;
 
 import com.clausgames.crystalmagic.proxy.IProxy;
 import com.clausgames.crystalmagic.tile.ModTileEntities;
-import com.clausgames.crystalmagic.world.gen.WorldGeneratorCrystals;
+import com.clausgames.crystalmagic.world.gen.ModWorldGen;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -18,7 +18,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = LibMisc.MODID, name = LibMisc.MODNAME, version = LibMisc.VERSION)
 
@@ -49,8 +48,7 @@ public class CrystalMagic
 	public void init(FMLInitializationEvent event)
 	{
 		ModCrafting.init();
-		// WorldGen
-		GameRegistry.registerWorldGenerator(new WorldGeneratorCrystals(), 0);
+		ModWorldGen.init();
 	}
 
 	@EventHandler
