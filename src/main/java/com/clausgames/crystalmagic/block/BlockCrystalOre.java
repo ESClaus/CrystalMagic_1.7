@@ -16,7 +16,6 @@ import com.clausgames.crystalmagic.tile.TileEntityBlockCrystalOre;
 import java.util.Random;
 
 
-
 public class BlockCrystalOre extends BlockContainer
 {
     private Item drop;
