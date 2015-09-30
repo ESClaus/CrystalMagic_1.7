@@ -24,6 +24,7 @@ item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
 
 # Block Names
 tile.cg_crystalmagic:BlockCrystalOre.name=Crystal Ore
+tile.cg_crystalmagic:BlockGoldenBars.name=Golden Bars
 
 # Creative Tab
 itemGroup.cg_crystalmagic=Crystal Magic
