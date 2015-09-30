@@ -10,7 +10,7 @@ public class BlockGoldenBars extends BlockPane
 {
     public BlockGoldenBars()
     {
-        super("cg_crystalmagic:blockGoldenBars", "cg_crystalmagic:blockGoldenBars", Material.iron, true);
+        super("cg_crystalmagic:blockGoldenBars", "cg_crystalmagic:blockGoldenBars", Material.iron, true); //Sets the texture and sidetexture(if any) TODO Would like to not have it hard coded in case we change MODID
         this.setBlockName("BlockGoldenBars");
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName());
         this.setHardness(5.0F);
