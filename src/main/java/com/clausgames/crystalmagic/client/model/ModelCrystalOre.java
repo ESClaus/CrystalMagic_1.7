@@ -4,152 +4,124 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
+/**
+ * Crystal.tcn - TechneToTabulaImporter
+ * Created using Tabula 4.1.1
+ */
 public class ModelCrystalOre extends ModelBase
 {
-        ModelRenderer Box_1;
-        ModelRenderer Box_3;
-        ModelRenderer Box_4;
-        ModelRenderer Box_5;
-        ModelRenderer Box_6;
-        ModelRenderer Box_7;
-        ModelRenderer Box_8;
-        ModelRenderer Box_9;
-        ModelRenderer Box_10;
-        ModelRenderer Box_11;
-        ModelRenderer Box_12;
-        ModelRenderer Box_13;
-        ModelRenderer Box_14;
+    public ModelRenderer Box1;
+    public ModelRenderer Box3;
+    public ModelRenderer Box4;
+    public ModelRenderer Box5;
+    public ModelRenderer Box6;
+    public ModelRenderer Box7;
+    public ModelRenderer Box8;
+    public ModelRenderer Box9;
+    public ModelRenderer Box10;
+    public ModelRenderer Box11;
+    public ModelRenderer Box12;
+    public ModelRenderer Box13;
+    public ModelRenderer Box14;
 
-        public ModelCrystalOre()
-        {
-            textureWidth = 64;
-            textureHeight = 64;
+    public ModelCrystalOre()
+    {
+        this.textureWidth = 64;
+        this.textureHeight = 64;
+        this.Box10 = new ModelRenderer(this, 1, 49);
+        this.Box10.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box10.addBox(-1.5F, -12.0F, -1.5F, 3, 7, 3, 0.0F);
+        this.setRotateAngle(Box10, -0.08726646259971647F, 0.0F, -0.5759586531581287F);
+        this.Box6 = new ModelRenderer(this, 1, 33);
+        this.Box6.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box6.addBox(-2.0F, -10.0F, -2.0F, 4, 9, 4, 0.0F);
+        this.setRotateAngle(Box6, 0.7330382858376184F, 0.2792526803190927F, 0.5410520681182421F);
+        this.Box13 = new ModelRenderer(this, 1, 25);
+        this.Box13.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box13.addBox(-1.5F, -6.0F, -1.5F, 3, 2, 3, 0.0F);
+        this.setRotateAngle(Box13, -0.5918411493512771F, -0.31869712141416456F, -0.40980330836826856F);
+        this.Box7 = new ModelRenderer(this, 49, 1);
+        this.Box7.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box7.addBox(-1.5F, -12.0F, -1.5F, 3, 7, 3, 0.0F);
+        this.setRotateAngle(Box7, 0.19198621771937624F, 0.0F, 0.5061454830783556F);
+        this.Box14 = new ModelRenderer(this, 25, 33);
+        this.Box14.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box14.addBox(-1.5F, -9.0F, -1.5F, 3, 9, 3, 0.0F);
+        this.setRotateAngle(Box14, 0.9075712110370513F, 0.2792526803190927F, 0.22689280275926282F);
+        this.Box9 = new ModelRenderer(this, 41, 33);
+        this.Box9.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box9.addBox(-1.5F, -11.0F, -1.5F, 3, 6, 3, 0.0F);
+        this.setRotateAngle(Box9, -0.8726646259971648F, 0.13962634015954636F, -0.13962634015954636F);
+        this.Box1 = new ModelRenderer(this, 1, 1);
+        this.Box1.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box1.addBox(-2.0F, -13.0F, -2.0F, 4, 13, 4, 0.0F);
+        this.setRotateAngle(Box1, 0.0F, 0.20943951023931953F, 0.0F);
+        this.Box8 = new ModelRenderer(this, 25, 33);
+        this.Box8.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box8.addBox(-1.5F, -12.0F, -1.5F, 3, 9, 3, 0.0F);
+        this.setRotateAngle(Box8, 0.7330382858376184F, 0.2792526803190927F, 0.5410520681182421F);
+        this.Box11 = new ModelRenderer(this, 1, 25);
+        this.Box11.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box11.addBox(-1.5F, -15.0F, -1.5F, 3, 2, 3, 0.0F);
+        this.Box12 = new ModelRenderer(this, 25, 1);
+        this.Box12.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box12.addBox(-2.0F, -10.0F, -2.0F, 3, 9, 4, 0.0F);
+        this.setRotateAngle(Box12, -0.593411945678072F, -0.5410520681182421F, 0.9599310885968813F);
+        this.Box3 = new ModelRenderer(this, 25, 1);
+        this.Box3.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box3.addBox(-2.0F, -10.0F, -2.0F, 4, 9, 4, 0.0F);
+        this.setRotateAngle(Box3, 0.17453292519943295F, -0.0F, 0.6108652381980153F);
+        this.Box4 = new ModelRenderer(this, 17, 17);
+        this.Box4.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box4.addBox(-2.0F, -10.0F, -2.0F, 4, 9, 4, 0.0F);
+        this.setRotateAngle(Box4, 0.0F, -0.0F, -0.6108652381980153F);
+        this.Box5 = new ModelRenderer(this, 41, 17);
+        this.Box5.setRotationPoint(0.0F, 24.0F, 0.0F);
+        this.Box5.addBox(-2.0F, -10.0F, -2.0F, 4, 9, 4, 0.0F);
+        this.setRotateAngle(Box5, -0.8726646259971648F, 0.13962634015954636F, -0.13962634015954636F);
+    }
 
-            Box_1 = new ModelRenderer(this, 1, 1);
-            Box_1.addBox(-2F, -13F, -2F, 4, 13, 4);
-            Box_1.setRotationPoint(0F, 24F, 0F);
-            Box_1.setTextureSize(64, 32);
-            Box_1.mirror = true;
-            setRotation(Box_1, 0F, 0.2094395F, 0F);
-            Box_3 = new ModelRenderer(this, 25, 1);
-            Box_3.addBox(-2F, -10F, -2F, 4, 9, 4);
-            Box_3.setRotationPoint(0F, 24F, 0F);
-            Box_3.setTextureSize(64, 32);
-            Box_3.mirror = true;
-            setRotation(Box_3, 0.1745329F, 0F, 0.6108652F);
-            Box_4 = new ModelRenderer(this, 17, 17);
-            Box_4.addBox(-2F, -10F, -2F, 4, 9, 4);
-            Box_4.setRotationPoint(0F, 24F, 0F);
-            Box_4.setTextureSize(64, 32);
-            Box_4.mirror = true;
-            setRotation(Box_4, 0F, 0F, -0.6108652F);
-            Box_5 = new ModelRenderer(this, 41, 17);
-            Box_5.addBox(-2F, -10F, -2F, 4, 9, 4);
-            Box_5.setRotationPoint(0F, 24F, 0F);
-            Box_5.setTextureSize(64, 32);
-            Box_5.mirror = true;
-            setRotation(Box_5, 0.0698132F, 1.675516F, -0.6806784F);
-            Box_6 = new ModelRenderer(this, 1, 33);
-            Box_6.addBox(-2F, -10F, -2F, 4, 9, 4);
-            Box_6.setRotationPoint(0F, 24F, 0F);
-            Box_6.setTextureSize(64, 32);
-            Box_6.mirror = true;
-            setRotation(Box_6, 0F, -1.570796F, -0.6108652F);
-            Box_7 = new ModelRenderer(this, 49, 1);
-            Box_7.addBox(-1.5F, -12F, -1.5F, 3, 7, 3);
-            Box_7.setRotationPoint(0F, 24F, 0F);
-            Box_7.setTextureSize(64, 32);
-            Box_7.mirror = true;
-            setRotation(Box_7, 0.1919862F, 0F, 0.5061455F);
-            Box_8 = new ModelRenderer(this, 25, 33);
-            Box_8.addBox(-1.5F, -12F, -1.5F, 3, 9, 3);
-            Box_8.setRotationPoint(0F, 24F, 0F);
-            Box_8.setTextureSize(64, 32);
-            Box_8.mirror = true;
-            setRotation(Box_8, 0F, 1.727876F, 0.5759587F);
-            Box_9 = new ModelRenderer(this, 41, 33);
-            Box_9.addBox(-1.5F, -11F, -1.5F, 3, 6, 3);
-            Box_9.setRotationPoint(0F, 24F, 0F);
-            Box_9.setTextureSize(64, 32);
-            Box_9.mirror = true;
-            setRotation(Box_9, 0F, -1.570796F, 0.6632251F);
-            Box_10 = new ModelRenderer(this, 1, 49);
-            Box_10.addBox(-1.5F, -12F, -1.5F, 3, 7, 3);
-            Box_10.setRotationPoint(0F, 24F, 0F);
-            Box_10.setTextureSize(64, 32);
-            Box_10.mirror = true;
-            setRotation(Box_10, -0.0872665F, 3.141593F, 0.5759587F);
-            Box_11 = new ModelRenderer(this, 1, 25);
-            Box_11.addBox(-1.5F, -15F, -1.5F, 3, 2, 3);
-            Box_11.setRotationPoint(0F, 24F, 0F);
-            Box_11.setTextureSize(64, 32);
-            Box_11.mirror = true;
-            setRotation(Box_11, 0F, 0F, 0F);
-            Box_12 = new ModelRenderer(this, 25, 1);
-            Box_12.addBox(-2F, -10F, -2F, 3, 9, 4);
-            Box_12.setRotationPoint(0F, 24F, 0F);
-            Box_12.setTextureSize(64, 32);
-            Box_12.mirror = true;
-            setRotation(Box_12, 0.2094395F, -0.8203047F, 0.8552113F);
-            Box_13 = new ModelRenderer(this, 1, 25);
-            Box_13.addBox(-1.5F, -6F, -1.5F, 3, 2, 3);
-            Box_13.setRotationPoint(0F, 24F, 0F);
-            Box_13.setTextureSize(64, 32);
-            Box_13.mirror = true;
-            setRotation(Box_13, 0.0698132F, -0.715585F, -0.6632251F);
-            Box_14 = new ModelRenderer(this, 25, 33);
-            Box_14.addBox(-1.5F, -9F, -1.5F, 3, 9, 3);
-            Box_14.setRotationPoint(0F, 24F, 0F);
-            Box_14.setTextureSize(64, 32);
-            Box_14.mirror = true;
-            setRotation(Box_14, 0F, 1.989675F, 0.837758F);
-        }
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
+    {
+        this.Box10.render(f5);
+        this.Box6.render(f5);
+        this.Box13.render(f5);
+        this.Box7.render(f5);
+        this.Box14.render(f5);
+        this.Box9.render(f5);
+        this.Box1.render(f5);
+        this.Box8.render(f5);
+        this.Box11.render(f5);
+        this.Box12.render(f5);
+        this.Box3.render(f5);
+        this.Box4.render(f5);
+        this.Box5.render(f5);
+    }
 
-        public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-        {
-            super.render(entity, f, f1, f2, f3, f4, f5);
-            setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-            Box_1.render(f5);
-            Box_3.render(f5);
-            Box_4.render(f5);
-            Box_5.render(f5);
-            Box_6.render(f5);
-            Box_7.render(f5);
-            Box_8.render(f5);
-            Box_9.render(f5);
-            Box_10.render(f5);
-            Box_11.render(f5);
-            Box_12.render(f5);
-            Box_13.render(f5);
-            Box_14.render(f5);
-        }
+    public void renderModel(float f)
+    {
+        this.Box10.render(f);
+        this.Box6.render(f);
+        this.Box13.render(f);
+        this.Box7.render(f);
+        this.Box14.render(f);
+        this.Box9.render(f);
+        this.Box1.render(f);
+        this.Box8.render(f);
+        this.Box11.render(f);
+        this.Box12.render(f);
+        this.Box3.render(f);
+        this.Box4.render(f);
+        this.Box5.render(f);
+    }
 
-        public void renderModel(float f)
-        {
-            Box_1.render(f);
-            Box_3.render(f);
-            Box_4.render(f);
-            Box_5.render(f);
-            Box_6.render(f);
-            Box_7.render(f);
-            Box_8.render(f);
-            Box_9.render(f);
-            Box_10.render(f);
-            Box_11.render(f);
-            Box_12.render(f);
-            Box_13.render(f);
-            Box_14.render(f);
-        }
-
-        private void setRotation(ModelRenderer model, float x, float y, float z)
-        {
-            model.rotateAngleX = x;
-            model.rotateAngleY = y;
-            model.rotateAngleZ = z;
-        }
-
-        public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-        {
-            super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        }
+    /**
+     * This is a helper function from Tabula to set the rotation of model parts
+     */
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
 }
