@@ -2,6 +2,8 @@ package com.clausgames.crystalmagic.block;
 
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -10,12 +12,23 @@ public class BlockGoldenBars extends BlockPane
 {
     public BlockGoldenBars()
     {
-        super("cg_crystalmagic:blockGoldenBars", "cg_crystalmagic:blockGoldenBars", Material.iron, true); //Sets the texture and sidetexture(if any) TODO Would like to not have it hard coded in case we change MODID
+        super(LibMisc.MODID + ":" + "blockGoldenBars", LibMisc.MODID + ":" + "blockGoldenBars", Material.iron, true); //Sets the texture and sidetexture(if any)
         this.setBlockName("BlockGoldenBars");
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName());
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setStepSound(soundTypeMetal); // Sets sound of stepping on block. (Default: depends on material type chosen)
         this.setCreativeTab(CreativeTabCrystalMagic.tabCrystalMagic);
+    }
+
+    @Override
+    public String getUnlocalizedName()
+    {
+        return String.format("tile.%s%s", LibMisc.MODID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    }
+
+    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
+    {
+        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
 }

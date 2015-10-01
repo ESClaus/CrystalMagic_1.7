@@ -26,7 +26,6 @@ public class BlockCrystalOre extends BlockContainer
     protected BlockCrystalOre(Material material)
     {
         super(material);
-
         this.setBlockName("BlockCrystalOre");
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName());
         this.setHardness(2.0f); // Sets how long it takes to break block (Default: Depends on material; stone:1.5f; obsidian:50.0f)

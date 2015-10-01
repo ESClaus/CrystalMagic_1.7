@@ -18,8 +18,8 @@ public class ModCrafting
 		//Crystal Codex Recipe, Shapless, Crystal Fragment + Book
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCrystalCodex), ModItems.itemCrystalFragment, Items.book);
 
-		// Crystal Block Recipe, C = Cobble, S = Sand, R = itemRoughCrystal
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockCrystal), "CSC", "SRS", "CSC", 'C', Blocks.cobblestone, 'S', Blocks.sand, 'R', ModItems.itemRoughCrystal);
+		//Golden Bars, G = Gold Ingot
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
 		GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);

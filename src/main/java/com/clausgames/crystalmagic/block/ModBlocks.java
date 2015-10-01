@@ -9,13 +9,11 @@ import net.minecraft.block.material.Material;
 public class ModBlocks
 {
 	// Declaration of Blocks
-	public static final BlockCrystalMagic blockCrystal = new BlockCrystal() ;
 	public static Block blockCrystalOre = new BlockCrystalOre(Material.rock);
 	public static final	BlockGoldenBars blockGoldenBars = new BlockGoldenBars();
 
 	public static void init()
 	{
-		GameRegistry.registerBlock(blockCrystal, "blockCrystal");
 		GameRegistry.registerBlock(blockCrystalOre, "BlockCrystalOre");
 		GameRegistry.registerBlock(blockGoldenBars, "blockGoldenBars");
 	}
