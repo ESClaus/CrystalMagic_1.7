@@ -9,6 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ModCrafting
 {
@@ -25,7 +26,7 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldInfusedStone), "OSO", "SOS", "OSO", 'O', Items.gold_ingot, 'S', Blocks.stone);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
-		GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);
+		GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE));
 
 		// Apprentice Armor Recipes, Placeholder, W = Wool, S = String
 		GameRegistry.addRecipe(new ItemStack(ModArmor.apprenticeHood), "WWW", "W W", 'W', Blocks.wool);
