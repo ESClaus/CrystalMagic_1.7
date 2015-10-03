@@ -9,10 +9,11 @@ import net.minecraft.stats.Achievement;
 
 public class ItemRoughCrystal extends ItemCrystalMagic implements IPickupAchievement
 {
-    public ItemRoughCrystal()
+    public ItemRoughCrystal(String unlocalizedName, String textureName)
     {
         super();
-        this.setUnlocalizedName("ItemRoughCrystal");
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(textureName);
     }
 
     @Override

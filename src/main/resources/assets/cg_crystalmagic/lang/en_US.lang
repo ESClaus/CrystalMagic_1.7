@@ -1,30 +1,33 @@
 < en_US.lang - English localization file for the Crystal Magic >
 
 # Book
-item.cg_crystalmagic:ItemCrystalCodex.name=Crystal Codex
+item.ItemCrystalCodex.name=Crystal Codex
 
 # Items
-item.cg_crystalmagic:ItemRoughCrystal.name=Rough Crystal
-item.cg_crystalmagic:ItemCrystalFragment.name=Crystal Fragment
-item.cg_crystalmagic:ItemNatureCrystal.name=Nature Crystal
-item.cg_crystalmagic:ItemFireCrystal.name=Fire Crystal
-item.cg_crystalmagic:ItemWaterCrystal.name=Water Crystal
-item.cg_crystalmagic:ItemAirCrystal.name=Air Crystal
-item.cg_crystalmagic:ItemLightCrystal.name=Light Crystal
-item.cg_crystalmagic:ItemDarkCrystal.name=Dark Crystal
+item.ItemRoughCrystal.name=Rough Crystal
+item.ItemCrystalFragment.name=Crystal Fragment
+item.ItemNatureCrystal.name=Nature Crystal
+item.ItemFireCrystal.name=Fire Crystal
+item.ItemWaterCrystal.name=Water Crystal
+item.ItemAirCrystal.name=Air Crystal
+item.ItemLightCrystal.name=Light Crystal
+item.ItemDarkCrystal.name=Dark Crystal
+item.ItemGoldCrystalFragment.name=Gold Crystal Fragment
 
 # Tools and Weapons
-item.cg_crystalmagic:ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
+item.ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
 
 # Armor
-item.cg_crystalmagic:ItemApprenticeHood.name=Apprentice Hood
-item.cg_crystalmagic:ItemApprenticeRobe.name=Apprentice Robe
-item.cg_crystalmagic:ItemApprenticeLeggings.name=Apprentice Leggings
-item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
+item.ItemApprenticeHood.name=Apprentice Hood
+item.ItemApprenticeRobe.name=Apprentice Robe
+item.ItemApprenticeLeggings.name=Apprentice Leggings
+item.ItemApprenticeBoots.name=Apprentice Boots
 
 # Block Names
-tile.cg_crystalmagic:BlockCrystalOre.name=Crystal Ore
-tile.cg_crystalmagic:BlockGoldenBars.name=Golden Bars
+tile.BlockCrystalOre.name=Crystal Ore
+tile.BlockGoldenBars.name=Golden Bars
+tile.GoldInfusedStone.name=Gold Infused Stone
+tile.GoldCrystalPlant.name=Gold Crystal Plant
 
 # Creative Tab
 itemGroup.cg_crystalmagic=Crystal Magic

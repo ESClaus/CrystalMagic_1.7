@@ -14,21 +14,10 @@ public class BlockGoldenBars extends BlockPane
     {
         super(LibMisc.MODID + ":" + "blockGoldenBars", LibMisc.MODID + ":" + "blockGoldenBars", Material.iron, true); //Sets the texture and sidetexture(if any)
         this.setBlockName("BlockGoldenBars");
-        this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName());
+        this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setStepSound(soundTypeMetal); // Sets sound of stepping on block. (Default: depends on material type chosen)
         this.setCreativeTab(CreativeTabCrystalMagic.tabCrystalMagic);
-    }
-
-    @Override
-    public String getUnlocalizedName()
-    {
-        return String.format("tile.%s%s", LibMisc.MODID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-    }
-
-    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
-    {
-        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
 }

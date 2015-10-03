@@ -8,10 +8,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModItems
 {
 	// Declaration of Items
-	public static final ItemCrystalMagic itemCrystalCodex = new ItemCrystalCodex();
-	public static final ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
-	public static final ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
-	public static final ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal();
+	public static ItemCrystalMagic itemCrystalCodex = new ItemCrystalCodex("ItemCrystalCodex", LibMisc.MODID + ":ItemCrystalCodex");
+	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal("ItemRoughCrystal", LibMisc.MODID + ":ItemRoughCrystal");
+	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment("ItemCrystalFragment", LibMisc.MODID + ":ItemCrystalFragment");
+	public static ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal("ItemNatureCrystal", LibMisc.MODID + ":ItemNatureCrystal");
+	public static OreCrystalFragment itemGoldCrystalFragment = new GoldCrystalFragment("ItemGoldCrystalFragment", LibMisc.MODID + ":ItemGoldCrystalFragment");
 
 	public static void init()
 	{
@@ -20,5 +21,6 @@ public class ModItems
 		GameRegistry.registerItem(itemRoughCrystal, "itemRoughCrystal");
 		GameRegistry.registerItem(itemCrystalFragment, "itemCrystalFragment");
 		GameRegistry.registerItem(itemNatureCrystal, "itemNatureCrystal");
+		GameRegistry.registerItem(itemGoldCrystalFragment, "itemGoldCrystalFragment");
 	}
 }

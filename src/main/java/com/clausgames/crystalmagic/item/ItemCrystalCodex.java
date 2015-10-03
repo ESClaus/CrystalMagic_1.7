@@ -7,10 +7,11 @@ import net.minecraft.world.World;
 
 public class ItemCrystalCodex extends ItemCrystalMagic
 {
-    public ItemCrystalCodex()
+    public ItemCrystalCodex(String unlocalizedName, String textureName)
     {
         super();
-        this.setUnlocalizedName("ItemCrystalCodex");
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(textureName);
         this.setMaxStackSize(1);
     }
 

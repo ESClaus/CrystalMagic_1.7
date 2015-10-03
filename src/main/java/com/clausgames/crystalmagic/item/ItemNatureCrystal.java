@@ -2,9 +2,10 @@ package com.clausgames.crystalmagic.item;
 
 public class ItemNatureCrystal extends ItemCrystalMagic
 {
-    public ItemNatureCrystal()
+    public ItemNatureCrystal(String unlocalizedName, String textureName)
     {
         super();
-        this.setUnlocalizedName("ItemNatureCrystal");
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(textureName);
     }
 }
