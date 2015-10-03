@@ -15,7 +15,7 @@ public class ModItems
 	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
 	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
 	public static ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal();
-	public static OreCrystalFragment itemGoldCrystalFragment = new GoldCrystalFragment(ModBlocks.goldCrystalPlant, ModBlocks.goldInfusedStone);
+	public static OreCrystalFragment itemGoldCrystalFragment = new GoldCrystalFragment();
 
 	public static void init()
 	{

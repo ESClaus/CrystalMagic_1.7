@@ -21,6 +21,9 @@ public class ModCrafting
 		//Golden Bars, G = Gold Ingot
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot);
 
+		//OreInfusedStones, O = OreType, S = Stone.
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldInfusedStone), "OSO", "SOS", "OSO", 'O', Items.gold_ingot, 'S', Blocks.stone);
+
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
 		GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', Items.iron_pickaxe);
 
