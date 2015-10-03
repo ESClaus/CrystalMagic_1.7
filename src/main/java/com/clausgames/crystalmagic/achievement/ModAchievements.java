@@ -1,5 +1,6 @@
 package com.clausgames.crystalmagic.achievement;
 
+import com.clausgames.crystalmagic.block.BlockGoldenBars;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.item.tool.ModTools;
@@ -7,6 +8,9 @@ import com.clausgames.crystalmagic.lib.LibAchievementNames;
 
 import com.clausgames.crystalmagic.lib.LibMisc;
 import cpw.mods.fml.common.FMLCommonHandler;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
@@ -26,7 +30,7 @@ public final class ModAchievements
 		crystalFragmentPickup = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT_PICKUP, 0, 0, new ItemStack(ModItems.itemCrystalFragment), null);
 		crystalEdgedPickaxeCraft = new AchievementMod(LibAchievementNames.CRYSTALEDGEDPICKAXE_CRAFT, 2, 0, ModTools.itemCrystalEdgedPickaxe, crystalFragmentPickup);
 		roughCrystalPickUp = new AchievementMod(LibAchievementNames.ROUGHCRYSTAL_PICKUP, 4, 1, new ItemStack(ModItems.itemRoughCrystal), crystalEdgedPickaxeCraft);
-		goldenBarsCraft = new AchievementMod(LibAchievementNames.GOLDENBARS_CRAFT, 4, 3, ModBlocks.blockGoldenBars, null);
+		goldenBarsCraft = new AchievementMod(LibAchievementNames.GOLDENBARS_CRAFT, 5, 1, Blocks.stonebrick, null);
 
 		
 		pageIndex = AchievementPage.getAchievementPages().size();
