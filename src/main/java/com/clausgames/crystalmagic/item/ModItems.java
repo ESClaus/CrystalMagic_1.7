@@ -1,11 +1,8 @@
 package com.clausgames.crystalmagic.item;
 
-import com.clausgames.crystalmagic.block.ModBlocks;
-import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemSeeds;
 
 @GameRegistry.ObjectHolder(LibMisc.MODID)
 public class ModItems

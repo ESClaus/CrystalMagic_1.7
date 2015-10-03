@@ -12,7 +12,7 @@ public class ModBlocks
 	public static Block blockCrystalOre = new BlockCrystalOre(Material.rock);
 	public static BlockGoldenBars blockGoldenBars = new BlockGoldenBars();
 	public static Block goldCrystalPlant = new GoldCrystalPlant();
-	public static BlockCrystalMagic goldInfusedStone = new GoldInfusedStone(Material.rock);
+	public static OreInfusedStone goldInfusedStone = new GoldInfusedStone(Material.rock);
 
 	public static void init()
 	{
