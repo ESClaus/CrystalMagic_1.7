@@ -17,6 +17,6 @@ public class ItemCrystalFragment extends ItemCrystalMagic implements IPickupAchi
 
     @Override
     public Achievement getAchievementOnPickup(ItemStack stack, EntityPlayer player, EntityItem item) {
-        return stack.getItemDamage() == 0 ? ModAchievements.crystalFragment : null;
+        return stack.getItemDamage() == 0 ? ModAchievements.crystalFragmentPickup : null;
     }
 }

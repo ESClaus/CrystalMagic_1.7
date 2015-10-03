@@ -18,6 +18,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.world.WorldType;
 
 @Mod(modid = LibMisc.MODID, name = LibMisc.MODNAME, version = LibMisc.VERSION)
 

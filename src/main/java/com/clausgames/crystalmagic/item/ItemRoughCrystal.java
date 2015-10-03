@@ -17,6 +17,6 @@ public class ItemRoughCrystal extends ItemCrystalMagic implements IPickupAchieve
 
     @Override
     public Achievement getAchievementOnPickup(ItemStack stack, EntityPlayer player, EntityItem item) {
-        return stack.getItemDamage() == 0 ? ModAchievements.roughCrystal : null;
+        return stack.getItemDamage() == 0 ? ModAchievements.roughCrystalPickUp : null;
     }
 }
