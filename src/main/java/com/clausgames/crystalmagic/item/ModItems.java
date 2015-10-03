@@ -13,6 +13,8 @@ public class ModItems
 	public static final ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
 	public static final ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal();
 
+	public static final OreCrystalFragment goldCrystalFragment = new GoldCrystalFragment();
+
 	public static void init()
 	{
 		// Register of Each Item
@@ -20,5 +22,7 @@ public class ModItems
 		GameRegistry.registerItem(itemRoughCrystal, "itemRoughCrystal");
 		GameRegistry.registerItem(itemCrystalFragment, "itemCrystalFragment");
 		GameRegistry.registerItem(itemNatureCrystal, "itemNatureCrystal");
+
+		GameRegistry.registerItem(goldCrystalFragment, "goldCrystalFragment");
 	}
 }

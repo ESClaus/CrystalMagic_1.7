@@ -8,6 +8,7 @@ import com.clausgames.crystalmagic.item.armor.ModArmor;
 import com.clausgames.crystalmagic.item.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
+import com.clausgames.crystalmagic.plants.ModPlants;
 import com.clausgames.crystalmagic.proxy.IProxy;
 import com.clausgames.crystalmagic.tile.ModTileEntities;
 import com.clausgames.crystalmagic.world.gen.ModWorldGen;
@@ -33,6 +34,7 @@ public class CrystalMagic
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		// Initialize each class' init.
+		ModPlants.init();
 		ModItems.init();
 		ModBlocks.init();
 		ModTools.init();
