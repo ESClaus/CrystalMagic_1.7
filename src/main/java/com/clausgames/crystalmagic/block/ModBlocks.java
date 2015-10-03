@@ -14,7 +14,7 @@ public class ModBlocks
 
 	public static void init()
 	{
-		GameRegistry.registerBlock(blockCrystalOre, "BlockCrystalOre");
+		GameRegistry.registerBlock(blockCrystalOre, "blockCrystalOre");
 		GameRegistry.registerBlock(blockGoldenBars, "blockGoldenBars");
 	}
 }
