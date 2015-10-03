@@ -12,6 +12,7 @@ item.cg_crystalmagic:ItemWaterCrystal.name=Water Crystal
 item.cg_crystalmagic:ItemAirCrystal.name=Air Crystal
 item.cg_crystalmagic:ItemLightCrystal.name=Light Crystal
 item.cg_crystalmagic:ItemDarkCrystal.name=Dark Crystal
+item.cg_crystalmagic:ItemGoldCrystalFragment.name=Gold Crystal Fragment
 
 # Tools and Weapons
 item.cg_crystalmagic:ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
@@ -25,6 +26,8 @@ item.cg_crystalmagic:ItemApprenticeBoots.name=Apprentice Boots
 # Block Names
 tile.cg_crystalmagic:BlockCrystalOre.name=Crystal Ore
 tile.cg_crystalmagic:BlockGoldenBars.name=Golden Bars
+tile.cg_crystalmagic:GoldInfusedStone.name=Gold Infused Stone
+tile.GoldCrystalPlant.name=Gold Crystal Plant
 
 # Creative Tab
 itemGroup.cg_crystalmagic=Crystal Magic
