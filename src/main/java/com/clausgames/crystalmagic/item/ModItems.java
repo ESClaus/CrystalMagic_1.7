@@ -8,10 +8,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModItems
 {
 	// Declaration of Items
-	public static final ItemCrystalMagic itemCrystalCodex = new ItemCrystalCodex();
-	public static final ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
-	public static final ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
-	public static final ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal();
+	public static ItemCrystalMagic itemCrystalCodex = new ItemCrystalCodex();
+	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal();
+	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment();
+	public static ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal();
 
 	public static void init()
 	{
