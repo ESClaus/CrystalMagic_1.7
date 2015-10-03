@@ -19,7 +19,7 @@ public class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCrystalCodex), ModItems.itemCrystalFragment, Items.book);
 
 		//Golden Bars, G = Gold Ingot
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot); //TODO Recipes for various Ore Infused Stone
 
 		//OreInfusedStones, O = OreType, S = Stone.
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldInfusedStone), "OSO", "SOS", "OSO", 'O', Items.gold_ingot, 'S', Blocks.stone);
