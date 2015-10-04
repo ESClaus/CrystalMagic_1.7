@@ -4,9 +4,10 @@ import com.clausgames.crystalmagic.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 public class GoldCrystalPlant extends OreCrystalPlant
 {
@@ -22,12 +23,6 @@ public class GoldCrystalPlant extends OreCrystalPlant
     }
 
     @Override
-    public int quantityDropped(Random random)
-    {
-        return 1; //Currently, sets how many items drop of "seed" before fully grown, but when fully grown it sets how many of fully grown item drop.
-    }
-
-    @Override
     protected Item func_149866_i()
     {
         return ModItems.itemGoldCrystalFragment; //This drops the "seed", as in when not fully grown, quantity determined by quantityDropped above. By default, at fully grown drops 1-2 based on random.
@@ -40,14 +35,19 @@ public class GoldCrystalPlant extends OreCrystalPlant
     }
 
     @Override
-    public Item getItemDropped(int metadata, Random rand, int fortune)
+    public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune)
     {
-        if (metadata == 7)
+        ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
+
+        if(metadata >= 7)
         {
-            return this.func_149865_P();
-        } else
-        {
-            return this.func_149866_i();
+            drops.add(new ItemStack(this.func_149865_P(), 1)); //Guaranteed Ore Drop if full growth
+            if(world.rand.nextFloat() < 0.03f)
+            {
+                drops.add(new ItemStack(this.func_149866_i(), 1)); //3% chance for additional Seed Drop
+            }
         }
+        drops.add(new ItemStack(this.func_149866_i(), 1)); //Guaranteed 1 Seed Drop whether fully grown or not
+        return drops;
     }
 }

@@ -4,6 +4,7 @@ import com.clausgames.crystalmagic.achievement.ICraftAchievement;
 import com.clausgames.crystalmagic.achievement.ModAchievements;
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;

@@ -48,12 +48,6 @@ public class OreCrystalPlant extends BlockCrops
     }
 
     @Override
-    public int quantityDropped(Random random)
-    {
-        return 1;
-    }
-
-    @Override
     protected Item func_149866_i()
     {
         return null; //This function is on each plant and sets the ACTUAL drop, it just has to be here to make it work on it's children.
@@ -76,6 +70,7 @@ public class OreCrystalPlant extends BlockCrops
     public boolean func_149852_a(World p_149852_1_, Random parRand, int p_149852_3_, int p_149852_4_, int p_149852_5_)
     {
         return false; //If not fully grown (determined with func_149851_a above), apply bonemeal. False means bonemeal has no effect. Default is true.
+        //return true;
     }
 
 }
