@@ -12,6 +12,8 @@ item.ItemWaterCrystal.name=Water Crystal
 item.ItemAirCrystal.name=Air Crystal
 item.ItemLightCrystal.name=Light Crystal
 item.ItemDarkCrystal.name=Dark Crystal
+
+#OreCrystalFragment Items
 item.ItemGoldCrystalFragment.name=Gold Crystal Fragment
 
 # Tools and Weapons
@@ -23,11 +25,22 @@ item.ItemApprenticeRobe.name=Apprentice Robe
 item.ItemApprenticeLeggings.name=Apprentice Leggings
 item.ItemApprenticeBoots.name=Apprentice Boots
 
-# Block Names
+# Blocks
 tile.BlockCrystalOre.name=Crystal Ore
 tile.BlockGoldenBars.name=Golden Bars
-tile.GoldInfusedStone.name=Gold Infused Stone
+
+#OreCrystalPlant Blocks
 tile.GoldCrystalPlant.name=Gold Crystal Plant
+
+#OreInfusedStone Blocks
+tile.CoalInfusedStone.name=Coal Infused Stone
+tile.RedstoneInfusedStone.name=Redstone Infused Stone
+tile.LapisInfusedStone.name=Lapis Infused Stone
+tile.QuartzInfusedStone.name=Quartz Infused Stone
+tile.IronInfusedStone.name=Iron Infused Stone
+tile.GoldInfusedStone.name=Gold Infused Stone
+tile.DiamondInfusedStone.name=Diamond Infused Stone
+tile.EmeraldInfusedStone.name=Emerald Infused Stone
 
 # Creative Tab
 itemGroup.cg_crystalmagic=Crystal Magic

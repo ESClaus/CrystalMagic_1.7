@@ -3,12 +3,12 @@ package com.clausgames.crystalmagic.block;
 import com.clausgames.crystalmagic.lib.LibMisc;
 import net.minecraft.block.material.Material;
 
-public class GoldInfusedStone extends OreInfusedStone
+public class CoalInfusedStone extends OreInfusedStone
 {
-    protected GoldInfusedStone(Material material)
+    protected CoalInfusedStone(Material material)
     {
         super(Material.rock);
-        this.setBlockName("GoldInfusedStone");
+        this.setBlockName("CoalInfusedStone");
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
     }
 }
