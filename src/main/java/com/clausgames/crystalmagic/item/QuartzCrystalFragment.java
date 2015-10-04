@@ -6,16 +6,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class GoldCrystalFragment extends OreCrystalFragment
+public class QuartzCrystalFragment extends OreCrystalFragment
 {
     private Block blockPlant;
     private Block blockSoil;
 
-    public GoldCrystalFragment(String unlocalizedName, String textureName)
+    public QuartzCrystalFragment(String unlocalizedName, String textureName)
     {
-        super(ModBlocks.goldCrystalPlant, ModBlocks.goldInfusedStone); //blockPlant, blockSoil
-        this.blockPlant = ModBlocks.goldCrystalPlant;
-        this.blockSoil = ModBlocks.goldInfusedStone;
+        super(ModBlocks.quartzCrystalPlant, ModBlocks.quartzInfusedStone); //blockPlant, blockSoil
+        this.blockPlant = ModBlocks.quartzCrystalPlant;
+        this.blockSoil = ModBlocks.quartzInfusedStone;
         this.setUnlocalizedName(unlocalizedName);
         this.setTextureName(textureName);
     }

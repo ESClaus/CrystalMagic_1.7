@@ -14,7 +14,14 @@ item.ItemLightCrystal.name=Light Crystal
 item.ItemDarkCrystal.name=Dark Crystal
 
 #OreCrystalFragment Items
+item.ItemCoalCrystalFragment.name=Coal Crystal Fragment
+item.ItemRedstoneCrystalFragment.name=Redstone Crystal Fragment
+item.ItemLapisCrystalFragment.name=Lapis Crystal Fragment
+item.ItemQuartzCrystalFragment.name=Quartz Crystal Fragment
+item.ItemIronCrystalFragment.name=Iron Crystal Fragment
 item.ItemGoldCrystalFragment.name=Gold Crystal Fragment
+item.ItemDiamondCrystalFragment.name=Diamond Crystal Fragment
+item.ItemEmeraldCrystalFragment.name=Emearld Crystal Fragment
 
 # Tools and Weapons
 item.ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
@@ -30,7 +37,14 @@ tile.BlockCrystalOre.name=Crystal Ore
 tile.BlockGoldenBars.name=Golden Bars
 
 #OreCrystalPlant Blocks
+tile.CoalCrystalPlant.name=Coal Crystal Plant
+tile.RedstoneCrystalPlant.name=Redstone Crystal Plant
+tile.LapisCrystalPlant.name=Lapis Crystal Plant
+tile.QuartzCrystalPlant.name=Quartz Crystal Plant
+tile.IronCrystalPlant.name=Iron Crystal Plant
 tile.GoldCrystalPlant.name=Gold Crystal Plant
+tile.DiamondCrystalPlant.name=Diamond Crystal Plant
+tile.EmeraldCrystalPlant.name=Emerald Crystal Plant
 
 #OreInfusedStone Blocks
 tile.CoalInfusedStone.name=Coal Infused Stone
