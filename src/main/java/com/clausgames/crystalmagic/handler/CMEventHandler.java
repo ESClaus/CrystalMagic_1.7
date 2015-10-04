@@ -19,7 +19,7 @@ public class CMEventHandler
     @SubscribeEvent
     public void onBlockDropItems(BlockEvent.HarvestDropsEvent event)
     {
-        if (event.block == Blocks.gold_ore)
+        if (event.block == Blocks.gold_ore) //TODO Add drops to other ore blocks once seeds are in.
         {
             ItemStack stack = new ItemStack(ModItems.itemGoldCrystalFragment, 1, 0);
             World world = event.world;
