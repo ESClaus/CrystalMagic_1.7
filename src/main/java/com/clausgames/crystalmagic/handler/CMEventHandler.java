@@ -37,7 +37,7 @@ public class CMEventHandler
             }
         }
 
-        if (event.block == Blocks.redstone_ore)
+        if (event.block == Blocks.redstone_ore ||  event.block == Blocks.lit_redstone_ore)
         {
             ItemStack stack = new ItemStack(ModItems.itemRedstoneCrystalFragment, 1, 0);
             World world = event.world;
@@ -47,7 +47,7 @@ public class CMEventHandler
                 String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
                 if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
                 {
-                    if (world.rand.nextFloat() < 1.00f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
                         event.drops.add(stack);
                     }
