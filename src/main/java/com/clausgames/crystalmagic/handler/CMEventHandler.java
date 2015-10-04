@@ -19,17 +19,146 @@ public class CMEventHandler
     @SubscribeEvent
     public void onBlockDropItems(BlockEvent.HarvestDropsEvent event)
     {
-        if (event.block == Blocks.gold_ore) //TODO Add drops to other ore blocks once seeds are in.
+        if (event.block == Blocks.coal_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemCoalCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.redstone_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemRedstoneCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 1.00f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.lapis_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemLapisCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.quartz_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemQuartzCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.iron_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemIronCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.gold_ore)
         {
             ItemStack stack = new ItemStack(ModItems.itemGoldCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
-            String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-            if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+            if(player.getCurrentEquippedItem() != null)
             {
-                if (world.rand.nextFloat() < 0.03f) //3% Chance to drop a GoldCrystalFragment Seed if using the right pick!
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
                 {
-                    event.drops.add(stack);
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.diamond_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemDiamondCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
+                }
+            }
+        }
+
+        if (event.block == Blocks.emerald_ore)
+        {
+            ItemStack stack = new ItemStack(ModItems.itemEmeraldCrystalFragment, 1, 0);
+            World world = event.world;
+            EntityPlayer player = event.harvester;
+            if(player.getCurrentEquippedItem() != null)
+            {
+                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
+                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                {
+                    if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
+                    {
+                        event.drops.add(stack);
+                    }
                 }
             }
         }
