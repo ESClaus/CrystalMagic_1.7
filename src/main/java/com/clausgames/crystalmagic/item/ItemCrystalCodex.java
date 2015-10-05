@@ -1,8 +1,9 @@
 package com.clausgames.crystalmagic.item;
 
+import com.clausgames.crystalmagic.gui.CrystalCodexGui;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
 public class ItemCrystalCodex extends ItemCrystalMagic
@@ -16,11 +17,11 @@ public class ItemCrystalCodex extends ItemCrystalMagic
     }
 
     @Override
-    public ItemStack onItemRightClick (ItemStack stack, World world, EntityPlayer player)
+    public ItemStack onItemRightClick (ItemStack item, World world, EntityPlayer player)
     {
         if(!world.isRemote){
-            player.addChatMessage(new ChatComponentText(" One day, this will open a nice book GUI for you in game. For now I live in the console logs"));
+            Minecraft.getMinecraft().displayGuiScreen(new CrystalCodexGui());
         }
-        return stack;
+        return super.onItemRightClick(item, world, player);
     }
 }
