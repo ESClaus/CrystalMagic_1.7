@@ -1,19 +1,21 @@
 package com.clausgames.crystalmagic.handler;
 
 import com.clausgames.crystalmagic.item.ModItems;
+import com.clausgames.crystalmagic.item.tool.ModTools;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 
-public class CMEventHandler
+public class VanillaOreDropHandler
 {
     public static void init()
     {
-        MinecraftForge.EVENT_BUS.register(new CMEventHandler());
+        MinecraftForge.EVENT_BUS.register(new VanillaOreDropHandler());
     }
 
     @SubscribeEvent
@@ -26,8 +28,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -44,8 +46,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -62,8 +64,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -80,8 +82,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -98,8 +100,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -116,8 +118,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -134,8 +136,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
@@ -152,8 +154,8 @@ public class CMEventHandler
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
-                String toolUsed = player.getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-                if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+                if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
                 {
                     if (world.rand.nextFloat() < 0.05f) //5% Chance to drop an OreCrystalFragment Seed if using the right pick!
                     {
