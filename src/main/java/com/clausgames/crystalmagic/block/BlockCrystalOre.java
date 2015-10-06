@@ -1,26 +1,24 @@
 package com.clausgames.crystalmagic.block;
 
+import com.clausgames.crystalmagic.achievement.ModAchievements;
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.item.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import com.clausgames.crystalmagic.tile.TileEntityBlockCrystalOre;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 
 public class BlockCrystalOre extends BlockContainer
 {
-    private Item drop;
-    private int meta;
-    private int least_quantity;
-    private int most_quantity;
-
     protected BlockCrystalOre(Material material)
     {
         super(material);
@@ -56,41 +54,28 @@ public class BlockCrystalOre extends BlockContainer
     }
 
     @Override
-    public Item getItemDropped(int meta, Random random, int fortune)
+    public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune)
     {
+        ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
+        EntityPlayerMP player = (EntityPlayerMP) harvesters.get();
         Item toolUsed = harvesters.get().getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
         if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
         {
-            this.drop = ModItems.itemRoughCrystal;
-            return this.drop;
+            drops.clear();
+            drops.add(new ItemStack(ModItems.itemRoughCrystal, world.rand.nextInt(4) + 1)); //drops Rough Crystal 1-4
+            return drops;
         } else
         {
-            this.drop = ModItems.itemCrystalFragment;
-            return this.drop;
-        }
-    }
-
-    @Override
-    public int damageDropped(int metadata)
-    {
-        return this.meta;
-    }
-
-    @Override
-    public int quantityDropped(int meta, int fortune, Random random)
-    {
-        if (drop == ModItems.itemRoughCrystal)
-        {
-            if (this.least_quantity >= this.most_quantity)
-                return this.least_quantity;
-            return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
-        } else
-        {
-            this.least_quantity = 1;
-            this.most_quantity = 2;
-            if (this.least_quantity >= this.most_quantity)
-                return this.least_quantity;
-            return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
+            if(!player.func_147099_x().hasAchievementUnlocked(ModAchievements.crystalFragmentPickup))
+            {
+                drops.clear();
+                drops.add(new ItemStack(ModItems.itemCrystalCodex));
+                drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
+                return drops;
+            }
+            drops.clear();
+            drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
+            return drops;
         }
     }
 }
