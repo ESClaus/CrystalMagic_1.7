@@ -2,12 +2,10 @@ package com.clausgames.crystalmagic.block;
 
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.item.ModItems;
+import com.clausgames.crystalmagic.item.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -27,6 +25,7 @@ public class BlockCrystalOre extends BlockContainer
     {
         super(material);
         this.setBlockName("BlockCrystalOre");
+        this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
         this.setHardness(2.0f); // Sets how long it takes to break block (Default: Depends on material; stone:1.5f; obsidian:50.0f)
         this.setResistance(6.0f); // Sets block's resistance to explosions (TNT, Creeper, Etc) (Default: Depends on material; stone:10.0f; obsidian:2000.0f)
         this.setLightLevel(0.3f); // Sets how much light is emitted from block (Default: 0.0f (nothing); maximum 1.0f(full sunlight))
@@ -59,8 +58,8 @@ public class BlockCrystalOre extends BlockContainer
     @Override
     public Item getItemDropped(int meta, Random random, int fortune)
     {
-        String toolUsed = harvesters.get().getCurrentEquippedItem().getItem().getUnlocalizedName().substring(5); // Checks what tool was that player used to break item.
-        if (toolUsed.equals("ItemCrystalEdgedPickaxe"))
+        Item toolUsed = harvesters.get().getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
+        if (toolUsed.equals(ModTools.itemCrystalEdgedPickaxe))
         {
             this.drop = ModItems.itemRoughCrystal;
             return this.drop;
