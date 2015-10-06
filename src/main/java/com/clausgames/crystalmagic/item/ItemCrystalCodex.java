@@ -19,8 +19,9 @@ public class ItemCrystalCodex extends ItemCrystalMagic
     @Override
     public ItemStack onItemRightClick (ItemStack item, World world, EntityPlayer player)
     {
+        Minecraft mc = Minecraft.getMinecraft();
         if(!world.isRemote){
-            Minecraft.getMinecraft().displayGuiScreen(new CrystalCodexGui());
+            mc.displayGuiScreen(new CrystalCodexGui(mc));
         }
         return super.onItemRightClick(item, world, player);
     }
