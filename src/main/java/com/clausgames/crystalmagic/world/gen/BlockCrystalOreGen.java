@@ -20,7 +20,7 @@ public class BlockCrystalOreGen implements IWorldGenerator
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
         switch (world.provider.dimensionId) {
             case 0: //Overworld
-                this.runGenerator(this.genBlockCrystalOre, world, random, chunkX, chunkX, 10, 0, 40);
+                this.runGenerator(this.genBlockCrystalOre, world, random, chunkX, chunkZ, 10, 0, 40);
                 break;
 
             case -1: //Nether
