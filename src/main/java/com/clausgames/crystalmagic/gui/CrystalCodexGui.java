@@ -9,8 +9,13 @@ import org.lwjgl.opengl.GL11;
 
 public class CrystalCodexGui extends GuiScreen
 {
-    int guiWidth = 246;
-    int guiHeight = 181;
+    int guiMainWidth = 256;
+    int guiMainHeight = 180;
+    int guiTabWidth = 24;
+    int guiTabHeight = 24;
+    int guiTabU = 0;
+    int guiTabV = 182;
+
     String title = "Crystal Magic";
 
     public CrystalCodexGui(Minecraft mc)
@@ -23,12 +28,17 @@ public class CrystalCodexGui extends GuiScreen
     @Override
     public void drawScreen(int x, int y, float ticks)
     {
-        int guiX = (width - guiWidth) / 2;
-        int guiY = (height - guiHeight) / 2;
+        int guiX = (width - guiMainWidth) / 2;
+        int guiY = (height - guiMainHeight) / 2;
         GL11.glColor4f(1, 1, 1, 1);
-        mc.renderEngine.bindTexture(new ResourceLocation(LibMisc.MODID, "textures/gui/codexbg.png"));
-        drawTexturedModalRect(guiX, guiY, 0, 0, guiWidth, guiHeight); //gui x/y position on screen, u/v position, gui width/height
-        drawCenteredString(mc.fontRenderer, title, width / 2, guiY + 15, 0xFFFFFF); //Centers string for me.
+        mc.renderEngine.bindTexture(new ResourceLocation(LibMisc.MODID, "textures/gui/crystalCodexGui.png")); //GUI's Image Sheet
+        drawDefaultBackground();
+        //Tab 1
+        drawTexturedModalRect(guiX + 32, guiY + 163, guiTabU, guiTabV, guiTabWidth, guiTabHeight); //gui x/y position on screen, u/v position, gui width/height
+        //Background Scroll
+        drawTexturedModalRect(guiX, guiY, 0, 0, guiMainWidth, guiMainHeight); //gui x/y position on screen, u/v position, gui width/height
+        //Title on Intro
+        drawCenteredString(mc.fontRenderer, title, width / 2, guiY + 20, 0xFFFFFF); //Centers string for me.
 
         super.drawScreen(x, y, ticks);
     }
