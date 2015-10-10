@@ -17,10 +17,11 @@ public class CrystalCodexGui extends GuiScreen
     int guiTabV = 182;
 
     String title = "Crystal Magic";
+    String sampleText ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo pretium, elementum elit ac, vestibulum orci. Donec quam ex, condimentum eget sapien ut, hendrerit varius elit. Mauris sit amet neque vel purus porta porttitor sit amet nec ipsum. Ut eu elit mollis, lobortis purus sit amet, malesuada diam. Etiam efficitur odio eu erat accumsan, a bibendum est commodo. Donec et lacus id purus interdum suscipit id vitae diam. Sed at eros mauris. Mauris convallis fringilla tellus, convallis luctus elit blandit id.";
 
     public CrystalCodexGui(Minecraft mc)
     {
-        ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
+        ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight); //TODO Do I need this?
         int width = scaled.getScaledWidth(); //Gets EXACT width of screen, even when scaled
         int height = scaled.getScaledHeight(); //Gets EXACT height of screen, even when scaled
     }
@@ -38,7 +39,9 @@ public class CrystalCodexGui extends GuiScreen
         //Background Scroll
         drawTexturedModalRect(guiX, guiY, 0, 0, guiMainWidth, guiMainHeight); //gui x/y position on screen, u/v position, gui width/height
         //Title on Intro
-        drawCenteredString(mc.fontRenderer, title, width / 2, guiY + 20, 0xFFFFFF); //Centers string for me.
+        drawCenteredString(mc.fontRenderer, title, width / 2, guiY - 4, 0xFFFFFF); //Centers string for me. //TODO Place string above scroll
+        //Sample Text for Intro | String str, int x, int y, int wrapWidth, int textColor
+        mc.fontRenderer.drawSplitString(sampleText, guiX + 32, guiY + 20, 200, 0xFFFFFF); //TODO Check on wrapWidth and Y position
 
         super.drawScreen(x, y, ticks);
     }
