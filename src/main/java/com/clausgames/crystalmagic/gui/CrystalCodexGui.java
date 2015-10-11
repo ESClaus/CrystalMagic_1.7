@@ -19,13 +19,6 @@ public class CrystalCodexGui extends GuiScreen
     String title = "Crystal Magic";
     String sampleText ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget justo pretium, elementum elit ac, vestibulum orci. Donec quam ex, condimentum eget sapien ut, hendrerit varius elit. Mauris sit amet neque vel purus porta porttitor sit amet nec ipsum. Ut eu elit mollis, lobortis purus sit amet, malesuada diam. Etiam efficitur odio eu erat accumsan, a bibendum est commodo. Donec et lacus id purus interdum suscipit id vitae diam. Sed at eros mauris. Mauris convallis fringilla tellus, convallis luctus elit blandit id.";
 
-    public CrystalCodexGui(Minecraft mc)
-    {
-        ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight); //TODO Do I need this?
-        int width = scaled.getScaledWidth(); //Gets EXACT width of screen, even when scaled
-        int height = scaled.getScaledHeight(); //Gets EXACT height of screen, even when scaled
-    }
-
     @Override
     public void drawScreen(int x, int y, float ticks)
     {
