@@ -21,7 +21,7 @@ public class CrystalCodexGui extends GuiScreen
 
     public CrystalCodexGui(Minecraft mc)
     {
-        ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight); //TODO Do I need this?
+        ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
         int width = scaled.getScaledWidth(); //Gets EXACT width of screen, even when scaled
         int height = scaled.getScaledHeight(); //Gets EXACT height of screen, even when scaled
     }
