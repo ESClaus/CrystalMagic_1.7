@@ -3,7 +3,7 @@ package com.clausgames.crystalmagic;
 import com.clausgames.crystalmagic.achievement.ModAchievements;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
-import com.clausgames.crystalmagic.handler.VanillaOreDropHandler;
+import com.clausgames.crystalmagic.handler.VanillaDropHandler;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.item.armor.ModArmor;
 import com.clausgames.crystalmagic.item.tool.ModTools;
@@ -40,7 +40,7 @@ public class CrystalMagic
 		ModArmor.init();
 		ModAchievements.init();
 		ModTileEntities.init();
-		VanillaOreDropHandler.init(); //This init is this way because we need to call OUR handler and not just Forge's by mistake
+		VanillaDropHandler.init(); //This init is this way because we need to call OUR handler and not just Forge's by mistake
 
 		//Renderers
 		proxy.registerRenderThings();

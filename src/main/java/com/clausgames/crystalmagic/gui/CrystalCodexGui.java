@@ -49,7 +49,6 @@ public class CrystalCodexGui extends GuiScreen
     @Override
     public boolean doesGuiPauseGame()
     {
-
         return false;
     }
 }

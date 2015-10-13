@@ -11,11 +11,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 
-public class VanillaOreDropHandler
+public class VanillaDropHandler
 {
     public static void init()
     {
-        MinecraftForge.EVENT_BUS.register(new VanillaOreDropHandler());
+        MinecraftForge.EVENT_BUS.register(new VanillaDropHandler());
     }
 
     @SubscribeEvent
