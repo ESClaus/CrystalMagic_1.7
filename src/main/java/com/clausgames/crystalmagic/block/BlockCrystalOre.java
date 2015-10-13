@@ -1,6 +1,5 @@
 package com.clausgames.crystalmagic.block;
 
-import com.clausgames.crystalmagic.achievement.ModAchievements;
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.item.tool.ModTools;
@@ -66,15 +65,7 @@ public class BlockCrystalOre extends BlockContainer
             return drops;
         } else
         {
-            if(!player.func_147099_x().hasAchievementUnlocked(ModAchievements.crystalFragmentPickup))
-            {
-                drops.clear();
-                drops.add(new ItemStack(ModItems.itemCrystalCodex));
-                drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
-                return drops;
-            }
             drops.clear();
-            drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
             return drops;
         }
     }
