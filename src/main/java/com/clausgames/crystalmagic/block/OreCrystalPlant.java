@@ -6,7 +6,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
@@ -103,4 +106,9 @@ public class OreCrystalPlant extends BlockCrops
         return false;
     }
 
+    @Override
+    public void onEntityCollidedWithBlock(World world, int worldX, int worldY, int worldZ, Entity player)
+    {
+        player.attackEntityFrom(DamageSource.cactus, 1.0F);
+    }
 }
