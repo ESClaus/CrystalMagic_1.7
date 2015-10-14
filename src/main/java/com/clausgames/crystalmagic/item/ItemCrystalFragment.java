@@ -24,9 +24,9 @@ public class ItemCrystalFragment extends ItemCrystalMagic implements IPickupAchi
         {
             if (!playerMP.func_147099_x().hasAchievementUnlocked(ModAchievements.crystalFragmentPickup)) //Checks if you have achievement yet
             {
-                player.inventory.addItemStackToInventory(new ItemStack(ModItems.itemCrystalCodex)); //If don't have achievement, give player CrystalCodex
+                item.dropItem(ModItems.itemCrystalCodex, 1); //If don't have achievement, give player CrystalCodex
             }
-            return ModAchievements.crystalFragmentPickup; //Return item dropped to close override without error.
+            return ModAchievements.crystalFragmentPickup; //Give Achievement
         } else
         {
             return null;
