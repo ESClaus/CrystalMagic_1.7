@@ -19,7 +19,7 @@ public class OreCrystalPlant extends BlockCrops
         this.setTickRandomly(true);
         this.setStepSound(soundTypeGrass);
         this.disableStats();
-        this.setCreativeTab((CreativeTabs)null); //this ensures it's not on creative, it shouldn't be.
+        this.setCreativeTab(null); //this ensures it's not on creative, it shouldn't be.
     }
 
     @SideOnly(Side.CLIENT)
@@ -82,7 +82,13 @@ public class OreCrystalPlant extends BlockCrops
     public void updateTick(World parWorld, int parX, int parY, int parZ, Random parRand) //Ticks the block if it's been scheduled
     {
         super.updateTick(parWorld, parX, parY, parZ, parRand);
-        int metadata = parWorld.getBlockMetadata(parX, parY, parZ) + 1;
+
+        int metadata = parWorld.getBlockMetadata(parX, parY, parZ);
+
+        if (parWorld.rand.nextFloat() < 0.125f) //12.5% chance to update per 10 ticks //TODO may need to tweak percentage
+        {
+            metadata += 1;
+        }
 
         if (metadata > 7)
         {
@@ -90,6 +96,11 @@ public class OreCrystalPlant extends BlockCrops
         }
 
         parWorld.setBlockMetadataWithNotify(parX, parY, parZ, metadata, 2);
+    }
+
+    @Override
+    public boolean isFertile (World world, int x, int y, int z) {
+        return false;
     }
 
 }
