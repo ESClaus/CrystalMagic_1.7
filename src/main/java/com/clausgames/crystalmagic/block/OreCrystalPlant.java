@@ -72,5 +72,10 @@ public class OreCrystalPlant extends BlockCrops
         return false; //If not fully grown (determined with func_149851_a above), apply bonemeal. False means bonemeal has no effect. Default is true.
         //return true;
     }
+    @Override
+    public int getRenderType()
+    {
+        return 1;
+    }
 
 }
