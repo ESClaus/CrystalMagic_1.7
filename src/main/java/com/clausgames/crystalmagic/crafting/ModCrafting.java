@@ -23,6 +23,7 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot);
 
 		//OreInfusedStones, O = OreType, S = Stone, C = CrystalFragment.
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.crystalInfusedStone), "OSO", "SCS", "OSO", 'O', ModItems.itemCrystal, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.coalInfusedStone), "OSO", "SCS", "OSO", 'O', Items.coal, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.redstoneInfusedStone), "OSO", "SCS", "OSO", 'O', Items.redstone, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.lapisInfusedStone), "OSO", "SCS", "OSO", 'O', new ItemStack(Items.dye, 1, 4), 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);

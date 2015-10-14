@@ -13,6 +13,7 @@ public class ModBlocks
 	public static BlockGoldenBars blockGoldenBars = new BlockGoldenBars();
 
 	//Plants
+	public static Block crystalPlant = new CrystalPlant();
 	public static Block coalCrystalPlant = new CoalCrystalPlant();
 	public static Block redstoneCrystalPlant = new RedstoneCrystalPlant();
 	public static Block lapisCrystalPlant = new LapisCrystalPlant();
@@ -23,6 +24,7 @@ public class ModBlocks
 	public static Block emeraldCrystalPlant = new EmeraldCrystalPlant();
 
 	//OreInfused Stone
+	public static OreInfusedStone crystalInfusedStone = new CrystalInfusedStone(Material.rock);
 	public static OreInfusedStone coalInfusedStone = new CoalInfusedStone(Material.rock);
 	public static OreInfusedStone redstoneInfusedStone = new RedstoneInfusedStone(Material.rock);
 	public static OreInfusedStone lapisInfusedStone = new LapisInfusedStone(Material.rock);
@@ -38,6 +40,7 @@ public class ModBlocks
 		GameRegistry.registerBlock(blockGoldenBars, "blockGoldenBars");
 
 		//Plants
+		GameRegistry.registerBlock(crystalPlant, "crystalPlant");
 		GameRegistry.registerBlock(coalCrystalPlant, "coalCrystalPlant");
 		GameRegistry.registerBlock(redstoneCrystalPlant, "redstoneCrystalPlant");
 		GameRegistry.registerBlock(lapisCrystalPlant, "lapisCrystalPlant");
@@ -48,6 +51,7 @@ public class ModBlocks
 		GameRegistry.registerBlock(emeraldCrystalPlant, "emeraldCrystalPlant");
 
 		//OreInfused Stone
+		GameRegistry.registerBlock(crystalInfusedStone, "CrystalInfusedStone");
 		GameRegistry.registerBlock(coalInfusedStone, "CoalInfusedStone");
 		GameRegistry.registerBlock(redstoneInfusedStone, "RedstoneInfusedStone");
 		GameRegistry.registerBlock(lapisInfusedStone, "LapisInfusedStone");

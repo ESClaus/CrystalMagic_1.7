@@ -12,10 +12,10 @@ public class ModItems
 	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal("ItemRoughCrystal", LibMisc.MODID + ":ItemRoughCrystal");
 	public static ItemCrystalMagic itemCrystal = new ItemRoughCrystal("ItemCrystal", LibMisc.MODID + ":ItemCrystal");
 	public static ItemCrystalMagic itemRoughCrystalFragment = new ItemRoughCrystalFragment("ItemRoughCrystalFragment", LibMisc.MODID + ":ItemRoughCrystalFragment");
-	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment("ItemCrystalFragment", LibMisc.MODID + ":ItemCrystalFragment");
 	public static ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal("ItemNatureCrystal", LibMisc.MODID + ":ItemNatureCrystal");
 
 	//OreCrystalFragments
+	public static OreCrystalFragment itemCrystalFragment = new ItemCrystalFragment("ItemCrystalFragment", LibMisc.MODID + ":ItemCrystalFragment");
 	public static OreCrystalFragment itemCoalCrystalFragment = new CoalCrystalFragment("ItemCoalCrystalFragment", LibMisc.MODID + ":ItemCoalCrystalFragment");
 	public static OreCrystalFragment itemRedstoneCrystalFragment = new RedstoneCrystalFragment("ItemRedstoneCrystalFragment", LibMisc.MODID + ":ItemRedstoneCrystalFragment");
 	public static OreCrystalFragment itemLapisCrystalFragment = new LapisCrystalFragment("ItemLapisCrystalFragment", LibMisc.MODID + ":ItemLapisCrystalFragment");
