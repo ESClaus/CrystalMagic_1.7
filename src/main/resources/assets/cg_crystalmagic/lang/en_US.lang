@@ -5,6 +5,8 @@ item.ItemCrystalCodex.name=Crystal Codex
 
 # Items
 item.ItemRoughCrystal.name=Rough Crystal
+item.ItemCrystal.name=Crystal
+item.ItemRoughCrystalFragment.name=Rough Crystal Fragment
 item.ItemCrystalFragment.name=Crystal Fragment
 item.ItemNatureCrystal.name=Nature Crystal
 item.ItemFireCrystal.name=Fire Crystal
@@ -21,7 +23,7 @@ item.ItemQuartzCrystalFragment.name=Quartz Crystal Fragment
 item.ItemIronCrystalFragment.name=Iron Crystal Fragment
 item.ItemGoldCrystalFragment.name=Gold Crystal Fragment
 item.ItemDiamondCrystalFragment.name=Diamond Crystal Fragment
-item.ItemEmeraldCrystalFragment.name=Emearld Crystal Fragment
+item.ItemEmeraldCrystalFragment.name=Emerald Crystal Fragment
 
 # Tools and Weapons
 item.ItemCrystalEdgedPickaxe.name=Crystal Edged Pickaxe
@@ -60,8 +62,8 @@ tile.EmeraldInfusedStone.name=Emerald Infused Stone
 itemGroup.cg_crystalmagic=Crystal Magic
 
 # Achievements
-achievement.crystalmagic:crystalFragmentPickup=Do You Believe In Magic?
-achievement.crystalmagic:crystalFragmentPickup.desc=Find a crystal fragment.
+achievement.crystalmagic:roughCrystalFragmentPickup=Do You Believe In Magic?
+achievement.crystalmagic:roughCrystalFragmentPickup.desc=Find a crystal fragment.
 achievement.crystalmagic:roughCrystalPickup=Abracadabra, I want to reach out and grab ya!
 achievement.crystalmagic:roughCrystalPickup.desc=Find a rough crystal.
 achievement.crystalmagic:crystalEdgedPickaxeCraft=Gem Miner

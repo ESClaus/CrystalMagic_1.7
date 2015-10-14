@@ -17,15 +17,15 @@ public final class ModAchievements
 	public static AchievementPage crystalmagicPage;
 	public static int pageIndex;
 
-	public static Achievement crystalFragmentPickup;
+	public static Achievement roughCrystalFragmentPickup;
 	public static Achievement roughCrystalPickUp;
 	public static Achievement crystalEdgedPickaxeCraft;
 	public static Achievement goldenBarsCraft;
 	
 	public static void init()
 	{
-		crystalFragmentPickup = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT_PICKUP, 0, 0, new ItemStack(ModItems.itemCrystalFragment), null);
-		crystalEdgedPickaxeCraft = new AchievementMod(LibAchievementNames.CRYSTALEDGEDPICKAXE_CRAFT, 2, 0, ModTools.itemCrystalEdgedPickaxe, crystalFragmentPickup);
+		roughCrystalFragmentPickup = new AchievementMod(LibAchievementNames.CRYSTALFRAGMENT_PICKUP, 0, 0, new ItemStack(ModItems.itemRoughCrystalFragment), null);
+		crystalEdgedPickaxeCraft = new AchievementMod(LibAchievementNames.CRYSTALEDGEDPICKAXE_CRAFT, 2, 0, ModTools.itemCrystalEdgedPickaxe, roughCrystalFragmentPickup);
 		roughCrystalPickUp = new AchievementMod(LibAchievementNames.ROUGHCRYSTAL_PICKUP, 4, 1, new ItemStack(ModItems.itemRoughCrystal), crystalEdgedPickaxeCraft);
 		goldenBarsCraft = new AchievementMod(LibAchievementNames.GOLDENBARS_CRAFT, 5, 1, ModBlocks.blockGoldenBars, null);
 

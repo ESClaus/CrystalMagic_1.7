@@ -16,8 +16,8 @@ public class ModCrafting
 	public static void init()
 	{
 		// Insert Crafting/Smelting Recipes Here
-		//Crystal Codex Recipe, Shapless, Crystal Fragment + Book
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCrystalCodex), ModItems.itemCrystalFragment, Items.book);
+		//Crystal Codex Recipe, Shapeless, Crystal Fragment + Book
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.itemCrystalCodex), ModItems.itemRoughCrystalFragment, Items.book);
 
 		//Golden Bars, G = Gold Ingot
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot);

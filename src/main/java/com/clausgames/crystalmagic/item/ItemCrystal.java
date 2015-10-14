@@ -1,8 +1,8 @@
 package com.clausgames.crystalmagic.item;
 
-public class ItemCrystalFragment extends ItemCrystalMagic
+public class ItemCrystal extends ItemCrystalMagic
 {
-    public ItemCrystalFragment(String unlocalizedName, String textureName)
+    public ItemCrystal(String unlocalizedName, String textureName)
     {
         super();
         this.setUnlocalizedName(unlocalizedName);

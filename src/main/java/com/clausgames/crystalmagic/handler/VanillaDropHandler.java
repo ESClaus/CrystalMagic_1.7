@@ -31,9 +31,9 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
                 Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
                 if (toolUsed == (Items.iron_shovel) || toolUsed == (Items.diamond_shovel))
                 {
-                    if (world.rand.nextFloat() < 0.25f) //25% Chance to drop a CrystalFragment if using the right shovel!
+                    if (world.rand.nextFloat() < 0.25f) //25% Chance to drop a RoughCrystalFragment if using the right shovel!
                     {
-                        event.drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
+                        event.drops.add(new ItemStack(ModItems.itemRoughCrystalFragment, world.rand.nextInt(2) + 1)); //drops RoughCrystalFragment 1-2
                     }
                 }
             }

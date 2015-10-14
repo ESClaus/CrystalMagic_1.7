@@ -10,6 +10,8 @@ public class ModItems
 	// Declaration of Items
 	public static ItemCrystalMagic itemCrystalCodex = new ItemCrystalCodex("ItemCrystalCodex", LibMisc.MODID + ":ItemCrystalCodex");
 	public static ItemCrystalMagic itemRoughCrystal = new ItemRoughCrystal("ItemRoughCrystal", LibMisc.MODID + ":ItemRoughCrystal");
+	public static ItemCrystalMagic itemCrystal = new ItemRoughCrystal("ItemCrystal", LibMisc.MODID + ":ItemCrystal");
+	public static ItemCrystalMagic itemRoughCrystalFragment = new ItemRoughCrystalFragment("ItemRoughCrystalFragment", LibMisc.MODID + ":ItemRoughCrystalFragment");
 	public static ItemCrystalMagic itemCrystalFragment = new ItemCrystalFragment("ItemCrystalFragment", LibMisc.MODID + ":ItemCrystalFragment");
 	public static ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal("ItemNatureCrystal", LibMisc.MODID + ":ItemNatureCrystal");
 
@@ -28,6 +30,8 @@ public class ModItems
 		// Register of Each Item
 		GameRegistry.registerItem(itemCrystalCodex, "itemCrystalCodex");
 		GameRegistry.registerItem(itemRoughCrystal, "itemRoughCrystal");
+		GameRegistry.registerItem(itemCrystal, "itemCrystal");
+		GameRegistry.registerItem(itemRoughCrystalFragment, "itemRoughCrystalFragment");
 		GameRegistry.registerItem(itemCrystalFragment, "itemCrystalFragment");
 		GameRegistry.registerItem(itemNatureCrystal, "itemNatureCrystal");
 
