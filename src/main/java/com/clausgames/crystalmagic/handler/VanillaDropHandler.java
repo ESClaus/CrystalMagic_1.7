@@ -1,12 +1,9 @@
 package com.clausgames.crystalmagic.handler;
 
-import com.clausgames.crystalmagic.achievement.ModAchievements;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.item.tool.ModTools;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -28,7 +25,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
         if (event.block == Blocks.gravel)
         {
             World world = event.world;
-            EntityPlayerMP player = (EntityPlayerMP) event.harvester;
+            EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
             {
                 Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
@@ -36,11 +33,6 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
                 {
                     if (world.rand.nextFloat() < 0.25f) //25% Chance to drop a CrystalFragment if using the right shovel!
                     {
-                        if(!player.func_147099_x().hasAchievementUnlocked(ModAchievements.crystalFragmentPickup))
-                        {
-                            event.drops.add(new ItemStack(ModItems.itemCrystalCodex));
-                            event.drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
-                        }
                         event.drops.add(new ItemStack(ModItems.itemCrystalFragment, world.rand.nextInt(2) + 1)); //drops Crystal Fragment 1-2
                     }
                 }
