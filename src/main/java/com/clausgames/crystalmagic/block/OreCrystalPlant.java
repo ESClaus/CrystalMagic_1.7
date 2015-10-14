@@ -78,4 +78,18 @@ public class OreCrystalPlant extends BlockCrops
         return 1;
     }
 
+    @Override
+    public void updateTick(World parWorld, int parX, int parY, int parZ, Random parRand) //Ticks the block if it's been scheduled
+    {
+        super.updateTick(parWorld, parX, parY, parZ, parRand);
+        int metadata = parWorld.getBlockMetadata(parX, parY, parZ) + 1;
+
+        if (metadata > 7)
+        {
+            metadata = 7;
+        }
+
+        parWorld.setBlockMetadataWithNotify(parX, parY, parZ, metadata, 2);
+    }
+
 }
