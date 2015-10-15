@@ -3,21 +3,23 @@ package com.clausgames.crystalmagic.block;
 import com.clausgames.crystalmagic.lib.LibMisc;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
 public class OreCrystalPlant extends BlockCrops
 {
+    //DEBUG - SET TRUE TO TURN BONEMEAL ON FOR ALL ORE PLANTS
+    public final boolean boneMeal = true;
+
     public OreCrystalPlant()
     {
         this.setTickRandomly(true);
@@ -67,15 +69,13 @@ public class OreCrystalPlant extends BlockCrops
     @Override
     public boolean func_149851_a(World parWorld, int parX, int parY, int parZ, boolean p_149851_5_)
     {
-        return false; //false meaning Bonemeal check never happens, so bonemeal can't be used in func_149852_a below
-        //return parWorld.getBlockMetadata(parX, parY, parZ) != 7; //Checks to ensure its not fully grown. If true, bonemeal CAN be applied (runs func_149852_a)
+        return boneMeal; //false means Bonemeal check never happens, so bonemeal can't be used in func_149852_a below
     }
 
     @Override
     public boolean func_149852_a(World p_149852_1_, Random parRand, int p_149852_3_, int p_149852_4_, int p_149852_5_)
     {
-        return false; //If not fully grown (determined with func_149851_a above), apply bonemeal. False means bonemeal has no effect. Default is true.
-        //return true;
+        return boneMeal; //If not fully grown (determined with func_149851_a above), apply bonemeal. False means bonemeal has no effect.
     }
     @Override
     public int getRenderType()
@@ -100,6 +100,7 @@ public class OreCrystalPlant extends BlockCrops
             metadata = 7;
         }
 
+        canBlockStay(parWorld, parX, parY, parZ);
         parWorld.setBlockMetadataWithNotify(parX, parY, parZ, metadata, 2);
     }
 
