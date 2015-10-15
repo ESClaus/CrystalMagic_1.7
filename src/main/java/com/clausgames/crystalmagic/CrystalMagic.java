@@ -1,6 +1,8 @@
 package com.clausgames.crystalmagic;
 
 import com.clausgames.crystalmagic.achievement.ModAchievements;
+import com.clausgames.crystalmagic.biome.ModBiomes;
+import com.clausgames.crystalmagic.biome.WorldTypeCrystalMagic;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
 import com.clausgames.crystalmagic.handler.VanillaDropHandler;
@@ -19,6 +21,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.world.WorldType;
 
 @Mod(modid = LibMisc.MODID, name = LibMisc.MODNAME, version = LibMisc.VERSION)
 
@@ -41,6 +44,7 @@ public class CrystalMagic
 		ModAchievements.init();
 		ModTileEntities.init();
 		VanillaDropHandler.init(); //This init is this way because we need to call OUR handler and not just Forge's by mistake
+        ModBiomes.init();
 
 		//Renderers
 		proxy.registerRenderThings();
@@ -56,6 +60,7 @@ public class CrystalMagic
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
+        WorldType CRYSTALMAGIC = new WorldTypeCrystalMagic(3, "crystalmagic");
 
 	}
 }
