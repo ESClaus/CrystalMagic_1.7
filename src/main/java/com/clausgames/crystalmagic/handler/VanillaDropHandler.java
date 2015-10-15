@@ -29,7 +29,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
             if(player.getCurrentEquippedItem() != null)
             {
                 Item toolUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
-                if (toolUsed == (Items.iron_shovel) || toolUsed == (Items.diamond_shovel))
+                if (toolUsed == (Items.iron_shovel) || toolUsed == (Items.diamond_shovel)) //TODO check for material harvest level iron or better (2 or better)
                 {
                     if (world.rand.nextFloat() < 0.25f) //25% Chance to drop a RoughCrystalFragment if using the right shovel!
                     {

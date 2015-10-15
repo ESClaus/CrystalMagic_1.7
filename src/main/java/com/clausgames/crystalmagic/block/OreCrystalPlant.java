@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
@@ -23,6 +24,7 @@ public class OreCrystalPlant extends BlockCrops
         this.setStepSound(soundTypeGrass);
         this.disableStats();
         this.setCreativeTab(null); //this ensures it's not on creative, it shouldn't be.
+        this.setBlockBounds(0, 0.75f, 0, 1.0f, 1.0f,1.0f); //setBlockBounds(minX, minY, minZ, maxX, maxY, maxZ) //x and z are 0 - 1, y is 3/4 block to full block
     }
 
     @SideOnly(Side.CLIENT)
