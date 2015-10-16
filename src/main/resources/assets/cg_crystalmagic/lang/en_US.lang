@@ -4,6 +4,7 @@
 item.ItemCrystalCodex.name=Crystal Codex
 
 # Items
+item.ItemDebugOrePlants.name=Ore Plant Debugger
 item.ItemRoughCrystal.name=Rough Crystal
 item.ItemCrystal.name=Crystal
 item.ItemRoughCrystalFragment.name=Rough Crystal Fragment
