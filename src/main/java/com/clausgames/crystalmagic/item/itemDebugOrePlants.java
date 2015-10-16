@@ -21,23 +21,24 @@ public class itemDebugOrePlants extends ItemCrystalMagic
         int blockMeta = world.getBlockMetadata(worldX, worldY, worldZ);
         Block block = world.getBlock(worldX, worldY, worldZ);
         Boolean isOrePlant = block instanceof OreCrystalPlant;
+        Boolean isCreative = player.capabilities.isCreativeMode;
 
-        if(blockMeta < 7 && !player.isSneaking() && isOrePlant) //metaData cant go past 7, player is not sneaking. This is on our OrePlant.
+        if(blockMeta < 7 && !player.isSneaking() && isOrePlant && isCreative) //metaData cant go past 7, player is not sneaking. This is on our OrePlant.
         {
             blockMeta += 1;
             world.setBlockMetadataWithNotify(worldX, worldY, worldZ, blockMeta, 2);
-        } else if(blockMeta > 0 && player.isSneaking() && isOrePlant) //metaData can't lower past 0, player is sneaking. This is on our OrePlant.
+        } else if(blockMeta > 0 && player.isSneaking() && isOrePlant && isCreative) //metaData can't lower past 0, player is sneaking. This is on our OrePlant.
         {
             blockMeta -=1;
             world.setBlockMetadataWithNotify(worldX, worldY, worldZ, blockMeta, 2);
         }
 
-        if (blockMeta > 7 && isOrePlant)
+        if (blockMeta > 7 && isOrePlant && isCreative)
         {
             world.setBlockMetadataWithNotify(worldX, worldY, worldZ, 7, 2); //If somehow metaData goes over 7, resets to 7.  This is on our OrePlant.
         }
 
-        if (blockMeta < 0 && isOrePlant)
+        if (blockMeta < 0 && isOrePlant && isCreative)
         {
             world.setBlockMetadataWithNotify(worldX, worldY, worldZ, 0, 2); //If somehow metaData goes lower than 0, resets to 0.  This is on our OrePlant.
         }
