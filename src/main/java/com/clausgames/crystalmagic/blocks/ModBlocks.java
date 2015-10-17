@@ -11,11 +11,13 @@ public class ModBlocks
 	// Declaration of Blocks
 	public static Block blockCrystalOre = new BlockCrystalOre(Material.rock);
 	public static BlockGoldenBars blockGoldenBars = new BlockGoldenBars();
+	public static BlockCrystalMagic blockSocketStation = new BlockSocketStation(Material.wood);
 
 	public static void init()
 	{
 		//Blocks
 		GameRegistry.registerBlock(blockCrystalOre, "blockCrystalOre");
 		GameRegistry.registerBlock(blockGoldenBars, "blockGoldenBars");
+		GameRegistry.registerBlock(blockSocketStation, "blockSocketStation");
 	}
 }

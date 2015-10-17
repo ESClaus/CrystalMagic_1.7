@@ -1,10 +1,11 @@
 package com.clausgames.crystalmagic.crafting;
 
-import com.clausgames.crystalmagic.item.armor.ModArmor;
-import com.clausgames.crystalmagic.block.ModBlocks;
-import com.clausgames.crystalmagic.item.ModItems;
+import com.clausgames.crystalmagic.blocks.ModBlocks;
+import com.clausgames.crystalmagic.blocks.plants.ModPlants;
 
-import com.clausgames.crystalmagic.item.tool.ModTools;
+import com.clausgames.crystalmagic.items.ModItems;
+import com.clausgames.crystalmagic.items.armor.ModArmor;
+import com.clausgames.crystalmagic.items.fragments.ModFragments;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -23,15 +24,15 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockGoldenBars, 16), "GGG", "GGG", 'G', Items.gold_ingot);
 
 		//OreInfusedStones, O = OreType, S = Stone, C = CrystalFragment.
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.crystalInfusedStone), "OSO", "SCS", "OSO", 'O', ModItems.itemCrystal, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.coalInfusedStone), "OSO", "SCS", "OSO", 'O', Items.coal, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.redstoneInfusedStone), "OSO", "SCS", "OSO", 'O', Items.redstone, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.lapisInfusedStone), "OSO", "SCS", "OSO", 'O', new ItemStack(Items.dye, 1, 4), 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.quartzInfusedStone), "OSO", "SCS", "OSO", 'O', Items.quartz, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.ironInfusedStone), "OSO", "SCS", "OSO", 'O', Items.iron_ingot, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldInfusedStone), "OSO", "SCS", "OSO", 'O', Items.gold_ingot, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.diamondInfusedStone), "OSO", "SCS", "OSO", 'O', Items.diamond, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.emeraldInfusedStone), "OSO", "SCS", "OSO", 'O', Items.emerald, 'S', Blocks.stone, 'C', ModItems.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.crystalInfusedStone), "OSO", "SCS", "OSO", 'O', ModItems.itemCrystal, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.coalInfusedStone), "OSO", "SCS", "OSO", 'O', Items.coal, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.redstoneInfusedStone), "OSO", "SCS", "OSO", 'O', Items.redstone, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.lapisInfusedStone), "OSO", "SCS", "OSO", 'O', new ItemStack(Items.dye, 1, 4), 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.quartzInfusedStone), "OSO", "SCS", "OSO", 'O', Items.quartz, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.ironInfusedStone), "OSO", "SCS", "OSO", 'O', Items.iron_ingot, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.goldInfusedStone), "OSO", "SCS", "OSO", 'O', Items.gold_ingot, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.diamondInfusedStone), "OSO", "SCS", "OSO", 'O', Items.diamond, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+		GameRegistry.addRecipe(new ItemStack(ModPlants.emeraldInfusedStone), "OSO", "SCS", "OSO", 'O', Items.emerald, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
 		//GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)); //TODO Remove

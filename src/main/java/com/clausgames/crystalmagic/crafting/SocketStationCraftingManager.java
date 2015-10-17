@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import com.clausgames.crystalmagic.item.ModItems;
-import com.clausgames.crystalmagic.item.tool.ModTools;
+import com.clausgames.crystalmagic.items.fragments.ModFragments;
+import com.clausgames.crystalmagic.items.tool.ModTools;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
@@ -36,7 +36,7 @@ public class SocketStationCraftingManager
         recipes = new ArrayList();
 
         //this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)); //TODO change to sockets
-        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), "F", 'F', ModItems.itemCrystalFragment);
+        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), "F", 'F', ModFragments.itemCrystalFragment);
 
         Collections.sort(this.recipes, new SocketStationRecipeSorter(this));
     }

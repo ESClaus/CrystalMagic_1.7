@@ -1,7 +1,8 @@
 package com.clausgames.crystalmagic.handler;
 
 import com.clausgames.crystalmagic.CrystalMagic;
-import com.clausgames.crystalmagic.block.ModBlocks;
+
+import com.clausgames.crystalmagic.blocks.ModBlocks;
 import com.clausgames.crystalmagic.container.SocketStationContainer;
 import com.clausgames.crystalmagic.gui.CrystalCodexGui;
 import com.clausgames.crystalmagic.gui.SocketStationGui;

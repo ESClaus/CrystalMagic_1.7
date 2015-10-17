@@ -1,6 +1,6 @@
 package com.clausgames.crystalmagic.container;
 
-import com.clausgames.crystalmagic.block.ModBlocks;
+import com.clausgames.crystalmagic.blocks.ModBlocks;
 import com.clausgames.crystalmagic.crafting.SocketStationCraftingManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
