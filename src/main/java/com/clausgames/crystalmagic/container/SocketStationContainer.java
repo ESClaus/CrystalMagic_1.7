@@ -26,13 +26,13 @@ public class SocketStationContainer extends Container
         this.posY = y;
         this.posZ = z;
 
-        this.addSlotToContainer(new SlotCrafting(invPlayer.player, craftMatrix, craftResult, 0, 131, 36)); //Result Slot
+        this.addSlotToContainer(new SlotCrafting(invPlayer.player, craftMatrix, craftResult, 0, 136, 35)); //Result Slot
 
         for (int i = 0; i < 1; i++) //loops to create inventory slots on Gui.
         {
             for (int k = 0; k < 1; k++)
             {
-                this.addSlotToContainer(new Slot(craftMatrix, k + i, 4 + k * 18, 3 + i * 18));
+                this.addSlotToContainer(new Slot(craftMatrix, k + i, 20 + k * 18, 35 + i * 18));
             }
         }
 

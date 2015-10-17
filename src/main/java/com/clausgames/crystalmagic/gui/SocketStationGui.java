@@ -30,7 +30,7 @@ public class SocketStationGui extends GuiContainer
 
     protected void drawGuiContainerForegroundLayer(int i, int j)
     {
-        this.fontRendererObj.drawString(StatCollector.translateToLocal("Socket Station"), 95, 8, 0xA634DB);
+        this.fontRendererObj.drawString(StatCollector.translateToLocal("Socket Station"), 99, 8, 0xA634DB);
     }
 
     @Override
