@@ -1,7 +1,7 @@
 package com.clausgames.crystalmagic.block;
 
 import com.clausgames.crystalmagic.item.ModItems;
-import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,9 +17,13 @@ public class QuartzCrystalPlant extends OreCrystalPlant
     }
 
     @Override
-    protected boolean canPlaceBlockOn(Block parSoil)
-    {
-        return parSoil == ModBlocks.quartzInfusedStone;
+    public boolean canPlaceBlockAt(World worldIn, int x, int y, int z) {
+        return worldIn.getBlock(x, y, z).isReplaceable(worldIn, x, y, z) && worldIn.getBlock(x, y + 1, z) == ModBlocks.quartzInfusedStone; //The Soil Block
+    }
+
+    @Override
+    public boolean canBlockStay(World worldIn, int x, int y, int z) {
+        return worldIn.isAirBlock(x, y - 1, z) && worldIn.getBlock(x, y + 1, z) == ModBlocks.quartzInfusedStone && worldIn.getBlock(x, y + 2, z).getMaterial() == Material.water; //Is block above where I click of type water and soil block?
     }
 
     @Override

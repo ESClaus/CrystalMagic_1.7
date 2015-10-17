@@ -4,6 +4,7 @@
 item.ItemCrystalCodex.name=Crystal Codex
 
 # Items
+item.ItemDebugOrePlants.name=Ore Plant Debugger
 item.ItemRoughCrystal.name=Rough Crystal
 item.ItemCrystal.name=Crystal
 item.ItemRoughCrystalFragment.name=Rough Crystal Fragment
@@ -15,7 +16,10 @@ item.ItemAirCrystal.name=Air Crystal
 item.ItemLightCrystal.name=Light Crystal
 item.ItemDarkCrystal.name=Dark Crystal
 
-#OreCrystalFragment Items
+# Sockets
+item.ItemEmptySocket.name=Empty Socket
+
+# OreCrystalFragment Items
 item.ItemCoalCrystalFragment.name=Coal Crystal Fragment
 item.ItemRedstoneCrystalFragment.name=Redstone Crystal Fragment
 item.ItemLapisCrystalFragment.name=Lapis Crystal Fragment
@@ -38,7 +42,7 @@ item.ItemApprenticeBoots.name=Apprentice Boots
 tile.BlockCrystalOre.name=Crystal Ore
 tile.BlockGoldenBars.name=Golden Bars
 
-#OreCrystalPlant Blocks
+# OreCrystalPlant Blocks
 tile.CrystalPlant.name=Crystal Plant
 tile.CoalCrystalPlant.name=Coal Crystal Plant
 tile.RedstoneCrystalPlant.name=Redstone Crystal Plant
@@ -49,7 +53,7 @@ tile.GoldCrystalPlant.name=Gold Crystal Plant
 tile.DiamondCrystalPlant.name=Diamond Crystal Plant
 tile.EmeraldCrystalPlant.name=Emerald Crystal Plant
 
-#OreInfusedStone Blocks
+# OreInfusedStone Blocks
 tile.CrystalInfusedStone.name=Crystal Infused Stone
 tile.CoalInfusedStone.name=Coal Infused Stone
 tile.RedstoneInfusedStone.name=Redstone Infused Stone

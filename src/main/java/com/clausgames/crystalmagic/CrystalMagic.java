@@ -1,10 +1,9 @@
 package com.clausgames.crystalmagic;
 
 import com.clausgames.crystalmagic.achievement.ModAchievements;
-import com.clausgames.crystalmagic.biome.ModBiomes;
-import com.clausgames.crystalmagic.biome.WorldTypeCrystalMagic;
 import com.clausgames.crystalmagic.block.ModBlocks;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
+import com.clausgames.crystalmagic.handler.GuiHandler;
 import com.clausgames.crystalmagic.handler.VanillaDropHandler;
 import com.clausgames.crystalmagic.item.ModItems;
 import com.clausgames.crystalmagic.item.armor.ModArmor;
@@ -21,7 +20,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.minecraft.world.WorldType;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = LibMisc.MODID, name = LibMisc.MODNAME, version = LibMisc.VERSION)
 
@@ -44,7 +43,6 @@ public class CrystalMagic
 		ModAchievements.init();
 		ModTileEntities.init();
 		VanillaDropHandler.init(); //This init is this way because we need to call OUR handler and not just Forge's by mistake
-        ModBiomes.init();
 
 		//Renderers
 		proxy.registerRenderThings();
@@ -55,12 +53,18 @@ public class CrystalMagic
 	{
 		ModCrafting.init();
 		ModWorldGen.init();
+		NetworkRegistry.INSTANCE.registerGuiHandler(CrystalMagic.instance, new GuiHandler()); //Registers GUI Handler to keep ClientSide Client and ServerSide Server
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-        WorldType CRYSTALMAGIC = new WorldTypeCrystalMagic(3, "crystalmagic");
 
+	}
+
+	// Enumerate GUIs
+	public enum GUI_ENUM
+	{
+		CRYSTALCODEX, SOCKET_STATION
 	}
 }

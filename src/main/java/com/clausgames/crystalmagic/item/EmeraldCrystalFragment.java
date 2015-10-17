@@ -2,6 +2,7 @@ package com.clausgames.crystalmagic.item;
 
 import com.clausgames.crystalmagic.block.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -21,17 +22,19 @@ public class EmeraldCrystalFragment extends OreCrystalFragment
     }
 
     @Override
-    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int worldX, int worldY, int worldZ, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_)
+    public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int worldX, int worldY, int worldZ, int blockSide, float p_77648_8_, float p_77648_9_, float p_77648_10_)
     {
-        if (p_77648_7_ != 1)
+        Boolean isWater = world.getBlock(worldX, worldY + 1, worldZ).getMaterial() == Material.water; //Is block above where I click of type water?
+
+        if (blockSide != 0)
         {
             return false;
         }
-        else if (player.canPlayerEdit(worldX, worldY, worldZ, p_77648_7_, itemStack) && player.canPlayerEdit(worldX, worldY + 1, worldZ, p_77648_7_, itemStack))
+        else if (player.canPlayerEdit(worldX, worldY, worldZ, blockSide, itemStack) && player.canPlayerEdit(worldX, worldY - 1, worldZ, blockSide, itemStack))
         {
-            if (world.getBlock(worldX, worldY, worldZ) == this.blockSoil && world.isAirBlock(worldX, worldY + 1, worldZ))
+            if (world.getBlock(worldX, worldY, worldZ) == this.blockSoil && world.isAirBlock(worldX, worldY - 1, worldZ) && isWater && this.blockPlant.canPlaceBlockAt(world, worldX, worldY - 1, worldZ))
             {
-                world.setBlock(worldX, worldY + 1, worldZ, this.blockPlant);
+                world.setBlock(worldX, worldY - 1, worldZ, this.blockPlant);
                 --itemStack.stackSize;
                 return true;
             }
