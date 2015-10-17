@@ -12,6 +12,7 @@ public class ModBlocks
 	public static Block blockCrystalOre = new BlockCrystalOre(Material.rock);
 	public static BlockGoldenBars blockGoldenBars = new BlockGoldenBars();
 	public static BlockCrystalMagic blockSocketStation = new BlockSocketStation(Material.wood);
+	public static BlockCrystalMagic blockGoldenCloud = new BlockGoldenCloud(Material.cloth);
 
 	public static void init()
 	{
@@ -19,5 +20,6 @@ public class ModBlocks
 		GameRegistry.registerBlock(blockCrystalOre, "blockCrystalOre");
 		GameRegistry.registerBlock(blockGoldenBars, "blockGoldenBars");
 		GameRegistry.registerBlock(blockSocketStation, "blockSocketStation");
+		GameRegistry.registerBlock(blockGoldenCloud, "blockGoldenCloud");
 	}
 }
