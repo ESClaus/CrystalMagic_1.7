@@ -1,13 +1,15 @@
 package com.clausgames.crystalmagic;
 
 import com.clausgames.crystalmagic.achievement.ModAchievements;
-import com.clausgames.crystalmagic.block.ModBlocks;
+import com.clausgames.crystalmagic.blocks.ModBlocks;
+import com.clausgames.crystalmagic.blocks.plants.ModPlants;
 import com.clausgames.crystalmagic.crafting.ModCrafting;
 import com.clausgames.crystalmagic.handler.GuiHandler;
 import com.clausgames.crystalmagic.handler.VanillaDropHandler;
-import com.clausgames.crystalmagic.item.ModItems;
-import com.clausgames.crystalmagic.item.armor.ModArmor;
-import com.clausgames.crystalmagic.item.tool.ModTools;
+import com.clausgames.crystalmagic.items.ModItems;
+import com.clausgames.crystalmagic.items.armor.ModArmor;
+import com.clausgames.crystalmagic.items.fragments.ModFragments;
+import com.clausgames.crystalmagic.items.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
 import com.clausgames.crystalmagic.proxy.IProxy;
@@ -38,8 +40,10 @@ public class CrystalMagic
 		// Initialize each class' init.
 		ModItems.init();
 		ModBlocks.init();
+        ModPlants.init();
 		ModTools.init();
 		ModArmor.init();
+        ModFragments.init();
 		ModAchievements.init();
 		ModTileEntities.init();
 		VanillaDropHandler.init(); //This init is this way because we need to call OUR handler and not just Forge's by mistake

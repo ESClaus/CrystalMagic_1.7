@@ -1,6 +1,6 @@
 package com.clausgames.crystalmagic.biome;
 
-import com.clausgames.crystalmagic.block.ModBlocks;
+import com.clausgames.crystalmagic.blocks.plants.ModPlants;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -18,7 +18,7 @@ public class BiomeGenCrystalMagic extends BiomeGenBase
         this.theBiomeDecorator.bigMushroomsPerChunk = 2;
 
         this.topBlock = Blocks.grass;
-        this.fillerBlock = ModBlocks.coalInfusedStone;
+        this.fillerBlock = ModPlants.coalInfusedStone;
 
 
     }

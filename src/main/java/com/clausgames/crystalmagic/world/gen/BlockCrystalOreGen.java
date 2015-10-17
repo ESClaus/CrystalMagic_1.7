@@ -1,6 +1,6 @@
 package com.clausgames.crystalmagic.world.gen;
 
-import com.clausgames.crystalmagic.block.ModBlocks;
+import com.clausgames.crystalmagic.blocks.ModBlocks;
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;

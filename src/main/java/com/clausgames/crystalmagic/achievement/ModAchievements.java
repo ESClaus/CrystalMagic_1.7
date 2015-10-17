@@ -1,13 +1,12 @@
 package com.clausgames.crystalmagic.achievement;
 
-import com.clausgames.crystalmagic.block.ModBlocks;
-import com.clausgames.crystalmagic.item.ModItems;
-import com.clausgames.crystalmagic.item.tool.ModTools;
+import com.clausgames.crystalmagic.blocks.ModBlocks;
+import com.clausgames.crystalmagic.items.ModItems;
+import com.clausgames.crystalmagic.items.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibAchievementNames;
 
 import com.clausgames.crystalmagic.lib.LibMisc;
 import cpw.mods.fml.common.FMLCommonHandler;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
