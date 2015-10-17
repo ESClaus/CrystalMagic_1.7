@@ -1,6 +1,8 @@
 package com.clausgames.crystalmagic.gui;
 
 import com.clausgames.crystalmagic.lib.LibMisc;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;

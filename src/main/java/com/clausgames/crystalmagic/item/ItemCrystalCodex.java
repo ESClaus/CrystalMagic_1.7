@@ -1,8 +1,7 @@
 package com.clausgames.crystalmagic.item;
 
+import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.gui.CrystalCodexGui;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -21,10 +20,14 @@ public class ItemCrystalCodex extends ItemCrystalMagic
     @Override
     public ItemStack onItemRightClick (ItemStack item, World world, EntityPlayer player)
     {
-        Minecraft mc = Minecraft.getMinecraft();
-        if(!world.isRemote)
+        //Minecraft mc = Minecraft.getMinecraft(); OLD CODE
+        if(world.isRemote)
         {
-            mc.displayGuiScreen(new CrystalCodexGui(mc));
+            // DEBUG
+            System.out.println("ItemCrystalCodex onItemRightClick");
+
+            player.openGui(CrystalMagic.instance, CrystalMagic.GUI_ENUM.CRYSTALCODEX.ordinal(), world, (int) player.posX, (int) player.posY, (int) player.posZ);
+            // mc.displayGuiScreen(new CrystalCodexGui(mc)); OLD CODE
         }
         return super.onItemRightClick(item, world, player);
     }

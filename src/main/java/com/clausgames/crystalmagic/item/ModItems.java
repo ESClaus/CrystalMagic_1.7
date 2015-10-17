@@ -15,6 +15,9 @@ public class ModItems
 	public static ItemCrystalMagic itemRoughCrystalFragment = new ItemRoughCrystalFragment("ItemRoughCrystalFragment", LibMisc.MODID + ":ItemRoughCrystalFragment");
 	public static ItemCrystalMagic itemNatureCrystal = new ItemNatureCrystal("ItemNatureCrystal", LibMisc.MODID + ":ItemNatureCrystal");
 
+	//Sockets
+	public static ItemSocket itemEmptySocket = new ItemEmptySocket("ItemEmptySocket", LibMisc.MODID + ":ItemEmptySocket");
+
 	//OreCrystalFragments
 	public static OreCrystalFragment itemCrystalFragment = new ItemCrystalFragment("ItemCrystalFragment", LibMisc.MODID + ":ItemCrystalFragment");
 	public static OreCrystalFragment itemCoalCrystalFragment = new CoalCrystalFragment("ItemCoalCrystalFragment", LibMisc.MODID + ":ItemCoalCrystalFragment");
@@ -36,6 +39,9 @@ public class ModItems
 		GameRegistry.registerItem(itemRoughCrystalFragment, "itemRoughCrystalFragment");
 		GameRegistry.registerItem(itemCrystalFragment, "itemCrystalFragment");
 		GameRegistry.registerItem(itemNatureCrystal, "itemNatureCrystal");
+
+		//Sockets
+		GameRegistry.registerItem(itemEmptySocket, "itemEmptySocket");
 
 		//OreCrystalFragments
 		GameRegistry.registerItem(itemCoalCrystalFragment, "itemCoalCrystalFragment");
