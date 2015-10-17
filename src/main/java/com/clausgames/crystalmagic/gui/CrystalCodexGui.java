@@ -41,7 +41,7 @@ public class CrystalCodexGui extends GuiScreen
         //Background Scroll
         drawTexturedModalRect(guiX, guiY, 0, 0, guiMainWidth, guiMainHeight); //gui x/y position on screen, u/v position, gui width/height
         //Title on Intro
-        drawCenteredString(mc.fontRenderer, title, width / 2, guiY - 4, 0xFFFFFF); //Centers string for me. //TODO Place string above scroll
+        drawCenteredString(mc.fontRenderer, title, width / 2, guiY - 4, 0xFFFFFF); //Centers string for me.
         //Sample Text for Intro | String str, int x, int y, int wrapWidth, int textColor
         mc.fontRenderer.drawSplitString(sampleText, guiX + 34, guiY + 24, 195, 0xFFFFFF); //TODO Check on wrapWidth and Y position
 
