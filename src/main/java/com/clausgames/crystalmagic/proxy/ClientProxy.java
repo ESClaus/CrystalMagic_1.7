@@ -1,6 +1,6 @@
 package com.clausgames.crystalmagic.proxy;
 
-import com.clausgames.crystalmagic.block.ModBlocks;
+import com.clausgames.crystalmagic.blocks.ModBlocks;
 import com.clausgames.crystalmagic.client.renderer.ItemRenderCrystalOre;
 import com.clausgames.crystalmagic.client.renderer.RenderCrystalOre;
 import com.clausgames.crystalmagic.tile.TileEntityBlockCrystalOre;

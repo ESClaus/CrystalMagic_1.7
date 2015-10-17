@@ -1,6 +1,7 @@
 package com.clausgames.crystalmagic.creativetab;
 
-import com.clausgames.crystalmagic.item.ModItems;
+import com.clausgames.crystalmagic.items.ModItems;
+import com.clausgames.crystalmagic.items.fragments.ModFragments;
 import com.clausgames.crystalmagic.lib.LibMisc;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -12,7 +13,7 @@ public class CreativeTabCrystalMagic
         @Override
         public Item getTabIconItem()
         {
-            return ModItems.itemCrystalFragment;
+            return ModFragments.itemCrystalFragment;
         }
     };
 }

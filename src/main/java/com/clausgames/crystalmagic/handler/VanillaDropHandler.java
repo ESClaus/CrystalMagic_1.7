@@ -1,14 +1,14 @@
 package com.clausgames.crystalmagic.handler;
 
-import com.clausgames.crystalmagic.item.ModItems;
-import com.clausgames.crystalmagic.item.tool.ModTools;
+import com.clausgames.crystalmagic.items.ModItems;
+import com.clausgames.crystalmagic.items.fragments.ModFragments;
+import com.clausgames.crystalmagic.items.tool.ModTools;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
@@ -42,7 +42,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.coal_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemCoalCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemCoalCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -60,7 +60,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.redstone_ore ||  event.block == Blocks.lit_redstone_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemRedstoneCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemRedstoneCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -78,7 +78,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.lapis_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemLapisCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemLapisCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -96,7 +96,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.quartz_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemQuartzCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemQuartzCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -114,7 +114,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.iron_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemIronCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemIronCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -132,7 +132,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.gold_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemGoldCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemGoldCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -150,7 +150,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.diamond_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemDiamondCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemDiamondCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
@@ -168,7 +168,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
 
         if (event.block == Blocks.emerald_ore)
         {
-            ItemStack stack = new ItemStack(ModItems.itemEmeraldCrystalFragment, 1, 0);
+            ItemStack stack = new ItemStack(ModFragments.itemEmeraldCrystalFragment, 1, 0);
             World world = event.world;
             EntityPlayer player = event.harvester;
             if(player.getCurrentEquippedItem() != null)
