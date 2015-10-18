@@ -28,11 +28,11 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
             World world = event.world;
             EntityPlayer player = event.harvester;
 
-            if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemSpade)
+            if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemSpade) //If its a shovel
             {
-                Item toolUsed = player.getCurrentEquippedItem().getItem();
-                int toolUsedHarvestLevel = player.getCurrentEquippedItem().getItem().getHarvestLevel(new ItemStack(toolUsed), "shovel"); // Checks what tool was that player used to break item.
-                if (toolUsedHarvestLevel >= 2)
+                Item toolUsed = player.getCurrentEquippedItem().getItem(); //Gets item used
+                int toolUsedHarvestLevel = player.getCurrentEquippedItem().getItem().getHarvestLevel(new ItemStack(toolUsed), "shovel"); // Gets harvest level of said tool
+                if (toolUsedHarvestLevel >= 2) //Iron or better, aka 2 or better.
                 {
                     if (world.rand.nextFloat() < 0.25f) //25% Chance to drop a RoughCrystalFragment if using the right shovel!
                     {
