@@ -3,23 +3,30 @@ package com.clausgames.crystalmagic.tile;
 import com.clausgames.crystalmagic.crafting.SocketStationRecipes;
 import com.clausgames.crystalmagic.items.ItemSocket;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileEntitySocketStation extends TileEntity implements ISidedInventory
+public class TileEntitySocketStation extends TileEntity implements IInventory
 {
-    private ItemStack slots[];
+    public ItemStack slots[];
 
-    //Hopper-like interaction for automation. Any side = Tool or Armor. Top = Sockets. Bottom = Craft Result.
-    private static final int[] slots_side = new int[] {0}; //Input Slot where Tool/Armor go
-    private static final int[] slots_top = new int[] {1, 2, 3}; //Input Slots where sockets go
-    private static final int[] slots_bottom = new int[] {4}; //Result Slot
+    /*
+    SLOTS
 
-    private String customName;
+    Slot {0}; //Input Slot where Tool/Armor go
+    Slot {1, 2, 3}; //Input Slots where sockets go
+    Slot {4}; //Result Slot
+
+    END SLOTS
+    */
+
+    public String customName;
 
     public TileEntitySocketStation()
     {
@@ -35,31 +42,32 @@ public class TileEntitySocketStation extends TileEntity implements ISidedInvento
     @Override
     public ItemStack getStackInSlot(int i)
     {
-        return slots[i];
+        if (i < 0 || i >= this.getSizeInventory())
+            return null;
+        return this.slots[i];
     }
 
     @Override
     public ItemStack getStackInSlotOnClosing(int i)
     {
-        if (slots[i] != null)
-        {
-            ItemStack itemstack = slots[i];
-            slots[i] = null;
-            return itemstack;
-        } else
-        {
-            return null;
-        }
+        ItemStack stack = this.getStackInSlot(i);
+        this.setInventorySlotContents(i, null);
+        return stack;
     }
 
     @Override
-    public void setInventorySlotContents(int i, ItemStack itemstack)
-    {
-        slots[i] = itemstack;
-        if (itemstack != null && itemstack.stackSize > getInventoryStackLimit())
-        {
-            itemstack.stackSize = getInventoryStackLimit();
-        }
+    public void setInventorySlotContents(int i, ItemStack stack) {
+        if (i < 0 || i >= this.getSizeInventory())
+            return;
+
+        if (stack != null && stack.stackSize > this.getInventoryStackLimit())
+            stack.stackSize = this.getInventoryStackLimit();
+
+        if (stack != null && stack.stackSize == 0)
+            stack = null;
+
+        this.slots[i] = stack;
+        this.markDirty();
     }
 
     @Override
@@ -75,14 +83,14 @@ public class TileEntitySocketStation extends TileEntity implements ISidedInvento
     }
 
     @Override
-    public boolean isUseableByPlayer(EntityPlayer player)
+    public boolean isUseableByPlayer(EntityPlayer player) //Is player within range of block to open GUI and interact with it
     {
-        if (worldObj.getTileEntity(xCoord, yCoord, zCoord) != this)
+        if (this.worldObj.getTileEntity(xCoord, yCoord, zCoord) != this)
         {
             return false;
         }else
         {
-            return player.getDistanceSq((double)xCoord + 0.5D, (double)yCoord + 0.5D, (double)zCoord + 0.5D) <= 64;
+            return player.getDistanceSq((double) xCoord + 0.5D, (double) yCoord + 0.5D, (double) zCoord + 0.5D) <= 64;
         }
     }
 
@@ -90,114 +98,104 @@ public class TileEntitySocketStation extends TileEntity implements ISidedInvento
     public void closeInventory() {}
 
     @Override
-    public boolean isItemValidForSlot(int i, ItemStack itemstack) //Has to do with automation only //TODO figure this out to change what is valid for each slot with if statements
+    public boolean isItemValidForSlot(int i, ItemStack itemStack) //Has to do with automation only
     {
-        if (itemstack != null)
+        if (itemStack != null)
         {
-            if (i == 0)
-            {
-                return itemstack.getItem() instanceof  ItemTool;
-            } else if (i == 1)
-            {
-                return itemstack.getItem() instanceof ItemSocket;
-            } else if (i == 2)
-            {
-                return itemstack.getItem() instanceof ItemSocket;
-            } else if (i == 3)
-            {
-                return itemstack.getItem() instanceof ItemSocket;
-            } else
+            boolean slot0Valid = (itemStack.getItem() instanceof ItemTool || itemStack.getItem() instanceof ItemArmor || itemStack.getItem() instanceof ItemHoe); //Checks if item going to slot 0 is Tool or Armor (or Hoe)
+            boolean slot123Valid = (itemStack.getItem() instanceof ItemSocket); //Checks if item going to slot 1, 2, or 3 is a Socket
+
+            if (i == 0 && slot0Valid)
             {
                 return true;
+            } else if (i == 1 && slot123Valid)
+            {
+                return true;
+            } else if (i == 2 && slot123Valid)
+            {
+                return true;
+            } else if (i == 3 && slot123Valid)
+            {
+                return true;
+            } else
+            {
+                return false;
             }
         }
         return false;
     }
 
-    public ItemStack decrStackSize(int i, int j)
+    public ItemStack decrStackSize(int index, int count)
     {
-        if (slots[i] != null)
-        {
-            if (slots[i].stackSize <= j)
-            {
-                ItemStack itemstack = slots[i];
-                slots[i] = null;
-                return itemstack; //Gives item back to player when they remove from slot.
+        if (this.getStackInSlot(index) != null) {
+            ItemStack itemstack;
+
+            if (this.getStackInSlot(index).stackSize <= count) {
+                itemstack = this.getStackInSlot(index);
+                this.setInventorySlotContents(index, null);
+                this.markDirty();
+                return itemstack;
+            } else {
+                itemstack = this.getStackInSlot(index).splitStack(count);
+
+                if (this.getStackInSlot(index).stackSize <= 0) {
+                    this.setInventorySlotContents(index, null);
+                } else {
+                    this.setInventorySlotContents(index, this.getStackInSlot(index));
+                }
+                this.markDirty();
+                return itemstack;
             }
-
-            ItemStack itemstack1 = slots[i].splitStack(j);
-
-            if(slots[i].stackSize == 0)
-            {
-                slots[i] = null;
-            }
-
-            return itemstack1; //Gives item back to player when they right click to remove half of it (splitStack).
-        } else
-        {
+        } else {
             return null;
         }
     }
 
-    public void readFromNBT(NBTTagCompound nbt)
-    {
-        super.readFromNBT(nbt);
-        NBTTagList list = nbt.getTagList("Items", 10);
-        slots = new ItemStack[getSizeInventory()];
-
-        for (int i = 0; i < list.tagCount(); i++) //gets whatever is in NBT to GUI slots
-        {
-            NBTTagCompound nbt1 = (NBTTagCompound)list.getCompoundTagAt(i);
-            byte b0 = nbt1.getByte("Slot");
-
-            if (b0 >= 0 && b0 < slots.length)
-            {
-                slots[b0] = ItemStack.loadItemStackFromNBT(nbt1);
-            }
-        }
-    }
-
-    public void writeToNBT(NBTTagCompound nbt)
-    {
+    @Override
+    public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        NBTTagList list = new NBTTagList();
 
-        for (int i = 0; i < slots.length; i++) //sends whatever is in GUI slots to NBT and save's data
-        {
-            if (slots[i] != null)
-            {
-                NBTTagCompound nbt1 = new NBTTagCompound();
-                nbt1.setByte("Slot", (byte)i);
-                slots[i].writeToNBT(nbt1);
-                list.appendTag(nbt1);
+        NBTTagList list = new NBTTagList();
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
+            if (this.getStackInSlot(i) != null) {
+                NBTTagCompound stackTag = new NBTTagCompound();
+                stackTag.setByte("Slot", (byte) i);
+                this.getStackInSlot(i).writeToNBT(stackTag);
+                list.appendTag(stackTag);
             }
         }
-
         nbt.setTag("Items", list);
+
+        if (this.hasCustomInventoryName()) {
+            nbt.setString("CustomName", this.getInventoryName());
+        }
     }
 
     @Override
-    public int[] getAccessibleSlotsFromSide(int i)
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+
+        NBTTagList list = nbt.getTagList("Items", 10);
+        for (int i = 0; i < list.tagCount(); ++i) {
+            NBTTagCompound stackTag = list.getCompoundTagAt(i);
+            int slot = stackTag.getByte("Slot") & 255;
+            this.setInventorySlotContents(slot, ItemStack.loadItemStackFromNBT(stackTag));
+        }
+
+        if (nbt.hasKey("CustomName", 8)) {
+            this.setCustomInventoryName(nbt.getString("CustomName"));
+        }
+    }
+
+    public void setCustomInventoryName(String customName)
     {
-        return i == 0 ? slots_bottom : (i == 1 ? slots_top : slots_side);
+        this.customName = customName;
     }
 
     @Override
     public String getInventoryName()
     {
         return this.hasCustomInventoryName() ? this.customName : "container.socketStation";
-    }
-
-    @Override
-    public boolean canInsertItem(int i, ItemStack itemStack, int j)
-    {
-        return this.isItemValidForSlot(i, itemStack);
-    }
-
-    @Override
-    public boolean canExtractItem(int i, ItemStack itemStack, int j)
-    {
-        return j != 0 || i != 0 || i != 1 || i != 2 || i != 3;
     }
 
     private boolean canSocket() //Checks for recipe and get's result

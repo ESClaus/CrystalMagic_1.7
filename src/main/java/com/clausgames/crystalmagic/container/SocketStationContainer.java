@@ -1,5 +1,6 @@
 package com.clausgames.crystalmagic.container;
 
+import com.clausgames.crystalmagic.items.ItemSocket;
 import com.clausgames.crystalmagic.slot.SlotSocketStation;
 import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,9 +8,10 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.item.ItemTool;
 
 public class SocketStationContainer extends Container
 {
@@ -17,13 +19,12 @@ public class SocketStationContainer extends Container
 
     public SocketStationContainer(InventoryPlayer invPlayer, TileEntitySocketStation teSocketStation)
     {
-
         socketer = teSocketStation;
 
-        this.addSlotToContainer(new Slot(teSocketStation, 0, 20, 35)); //ItemTool/Armor Input Slot
-        this.addSlotToContainer(new Slot(teSocketStation, 1, 78, 17)); //Socket SlotTop
-        this.addSlotToContainer(new Slot(teSocketStation, 2, 78, 35)); //Socket SlotMid
-        this.addSlotToContainer(new Slot(teSocketStation, 3, 78, 53)); //Socket SlotBottom
+        this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 0, 20, 35)); //ItemTool/Armor Input Slot
+        this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 1, 78, 17)); //Socket SlotTop
+        this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 2, 78, 35)); //Socket SlotMid
+        this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 3, 78, 53)); //Socket SlotBottom
         this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 4, 136, 35)); //Result Slot
 
         //Inventory of Player
@@ -53,59 +54,34 @@ public class SocketStationContainer extends Container
         return socketer.isUseableByPlayer(player);
     }
 
-    public ItemStack transferStackInSlot(EntityPlayer player, int p_82846_2_) // Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
+    public ItemStack transferStackInSlot(EntityPlayer player, int fromSlot) // Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
     {
-        ItemStack itemstack = null;
-        Slot slot = (Slot)this.inventorySlots.get(p_82846_2_);
+        ItemStack previous = null;
+        Slot slot = (Slot)this.inventorySlots.get(fromSlot); //Slot shift-clicked on
 
-        if (slot != null && slot.getHasStack())
+        if (slot != null && slot.getHasStack()) //Slot isn't empty and has an ItemStack
         {
-            ItemStack itemstack1 = slot.getStack();
-            itemstack = itemstack1.copy();
+            ItemStack current = slot.getStack(); //gets current item in slot.
+            previous = current.copy();
+            boolean slot0Valid = (current.getItem() instanceof ItemTool || current.getItem() instanceof ItemArmor || current.getItem() instanceof ItemHoe); //Checks if item going to slot 0 is Tool or Armor (or Hoe)
+            boolean slot123Valid = (current.getItem() instanceof ItemSocket); //Checks if item going to slot 1, 2, or 3 is a Socket
 
-            if (p_82846_2_ == 2)
-            {
-                if (!this.mergeItemStack(itemstack1, 3, 39, true))
-                {
+            // From TE Inventory to Player Inventory
+            if (fromSlot < socketer.slots.length) {
+                if (!this.mergeItemStack(current, socketer.slots.length, 41, true))
                     return null;
-                }
-
-                slot.onSlotChange(itemstack1, itemstack);
-            }
-            else if (p_82846_2_ != 1 && p_82846_2_ != 0)
-            {
-                if (FurnaceRecipes.smelting().getSmeltingResult(itemstack1) != null)
-                {
-                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
-                    {
-                        return null;
-                    }
-                }
-                else if (TileEntityFurnace.isItemFuel(itemstack1))
-                {
-                    if (!this.mergeItemStack(itemstack1, 1, 2, false))
-                    {
-                        return null;
-                    }
-                }
-                else if (p_82846_2_ >= 3 && p_82846_2_ < 30)
-                {
-                    if (!this.mergeItemStack(itemstack1, 30, 39, false))
-                    {
-                        return null;
-                    }
-                }
-                else if (p_82846_2_ >= 30 && p_82846_2_ < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
-                {
+            // From Player Inventory to TE Inventory Input Slot 0
+            } else if(fromSlot > 4 && slot0Valid) {
+                if (!this.mergeItemStack(current, 0, 1, false))
                     return null;
-                }
-            }
-            else if (!this.mergeItemStack(itemstack1, 3, 39, false))
+            // From Player Inventory to TE Inventory Socket Slots 1/2/3
+            } else if(fromSlot > 4 && slot123Valid)
             {
-                return null;
+                if (!this.mergeItemStack(current, 1, 4, false))
+                    return null;
             }
 
-            if (itemstack1.stackSize == 0)
+            if (current.stackSize == 0)
             {
                 slot.putStack((ItemStack)null);
             }
@@ -114,19 +90,35 @@ public class SocketStationContainer extends Container
                 slot.onSlotChanged();
             }
 
-            if (itemstack1.stackSize == itemstack.stackSize)
+            if (current.stackSize == previous.stackSize)
             {
                 return null;
             }
 
-            slot.onPickupFromSlot(player, itemstack1);
+            slot.onPickupFromSlot(player, current);
         }
 
-        return itemstack;
+        return previous;
     }
 
     public void detectAndSendChanges()
     {
         super.detectAndSendChanges();
+    }
+
+    @Override
+    public void onContainerClosed(EntityPlayer player)
+    {
+        super.onContainerClosed(player);
+
+        for (int i = 0; i < 5; i++)
+        {
+            ItemStack itemstack = this.socketer.getStackInSlotOnClosing(i);
+
+            if (itemstack != null)
+            {
+                player.dropPlayerItemWithRandomChoice(itemstack, false);
+            }
+        }
     }
 }

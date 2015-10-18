@@ -38,9 +38,5 @@ public class SocketStationGui extends GuiContainer
         GL11.glColor4f(1f, 1f, 1f, 1f);
         Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
         drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
-
-        //do the thing with the power
-
-        //do the thing with the socketing (progress scale)
     }
 }

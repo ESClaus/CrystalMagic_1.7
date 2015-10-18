@@ -152,6 +152,15 @@ public class BlockSocketStation extends BlockContainer
     }
 
     @Override
+    public void breakBlock(World world, int x, int y, int z, Block block, int metadata)
+    {
+        if (hasTileEntity(metadata) && !(this instanceof BlockContainer))
+        {
+            world.removeTileEntity(x, y, z);
+        }
+    }
+
+    @Override
     public TileEntity createNewTileEntity(World world, int var2)
     {
         return new TileEntitySocketStation();
