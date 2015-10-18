@@ -27,6 +27,7 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
         {
             World world = event.world;
             EntityPlayer player = event.harvester;
+
             if(player.getCurrentEquippedItem() != null)
             {
                 Item itemUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.

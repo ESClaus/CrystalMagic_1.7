@@ -16,7 +16,7 @@ public class SocketStationGui extends GuiContainer
     public SocketStationGui(InventoryPlayer invPlayer, World world, int x, int y, int z)
     {
         super(new SocketStationContainer(invPlayer, world, x, y, z));
-        this.xSize = 176; //TODO what are these sizes, adjust to what we need
+        this.xSize = 176;
         this.ySize = 166;
     }
 
