@@ -41,8 +41,12 @@ item.ItemApprenticeBoots.name=Apprentice Boots
 # Blocks
 tile.BlockCrystalOre.name=Crystal Ore
 tile.BlockGoldenBars.name=Golden Bars
-tile.BlockSocketStation.name=Socket Station
 tile.BlockGoldenCloud.name=Golden Cloud
+
+# Machines
+tile.BlockSocketStation.name=Socket Station
+tile.BlockSocketStation131.name=Socket Station131
+container.socketStation=Socket Station
 
 # OreCrystalPlant Blocks
 tile.CrystalPlant.name=Crystal Plant

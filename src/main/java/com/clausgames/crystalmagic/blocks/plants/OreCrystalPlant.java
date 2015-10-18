@@ -88,7 +88,7 @@ public class OreCrystalPlant extends BlockCrops
 
         int metadata = parWorld.getBlockMetadata(parX, parY, parZ);
 
-        if (parWorld.rand.nextFloat() < 0.125f) //12.5% chance to update per 10 ticks //TODO may need to tweak percentage
+        if (parWorld.rand.nextFloat() < 0.125f) //12.5% chance to update per 10 ticks
         {
             metadata += 1;
         }

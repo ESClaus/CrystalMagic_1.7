@@ -21,6 +21,6 @@ public class OreInfusedStone extends BlockCrystalMagic
     @Override
     public boolean isFertile(World world, int x, int y, int z)
     {
-        return false; //Water cannot "hydrate" this soil to increase crop growth rate. //TODO Nature growth increases? If so, we can add an IF statement to see if one is nearby.
+        return false; //Water cannot "hydrate" this soil to increase crop growth rate.
     }
 }

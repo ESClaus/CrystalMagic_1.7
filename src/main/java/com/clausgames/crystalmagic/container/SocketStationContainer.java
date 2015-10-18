@@ -1,42 +1,33 @@
 package com.clausgames.crystalmagic.container;
 
-import com.clausgames.crystalmagic.blocks.ModBlocks;
-import com.clausgames.crystalmagic.crafting.SocketStationCraftingManager;
+import com.clausgames.crystalmagic.slot.SlotSocketStation;
+import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ICrafting;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
+import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.tileentity.TileEntityFurnace;
 
 public class SocketStationContainer extends Container
 {
-    public InventoryCrafting craftMatrix;
-    public IInventory craftResult;
-    private World worldObj;
-    private int posX;
-    private int posY;
-    private int posZ;
+    private TileEntitySocketStation socketer;
 
-    public SocketStationContainer(InventoryPlayer invPlayer, World world, int x, int y, int z)
+    public SocketStationContainer(InventoryPlayer invPlayer, TileEntitySocketStation teSocketStation)
     {
-        this.craftMatrix = new InventoryCrafting(this, 1, 1); //specifies how many slots input will be, 1x1
-        this.craftResult = new InventoryCraftResult();
-        this.worldObj = world;
-        this.posX = x;
-        this.posY = y;
-        this.posZ = z;
 
-        this.addSlotToContainer(new SlotCrafting(invPlayer.player, craftMatrix, craftResult, 0, 136, 35)); //Result Slot
+        socketer = teSocketStation;
 
-        for (int i = 0; i < 1; i++) //loops to create inventory slots on Gui.
-        {
-            for (int k = 0; k < 1; k++)
-            {
-                this.addSlotToContainer(new Slot(craftMatrix, k + i, 20 + k * 18, 35 + i * 18));
-            }
-        }
+        this.addSlotToContainer(new Slot(teSocketStation, 0, 20, 35)); //ItemTool/Armor Input Slot
+        this.addSlotToContainer(new Slot(teSocketStation, 1, 78, 17)); //Socket SlotTop
+        this.addSlotToContainer(new Slot(teSocketStation, 2, 78, 35)); //Socket SlotMid
+        this.addSlotToContainer(new Slot(teSocketStation, 3, 78, 53)); //Socket SlotBottom
+        this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 4, 136, 35)); //Result Slot
 
-        for (int i = 0; i < 3; i++) //loops to create inventory slots of player
+        //Inventory of Player
+        for (int i = 0; i < 3; i++)
         {
             for (int k = 0; k < 9; k++)
             {
@@ -44,78 +35,98 @@ public class SocketStationContainer extends Container
             }
         }
 
-        for (int i = 0; i < 9; i++) // loops to create inventory slots of player hotbar
+        //HotBar aka ActionBar
+        for (int i = 0; i < 9; i++)
         {
             this.addSlotToContainer(new Slot(invPlayer, i, 8 + i * 18, 142));
         }
-
-        onCraftMatrixChanged(craftMatrix);
     }
 
-    public void onCraftMatrixChanged(IInventory iInventory)
+    public void addCraftingToCrafters(ICrafting crafting)
     {
-        craftResult.setInventorySlotContents(0, SocketStationCraftingManager.getInstance().findMatchingRecipe(craftMatrix, worldObj));
+        super.addCraftingToCrafters(crafting);
     }
 
     @Override
     public boolean canInteractWith(EntityPlayer player)
     {
-        if(worldObj.getBlock(posX, posY, posZ) != ModBlocks.blockSocketStation)
-        {
-            return false;
-        } else
-        {
-            return player.getDistanceSq((double)posX + 0.5D, (double)posY + 0.5D, (double)posZ + 0.5D) <= 64.0D;
-        }
+        return socketer.isUseableByPlayer(player);
     }
 
-    public void onContainerClosed(EntityPlayer entityPlayer) //Called when the container is closed and spits items onto ground if we close with items in input.
+    public ItemStack transferStackInSlot(EntityPlayer player, int p_82846_2_) // Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
     {
-        super.onContainerClosed(entityPlayer);
+        ItemStack itemstack = null;
+        Slot slot = (Slot)this.inventorySlots.get(p_82846_2_);
 
-        if (!this.worldObj.isRemote)
+        if (slot != null && slot.getHasStack())
         {
-            for (int i = 0; i < 1; ++i)
-            {
-                ItemStack itemstack = this.craftMatrix.getStackInSlotOnClosing(i);
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
 
-                if (itemstack != null)
+            if (p_82846_2_ == 2)
+            {
+                if (!this.mergeItemStack(itemstack1, 3, 39, true))
                 {
-                    entityPlayer.dropPlayerItemWithRandomChoice(itemstack, false);
+                    return null;
+                }
+
+                slot.onSlotChange(itemstack1, itemstack);
+            }
+            else if (p_82846_2_ != 1 && p_82846_2_ != 0)
+            {
+                if (FurnaceRecipes.smelting().getSmeltingResult(itemstack1) != null)
+                {
+                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
+                    {
+                        return null;
+                    }
+                }
+                else if (TileEntityFurnace.isItemFuel(itemstack1))
+                {
+                    if (!this.mergeItemStack(itemstack1, 1, 2, false))
+                    {
+                        return null;
+                    }
+                }
+                else if (p_82846_2_ >= 3 && p_82846_2_ < 30)
+                {
+                    if (!this.mergeItemStack(itemstack1, 30, 39, false))
+                    {
+                        return null;
+                    }
+                }
+                else if (p_82846_2_ >= 30 && p_82846_2_ < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
+                {
+                    return null;
                 }
             }
-        }
-    }
-
-    @Override
-    public ItemStack transferStackInSlot(EntityPlayer playerIn, int fromSlot)
-    {
-        ItemStack previous = null;
-        Slot slot = (Slot) this.inventorySlots.get(fromSlot);
-
-        if (slot != null && slot.getHasStack()) {
-            ItemStack current = slot.getStack();
-            previous = current.copy();
-
-            if (fromSlot < 3) {
-                // From Block Inventory to Player Inventory
-                if (!this.mergeItemStack(current, 9, 37, true))
-                    return null;
-            } else {
-                // From Player Inventory to Block Inventory
-                if (!this.mergeItemStack(current, 1, 3, false))
-                    return null;
+            else if (!this.mergeItemStack(itemstack1, 3, 39, false))
+            {
+                return null;
             }
 
-            if (current.stackSize == 0)
-                slot.putStack((ItemStack) null);
+            if (itemstack1.stackSize == 0)
+            {
+                slot.putStack((ItemStack)null);
+            }
             else
+            {
                 slot.onSlotChanged();
+            }
 
-            if (current.stackSize == previous.stackSize)
+            if (itemstack1.stackSize == itemstack.stackSize)
+            {
                 return null;
-            slot.onPickupFromSlot(playerIn, current);
+            }
+
+            slot.onPickupFromSlot(player, itemstack1);
         }
-        return previous;
+
+        return itemstack;
+    }
+
+    public void detectAndSendChanges()
+    {
+        super.detectAndSendChanges();
     }
 }

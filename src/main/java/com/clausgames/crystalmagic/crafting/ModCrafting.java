@@ -2,7 +2,6 @@ package com.clausgames.crystalmagic.crafting;
 
 import com.clausgames.crystalmagic.blocks.ModBlocks;
 import com.clausgames.crystalmagic.blocks.plants.ModPlants;
-
 import com.clausgames.crystalmagic.items.ModItems;
 import com.clausgames.crystalmagic.items.armor.ModArmor;
 import com.clausgames.crystalmagic.items.fragments.ModFragments;
@@ -10,7 +9,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class ModCrafting
 {
@@ -33,6 +31,10 @@ public class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModPlants.goldInfusedStone), "OSO", "SCS", "OSO", 'O', Items.gold_ingot, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
 		GameRegistry.addRecipe(new ItemStack(ModPlants.diamondInfusedStone), "OSO", "SCS", "OSO", 'O', Items.diamond, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
 		GameRegistry.addRecipe(new ItemStack(ModPlants.emeraldInfusedStone), "OSO", "SCS", "OSO", 'O', Items.emerald, 'S', Blocks.stone, 'C', ModFragments.itemCrystalFragment);
+
+		//Machines
+		//Socket Station, F = itemCrystal, C = CraftTable, A = Anvil
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockSocketStation), "FFF", "FCF", "FAF", 'F', ModItems.itemCrystal, 'C', Blocks.crafting_table, 'A', Blocks.anvil);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
 		//GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)); //TODO Remove
