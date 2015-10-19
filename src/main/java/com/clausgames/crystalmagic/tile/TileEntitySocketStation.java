@@ -1,7 +1,7 @@
 package com.clausgames.crystalmagic.tile;
 
 import com.clausgames.crystalmagic.crafting.SocketStationRecipes;
-import com.clausgames.crystalmagic.items.ItemSocket;
+import com.clausgames.crystalmagic.items.sockets.ItemSocket;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemArmor;

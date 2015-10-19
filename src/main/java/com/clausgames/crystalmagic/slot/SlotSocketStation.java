@@ -1,7 +1,6 @@
 package com.clausgames.crystalmagic.slot;
 
-import com.clausgames.crystalmagic.container.SocketStationContainer;
-import com.clausgames.crystalmagic.items.ItemSocket;
+import com.clausgames.crystalmagic.items.sockets.ItemSocket;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;

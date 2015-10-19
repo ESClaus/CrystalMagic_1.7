@@ -1,14 +1,7 @@
-package com.clausgames.crystalmagic.items;
+package com.clausgames.crystalmagic.items.sockets;
 
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumChatFormatting;
-
-import java.util.List;
 
 public class ItemSocket extends Item
 {

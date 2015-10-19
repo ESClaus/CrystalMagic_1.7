@@ -9,6 +9,7 @@ import com.clausgames.crystalmagic.handler.VanillaDropHandler;
 import com.clausgames.crystalmagic.items.ModItems;
 import com.clausgames.crystalmagic.items.armor.ModArmor;
 import com.clausgames.crystalmagic.items.fragments.ModFragments;
+import com.clausgames.crystalmagic.items.sockets.ModSockets;
 import com.clausgames.crystalmagic.items.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
 
@@ -46,6 +47,7 @@ public class CrystalMagic
 		ModTools.init();
 		ModArmor.init();
         ModFragments.init();
+		ModSockets.init();
 		ModAchievements.init();
 		ModTileEntities.init();
 		VanillaDropHandler.init(); //This init is this way because we need to call OUR handler and not just Forge's by mistake
