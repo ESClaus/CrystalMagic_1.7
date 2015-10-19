@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,10 +28,12 @@ public class VanillaDropHandler //This is overriding drop tables of vanilla bloc
         {
             World world = event.world;
             EntityPlayer player = event.harvester;
-            if(player.getCurrentEquippedItem() != null)
+
+            if(player.getHeldItem() != null) //If used an item.
             {
-                Item itemUsed = player.getCurrentEquippedItem().getItem(); // Checks what tool was that player used to break item.
-                if (itemUsed == (Items.iron_shovel) || itemUsed == (Items.diamond_shovel)) //TODO check for material harvest level iron or better (2 or better)
+                ItemStack toolUsed = player.getHeldItem();
+                int toolUsedHarvestLevel = player.getHeldItem().getItem().getHarvestLevel(toolUsed, "shovel"); // Gets harvest level of said tool
+                if (toolUsedHarvestLevel >= 2) //Iron or better, aka 2 or better.
                 {
                     if (world.rand.nextFloat() < 0.25f) //25% Chance to drop a RoughCrystalFragment if using the right shovel!
                     {
