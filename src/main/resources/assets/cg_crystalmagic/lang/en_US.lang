@@ -5,6 +5,9 @@ item.ItemCrystalCodex.name=Crystal Codex
 
 # Items
 item.ItemDebugOrePlants.name=Ore Plant Debugger
+item.ItemCrystalTuningFork.name=Crystal Tuning Fork
+
+# Crystal Items
 item.ItemRoughCrystal.name=Rough Crystal
 item.ItemCrystal.name=Crystal
 item.ItemRoughCrystalFragment.name=Rough Crystal Fragment
@@ -18,6 +21,9 @@ item.ItemDarkCrystal.name=Dark Crystal
 
 # Sockets
 item.ItemEmptySocket.name=Empty Socket
+item.ItemLuckySocket.name=Lucky Socket
+item.ItemSpeedySocket.name=Speedy Socket
+item.ItemFierySocket.name=Fiery Socket
 
 # OreCrystalFragment Items
 item.ItemCoalCrystalFragment.name=Coal Crystal Fragment
@@ -45,6 +51,8 @@ tile.BlockGoldenCloud.name=Golden Cloud
 
 # Machines
 tile.BlockSocketStation.name=Socket Station
+tile.BlockSocketStation131.name=Socket Station131
+container.socketStation=Socket Station
 
 # OreCrystalPlant Blocks
 tile.CrystalPlant.name=Crystal Plant

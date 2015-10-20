@@ -2,13 +2,14 @@ package com.clausgames.crystalmagic.handler;
 
 import com.clausgames.crystalmagic.CrystalMagic;
 
-import com.clausgames.crystalmagic.blocks.ModBlocks;
 import com.clausgames.crystalmagic.container.SocketStationContainer;
 import com.clausgames.crystalmagic.gui.CrystalCodexGui;
 import com.clausgames.crystalmagic.gui.SocketStationGui;
+import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class GuiHandler implements IGuiHandler
@@ -17,14 +18,19 @@ public class GuiHandler implements IGuiHandler
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
-        if (ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal())
+        TileEntity entity = world.getTileEntity(x, y, z);
+
+        if(entity != null)
         {
-            if(ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal() && world.getBlock(x, y, z) == ModBlocks.blockSocketStation)
+            if (ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal())
             {
-                return new SocketStationContainer(player.inventory, world, x, y, z);
-            } else
-            {
-                return null;
+                if(entity instanceof TileEntitySocketStation)
+                {
+                    return new SocketStationContainer(player.inventory, (TileEntitySocketStation) entity);
+                } else
+                {
+                    return null;
+                }
             }
         }
 
@@ -35,12 +41,16 @@ public class GuiHandler implements IGuiHandler
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         Minecraft mc = Minecraft.getMinecraft();
+        TileEntity entity = world.getTileEntity(x, y, z);
 
-        if (ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal())
+        if (entity != null)
         {
-            if(ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal() && world.getBlock(x, y, z) == ModBlocks.blockSocketStation)
+            if(ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal())
             {
-                return new SocketStationGui(player.inventory, world, x, y, z);
+                if(entity instanceof TileEntitySocketStation)
+                {
+                    return new SocketStationGui(player.inventory, (TileEntitySocketStation) entity);
+                }
             } else
             {
                 return null;
