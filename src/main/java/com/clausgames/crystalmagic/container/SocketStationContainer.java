@@ -27,6 +27,7 @@ public class SocketStationContainer extends Container
         this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 2, 78, 35)); //Socket SlotMid
         this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 3, 78, 53)); //Socket SlotBottom
         this.addSlotToContainer(new SlotSocketStationResult(invPlayer.player, teSocketStation, teSocketStation, 4, 136, 35)); //Result Slot
+        //a//
 
         //Inventory of Player
         for (int i = 0; i < 3; i++)
