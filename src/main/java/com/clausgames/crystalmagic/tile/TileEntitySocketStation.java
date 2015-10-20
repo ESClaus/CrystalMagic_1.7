@@ -102,8 +102,8 @@ public class TileEntitySocketStation extends TileEntity implements IInventory
     {
         if (itemStack != null)
         {
-            boolean slot0Valid = (itemStack.getItem() instanceof ItemTool || itemStack.getItem() instanceof ItemArmor || itemStack.getItem() instanceof ItemHoe); //Checks if item going to slot 0 is Tool or Armor (or Hoe)
-            boolean slot123Valid = (itemStack.getItem() instanceof ItemSocket); //Checks if item going to slot 1, 2, or 3 is a Socket
+            boolean slot0Valid = (itemStack.getItem() instanceof ItemTool || itemStack.getItem() instanceof ItemArmor || itemStack.getItem() instanceof ItemHoe); //Checks if item going to slots 0 is Tool or Armor (or Hoe)
+            boolean slot123Valid = (itemStack.getItem() instanceof ItemSocket); //Checks if item going to slots 1, 2, or 3 is a Socket
 
             if (i == 0 && slot0Valid)
             {
@@ -198,7 +198,7 @@ public class TileEntitySocketStation extends TileEntity implements IInventory
         return this.hasCustomInventoryName() ? this.customName : "container.socketStation";
     }
 
-    private boolean canSocket() //Checks for recipe and get's result
+    public boolean canSocket() //Checks for recipe and get's result
     {
         if (slots[0] == null)
         {
@@ -217,36 +217,36 @@ public class TileEntitySocketStation extends TileEntity implements IInventory
                 return false;
             }
 
-            if (slots[4] == null) //If output slot is empty
+            if (slots[4] == null) //If output slots is empty
             {
                 return true;
             }
 
-            if (!slots[4].isItemEqual(itemStack)) //If output slot has an item that is NOT the current crafting recipe inputted.
+            if (!slots[4].isItemEqual(itemStack)) //If output slots has an item that is NOT the current crafting recipe inputted.
             {
                 return false;
             }
 
-            if (slots[4].stackSize < getInventoryStackLimit() && slots[4].stackSize < slots[4].getMaxStackSize()) //As long as the output slot has less than 64 items and is less than max stack size of that item's stack limit
+            if (slots[4].stackSize < getInventoryStackLimit() && slots[4].stackSize < slots[4].getMaxStackSize()) //As long as the output slots has less than 64 items and is less than max stack size of that item's stack limit
             {
                 return true;
             }else
             {
-                return slots[4].stackSize < itemStack.getMaxStackSize(); //Puts crafted result into output as long as the item's max stack size hasn't been hit, if it has, will wait to put item in slot.
+                return slots[4].stackSize < itemStack.getMaxStackSize(); //Puts crafted result into output as long as the item's max stack size hasn't been hit, if it has, will wait to put item in slots.
             }
         }
     }
 
-    private void socketItem()
+    public void socketItem()
     {
         if (canSocket())
         {
             ItemStack itemStack = SocketStationRecipes.getSocketingResult(slots[0].getItem(), slots[1].getItem(), slots[2].getItem(), slots[3].getItem()); //Grabs the result of said items in said slots and puts into an itemstack
 
-            if (slots[4] == null) //If result is empty, copy whatever the item is and put into result slot.
+            if (slots[4] == null) //If result is empty, copy whatever the item is and put into result slots.
             {
-                slots[4] = itemStack.copy(); //Puts result into result slot.
-            } else if(slots[4].isItemEqual(itemStack)) //If it has an item in result slot already, increment the stack size until you hit max stack size of item.
+                slots[4] = itemStack.copy(); //Puts result into result slots.
+            } else if(slots[4].isItemEqual(itemStack)) //If it has an item in result slots already, increment the stack size until you hit max stack size of item.
             {
                 slots[4].stackSize += itemStack.stackSize;
             }
@@ -266,15 +266,6 @@ public class TileEntitySocketStation extends TileEntity implements IInventory
                     slots[i] = null;
                 }
             }
-        }
-    }
-
-    public void updateEntity()
-    {
-        if(!worldObj.isRemote && canSocket())
-        {
-            this.socketItem();
-            this.markDirty();
         }
     }
 }

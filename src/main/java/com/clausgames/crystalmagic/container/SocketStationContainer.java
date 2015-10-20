@@ -1,7 +1,8 @@
 package com.clausgames.crystalmagic.container;
 
+import com.clausgames.crystalmagic.crafting.slots.SlotSocketStationResult;
 import com.clausgames.crystalmagic.items.sockets.ItemSocket;
-import com.clausgames.crystalmagic.slot.SlotSocketStation;
+import com.clausgames.crystalmagic.crafting.slots.SlotSocketStation;
 import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -15,7 +16,7 @@ import net.minecraft.item.ItemTool;
 
 public class SocketStationContainer extends Container
 {
-    private TileEntitySocketStation socketer;
+    public TileEntitySocketStation socketer;
 
     public SocketStationContainer(InventoryPlayer invPlayer, TileEntitySocketStation teSocketStation)
     {
@@ -25,7 +26,7 @@ public class SocketStationContainer extends Container
         this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 1, 78, 17)); //Socket SlotTop
         this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 2, 78, 35)); //Socket SlotMid
         this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 3, 78, 53)); //Socket SlotBottom
-        this.addSlotToContainer(new SlotSocketStation(invPlayer.player, teSocketStation, 4, 136, 35)); //Result Slot
+        this.addSlotToContainer(new SlotSocketStationResult(invPlayer.player, teSocketStation, teSocketStation, 4, 136, 35)); //Result Slot
 
         //Inventory of Player
         for (int i = 0; i < 3; i++)
@@ -54,17 +55,17 @@ public class SocketStationContainer extends Container
         return socketer.isUseableByPlayer(player);
     }
 
-    public ItemStack transferStackInSlot(EntityPlayer player, int fromSlot) // Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
+    public ItemStack transferStackInSlot(EntityPlayer player, int fromSlot) // Called when a player shift-clicks on a slots. You must override this or you will crash when someone does that.
     {
         ItemStack previous = null;
         Slot slot = (Slot)this.inventorySlots.get(fromSlot); //Slot shift-clicked on
 
         if (slot != null && slot.getHasStack()) //Slot isn't empty and has an ItemStack
         {
-            ItemStack current = slot.getStack(); //gets current item in slot.
+            ItemStack current = slot.getStack(); //gets current item in slots.
             previous = current.copy();
-            boolean slot0Valid = (current.getItem() instanceof ItemTool || current.getItem() instanceof ItemArmor || current.getItem() instanceof ItemHoe); //Checks if item going to slot 0 is Tool or Armor (or Hoe)
-            boolean slot123Valid = (current.getItem() instanceof ItemSocket); //Checks if item going to slot 1, 2, or 3 is a Socket
+            boolean slot0Valid = (current.getItem() instanceof ItemTool || current.getItem() instanceof ItemArmor || current.getItem() instanceof ItemHoe); //Checks if item going to slots 0 is Tool or Armor (or Hoe)
+            boolean slot123Valid = (current.getItem() instanceof ItemSocket); //Checks if item going to slots 1, 2, or 3 is a Socket
 
             // From TE Inventory to Player Inventory
             if (fromSlot < socketer.slots.length) {

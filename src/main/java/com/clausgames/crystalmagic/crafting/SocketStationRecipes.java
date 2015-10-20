@@ -5,7 +5,6 @@ import com.clausgames.crystalmagic.items.tool.ModTools;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 
 public class SocketStationRecipes
 {
@@ -14,7 +13,7 @@ public class SocketStationRecipes
 
     }
 
-    public static ItemStack getSocketingResult(Item itemSlot0, Item itemSlot1, Item itemSlot2, Item itemSlot3) //Checks item in each slot specified and checks for recipe
+    public static ItemStack getSocketingResult(Item itemSlot0, Item itemSlot1, Item itemSlot2, Item itemSlot3) //Checks item in each slots specified and checks for recipe
     {
         return getOutput(itemSlot0, itemSlot1, itemSlot2, itemSlot3);
     }
@@ -29,7 +28,7 @@ public class SocketStationRecipes
 
         if (itemSlot0 == Items.diamond_pickaxe && itemSlot1 == ModSockets.itemEmptySocket && itemSlot2 == ModSockets.itemEmptySocket && itemSlot3 == ModSockets.itemEmptySocket) //When sockets are in place, add OR to allow sockets to be interchangeable in GUI slots.
         {
-            return new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1);
+            return new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1); //TODO change to Socketed Diamond Pick
         }
 
         /*//Testing theory that saying instanceOf any Tool will make item, it worked! //TODO Now to use it properly

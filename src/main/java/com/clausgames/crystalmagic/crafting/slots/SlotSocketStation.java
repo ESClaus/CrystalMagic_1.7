@@ -1,4 +1,4 @@
-package com.clausgames.crystalmagic.slot;
+package com.clausgames.crystalmagic.crafting.slots;
 
 import com.clausgames.crystalmagic.items.sockets.ItemSocket;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,8 +21,8 @@ public class SlotSocketStation extends Slot
 
     public boolean isItemValid(ItemStack itemStack)
     {
-        boolean slot0Valid = (itemStack.getItem() instanceof ItemTool || itemStack.getItem() instanceof ItemArmor || itemStack.getItem() instanceof ItemHoe); //Checks if item going to slot 0 is Tool or Armor (or Hoe)
-        boolean slot123Valid = (itemStack.getItem() instanceof ItemSocket); //Checks if item going to slot 1, 2, or 3 is a Socket
+        boolean slot0Valid = (itemStack.getItem() instanceof ItemTool || itemStack.getItem() instanceof ItemArmor || itemStack.getItem() instanceof ItemHoe); //Checks if item going to slots 0 is Tool or Armor (or Hoe)
+        boolean slot123Valid = (itemStack.getItem() instanceof ItemSocket); //Checks if item going to slots 1, 2, or 3 is a Socket
 
         if (slot == 0 && slot0Valid)
         {
