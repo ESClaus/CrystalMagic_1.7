@@ -1,8 +1,8 @@
 package com.clausgames.crystalmagic.items;
 
-public class ItemEmptySocket extends ItemSocket
+public class ItemFireCrystal extends ItemCrystalMagic
 {
-    public ItemEmptySocket(String unlocalizedName, String textureName)
+    public ItemFireCrystal(String unlocalizedName, String textureName)
     {
         super();
         this.setUnlocalizedName(unlocalizedName);
