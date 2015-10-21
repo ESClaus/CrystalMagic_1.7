@@ -2,14 +2,13 @@ package com.clausgames.crystalmagic.handler;
 
 import com.clausgames.crystalmagic.CrystalMagic;
 
-import com.clausgames.crystalmagic.container.SocketStationContainer;
+import com.clausgames.crystalmagic.container.SocketBenchContainer;
 import com.clausgames.crystalmagic.gui.CrystalCodexGui;
-import com.clausgames.crystalmagic.gui.SocketStationGui;
-import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
+import com.clausgames.crystalmagic.gui.SocketBenchGui;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class GuiHandler implements IGuiHandler
@@ -18,20 +17,11 @@ public class GuiHandler implements IGuiHandler
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
-        TileEntity entity = world.getTileEntity(x, y, z);
 
-        if(entity != null)
+
+        if (ID == CrystalMagic.GUI_ENUM.SOCKET_BENCH.ordinal())
         {
-            if (ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal())
-            {
-                if(entity instanceof TileEntitySocketStation)
-                {
-                    return new SocketStationContainer(player.inventory, (TileEntitySocketStation) entity);
-                } else
-                {
-                    return null;
-                }
-            }
+            return new SocketBenchContainer(player.inventory, world, x, y, z);
         }
 
         return null;
@@ -41,20 +31,10 @@ public class GuiHandler implements IGuiHandler
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         Minecraft mc = Minecraft.getMinecraft();
-        TileEntity entity = world.getTileEntity(x, y, z);
 
-        if (entity != null)
+        if (ID == CrystalMagic.GUI_ENUM.SOCKET_BENCH.ordinal())
         {
-            if(ID == CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal())
-            {
-                if(entity instanceof TileEntitySocketStation)
-                {
-                    return new SocketStationGui(player.inventory, (TileEntitySocketStation) entity);
-                }
-            } else
-            {
-                return null;
-            }
+            return new SocketBenchGui(player.inventory, world, I18n.format("tile.BlockSocketBench.name"), x, y, z);
         }
 
         if (ID == CrystalMagic.GUI_ENUM.CRYSTALCODEX.ordinal())

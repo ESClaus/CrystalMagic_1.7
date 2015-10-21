@@ -15,7 +15,7 @@ public class ModBlocks
 	public static BlockCrystalMagic blockGoldenCloud = new BlockGoldenCloud(Material.cloth);
 
 	//Declaration of Machine Blocks
-	public static BlockContainer blockSocketStation = new BlockSocketStation(); //TODO may need to remove true version and Active
+	public static BlockCrystalMagic blockSocketBench = new BlockSocketBench(Material.wood);
 
 	public static void init()
 	{
@@ -25,6 +25,6 @@ public class ModBlocks
 		GameRegistry.registerBlock(blockGoldenCloud, "blockGoldenCloud");
 
 		//Registration of Machine Blocks
-		GameRegistry.registerBlock(blockSocketStation, "blockSocketStation");
+		GameRegistry.registerBlock(blockSocketBench, "blockSocketBench");
 	}
 }

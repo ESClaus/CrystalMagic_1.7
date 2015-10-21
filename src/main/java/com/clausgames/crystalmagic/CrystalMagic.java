@@ -15,7 +15,6 @@ import com.clausgames.crystalmagic.lib.LibMisc;
 
 import com.clausgames.crystalmagic.proxy.IProxy;
 import com.clausgames.crystalmagic.tile.ModTileEntities;
-import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
 import com.clausgames.crystalmagic.world.gen.ModWorldGen;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -25,7 +24,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = LibMisc.MODID, name = LibMisc.MODNAME, version = LibMisc.VERSION)
 
@@ -62,9 +60,6 @@ public class CrystalMagic
 		ModCrafting.init();
 		ModWorldGen.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(CrystalMagic.instance, new GuiHandler()); //Registers GUI Handler to keep ClientSide Client and ServerSide Server
-
-		//Register TileEntities
-		GameRegistry.registerTileEntity(TileEntitySocketStation.class, "SocketStation");
 	}
 
 	@EventHandler
@@ -76,6 +71,6 @@ public class CrystalMagic
 	// Enumerate GUIs
 	public enum GUI_ENUM
 	{
-		CRYSTALCODEX, SOCKET_STATION
+		CRYSTALCODEX, SOCKET_BENCH
 	}
 }

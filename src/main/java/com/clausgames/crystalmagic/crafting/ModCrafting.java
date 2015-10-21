@@ -53,7 +53,7 @@ public class ModCrafting
 
 		//Machines
 		//Socket Station, F = Crystal, C = CraftTable, A = Anvil
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockSocketStation), "FFF", "FCF", "FAF", 'F', ModItems.itemCrystal, 'C', Blocks.crafting_table, 'A', Blocks.anvil);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.blockSocketBench), "FFF", "FCF", "FAF", 'F', ModItems.itemCrystal, 'C', Blocks.crafting_table, 'A', Blocks.anvil);
 
 		// Crystal Edged Pickaxe Recipe, F = itemCrystalFragment, I = Iron
 		//GameRegistry.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe), " F ", "FIF", 'F', ModItems.itemCrystalFragment, 'I', new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)); //TODO Remove

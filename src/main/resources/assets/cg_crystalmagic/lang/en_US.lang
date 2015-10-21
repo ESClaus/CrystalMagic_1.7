@@ -50,9 +50,8 @@ tile.BlockGoldenBars.name=Golden Bars
 tile.BlockGoldenCloud.name=Golden Cloud
 
 # Machines
-tile.BlockSocketStation.name=Socket Station
-tile.BlockSocketStation131.name=Socket Station131
-container.socketStation=Socket Station
+tile.BlockSocketBench.name=Socket Bench
+container.socketBench=Socket Bench
 
 # OreCrystalPlant Blocks
 tile.CrystalPlant.name=Crystal Plant

@@ -2,53 +2,54 @@ package com.clausgames.crystalmagic.blocks;
 
 import codechicken.lib.math.MathHelper;
 import com.clausgames.crystalmagic.CrystalMagic;
-import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
-import com.clausgames.crystalmagic.tile.TileEntitySocketStation;
-import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
-public class BlockSocketStation extends BlockContainer
+public class BlockSocketBench extends BlockCrystalMagic
 {
-    private Random rand;
+    @SideOnly(Side.CLIENT)
+    private IIcon socketBenchTop; //Sets top texture, side is already built in with blockIcon
 
     @SideOnly(Side.CLIENT)
-    private IIcon socketStationTop131; //Sets top texture, side is already built in with blockIcon
+    private IIcon socketBenchBottom; //Sets bottom texture, side is already built in with blockIcon
 
-    @SideOnly(Side.CLIENT)
-    private IIcon socketStationBottom131; //Sets bottom texture, side is already built in with blockIcon
-
-
-    public BlockSocketStation()
+    public BlockSocketBench(Material material)
     {
-        super(Material.wood);
-        this.setBlockName("BlockSocketStation");
+        super(material);
+        this.setBlockName("BlockSocketBench");
         this.setHardness(3.5f);
         this.setResistance(5.0f);
         this.setStepSound(soundTypeWood);
-        this.setCreativeTab(CreativeTabCrystalMagic.tabCrystalMagic);
-        rand = new Random();
+    }
+
+    @Override
+    public boolean onBlockActivated(World parWorld, int x, int y, int z, EntityPlayer parPlayer, int parSide, float hitX, float hitY, float hitZ)
+    {
+        if(!parWorld.isRemote && !parPlayer.isSneaking())
+        {
+            // DEBUG
+            System.out.println("BlockSocketBench onBlockActivated");
+
+            parPlayer.openGui(CrystalMagic.instance, CrystalMagic.GUI_ENUM.SOCKET_BENCH.ordinal(), parWorld, x, y, z); // Opens GUI
+        }
+        return true;
     }
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
-        this.blockIcon = iconRegister.registerIcon(LibMisc.MODID + ":socketStationSide131");
-        this.socketStationBottom131 = iconRegister.registerIcon(LibMisc.MODID + ":socketStationBottom131");
-        this.socketStationTop131 = iconRegister.registerIcon(LibMisc.MODID + ":socketStationTop131");
+        this.blockIcon = iconRegister.registerIcon(LibMisc.MODID + ":socketBenchSide");
+        this.socketBenchBottom = iconRegister.registerIcon(LibMisc.MODID + ":socketBenchBottom");
+        this.socketBenchTop = iconRegister.registerIcon(LibMisc.MODID + ":socketBenchTop");
     }
 
     @SideOnly(Side.CLIENT)
@@ -62,10 +63,10 @@ public class BlockSocketStation extends BlockContainer
             return this.blockIcon; //This would be front texture if we wanted one
         }else if(side == 0)
         {
-            return this.socketStationBottom131; //Bottom Texture
+            return this.socketBenchBottom; //Bottom Texture
         }else if(side == 1)
         {
-            return this.socketStationTop131; //Top Texture
+            return this.socketBenchTop; //Top Texture
         }else
         {
             return this.blockIcon; //Side Texture
@@ -110,9 +111,9 @@ public class BlockSocketStation extends BlockContainer
         }
     }
 
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemStack)
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemStack) //Sets metadata based on where player is so block faces player.
     {
-        int i = MathHelper.floor_double((double)(entityPlayer.rotationYaw * 4.0f / 360f) + 0.5d) & 3;
+        int i = MathHelper.floor_double((double) (entityPlayer.rotationYaw * 4.0f / 360f) + 0.5d) & 3;
 
         if (i == 0)
         {
@@ -130,39 +131,5 @@ public class BlockSocketStation extends BlockContainer
         {
             world.setBlockMetadataWithNotify(x, y, z, 4, 2);
         }
-    }
-
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int blockSide, float hitX, float hitY, float hitZ)
-    {
-        if(world.isRemote)
-        {
-            return true;
-        }else if(!player.isSneaking())
-        {
-            TileEntitySocketStation entity = (TileEntitySocketStation) world.getTileEntity(x, y, z);
-            if(entity != null)
-            {
-                FMLNetworkHandler.openGui(player, CrystalMagic.instance, CrystalMagic.GUI_ENUM.SOCKET_STATION.ordinal(), world, x, y, z); //Grabs GUI elements from TileEntity for Server and Client
-            }
-            return true;
-        }else
-        {
-            return false;
-        }
-    }
-
-    @Override
-    public void breakBlock(World world, int x, int y, int z, Block block, int metadata)
-    {
-        if (hasTileEntity(metadata) && !(this instanceof BlockContainer))
-        {
-            world.removeTileEntity(x, y, z);
-        }
-    }
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int var2)
-    {
-        return new TileEntitySocketStation();
     }
 }

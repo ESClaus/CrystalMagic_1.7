@@ -9,11 +9,11 @@ import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 
-public class SlotSocketStation extends Slot
+public class SlotSocketBenchInput extends Slot
 {
     int slot;
 
-    public SlotSocketStation(EntityPlayer player, IInventory iInventory, int i, int j, int k)
+    public SlotSocketBenchInput(IInventory iInventory, int i, int j, int k)
     {
         super(iInventory, i, j, k);
         slot = i;
