@@ -6,6 +6,7 @@ import com.clausgames.crystalmagic.crafting.SocketBenchRecipeManager;
 import com.clausgames.crystalmagic.crafting.slots.SlotSocketBenchInput;
 import com.clausgames.crystalmagic.crafting.slots.SlotSocketBenchOutput;
 import com.clausgames.crystalmagic.items.sockets.ItemSocket;
+import com.clausgames.crystalmagic.lib.LibNames;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

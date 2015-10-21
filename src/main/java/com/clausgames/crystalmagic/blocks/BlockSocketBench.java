@@ -3,6 +3,7 @@ package com.clausgames.crystalmagic.blocks;
 import codechicken.lib.math.MathHelper;
 import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import com.clausgames.crystalmagic.lib.LibNames;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -25,7 +26,7 @@ public class BlockSocketBench extends BlockCrystalMagic
     public BlockSocketBench(Material material)
     {
         super(material);
-        this.setBlockName("BlockSocketBench");
+        this.setBlockName(LibNames.Blocks.SOCKET_BENCH);
         this.setHardness(3.5f);
         this.setResistance(5.0f);
         this.setStepSound(soundTypeWood);
@@ -79,7 +80,7 @@ public class BlockSocketBench extends BlockCrystalMagic
         this.setDefaultDirection(world, x, y, z);
     }
 
-    private void setDefaultDirection(World world, int x, int y, int z) //Sets direciton based on blocks to left/right/front/back of it and changes metadata, which will change texture.
+    private void setDefaultDirection(World world, int x, int y, int z) //Sets direction based on blocks to left/right/front/back of it and changes metadata, which will change texture.
     {
         if(!world.isRemote)
         {

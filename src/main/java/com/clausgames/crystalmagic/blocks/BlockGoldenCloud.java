@@ -1,6 +1,7 @@
 package com.clausgames.crystalmagic.blocks;
 
 import com.clausgames.crystalmagic.lib.LibMisc;
+import com.clausgames.crystalmagic.lib.LibNames;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -13,7 +14,7 @@ public class BlockGoldenCloud extends BlockCrystalMagic
     public BlockGoldenCloud(Material material)
     {
         super(Material.cloth);
-        this.setBlockName("BlockGoldenCloud");
+        this.setBlockName(LibNames.Blocks.GOLDEN_CLOUD);
         this.setStepSound(soundTypeCloth);
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
     }

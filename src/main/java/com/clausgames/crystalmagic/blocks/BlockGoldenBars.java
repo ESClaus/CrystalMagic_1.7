@@ -4,6 +4,7 @@ import com.clausgames.crystalmagic.achievement.ICraftAchievement;
 import com.clausgames.crystalmagic.achievement.ModAchievements;
 import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import com.clausgames.crystalmagic.lib.LibNames;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,8 +16,8 @@ public class BlockGoldenBars extends BlockPane implements ICraftAchievement
 {
     public BlockGoldenBars()
     {
-        super(LibMisc.MODID + ":" + "blockGoldenBars", LibMisc.MODID + ":" + "blockGoldenBars", Material.iron, true); //Sets the texture and sidetexture(if any)
-        this.setBlockName("BlockGoldenBars");
+        super(LibMisc.MODID + ":" + "goldenBars", LibMisc.MODID + ":" + "goldenBars", Material.iron, true); //Sets the texture and sidetexture(if any)
+        this.setBlockName(LibNames.Blocks.GOLDEN_BARS);
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
         this.setHardness(5.0F);
         this.setResistance(10.0F);

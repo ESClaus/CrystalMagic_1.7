@@ -5,10 +5,12 @@ import com.clausgames.crystalmagic.CrystalMagic;
 import com.clausgames.crystalmagic.container.SocketBenchContainer;
 import com.clausgames.crystalmagic.gui.CrystalCodexGui;
 import com.clausgames.crystalmagic.gui.SocketBenchGui;
+import com.clausgames.crystalmagic.lib.LibNames;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 public class GuiHandler implements IGuiHandler
@@ -34,7 +36,7 @@ public class GuiHandler implements IGuiHandler
 
         if (ID == CrystalMagic.GUI_ENUM.SOCKET_BENCH.ordinal())
         {
-            return new SocketBenchGui(player.inventory, world, I18n.format("tile.BlockSocketBench.name"), x, y, z);
+            return new SocketBenchGui(player.inventory, world, StatCollector.translateToLocal(LibNames.Containers.SOCKET_BENCH), x, y, z);
         }
 
         if (ID == CrystalMagic.GUI_ENUM.CRYSTALCODEX.ordinal())

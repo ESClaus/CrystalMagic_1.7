@@ -2,6 +2,7 @@ package com.clausgames.crystalmagic.gui;
 
 import com.clausgames.crystalmagic.container.SocketBenchContainer;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import com.clausgames.crystalmagic.lib.LibNames;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;

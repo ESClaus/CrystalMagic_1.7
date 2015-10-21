@@ -45,12 +45,12 @@ item.ItemApprenticeLeggings.name=Apprentice Leggings
 item.ItemApprenticeBoots.name=Apprentice Boots
 
 # Blocks
-tile.BlockCrystalOre.name=Crystal Ore
-tile.BlockGoldenBars.name=Golden Bars
-tile.BlockGoldenCloud.name=Golden Cloud
+tile.crystalOre.name=Crystal Ore
+tile.goldenBars.name=Golden Bars
+tile.goldenCloud.name=Golden Cloud
 
 # Machines
-tile.BlockSocketBench.name=Socket Bench
+tile.socketBench.name=Socket Bench
 container.socketBench=Socket Bench
 
 # OreCrystalPlant Blocks

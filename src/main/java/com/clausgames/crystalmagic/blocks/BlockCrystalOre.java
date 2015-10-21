@@ -4,6 +4,7 @@ import com.clausgames.crystalmagic.creativetab.CreativeTabCrystalMagic;
 import com.clausgames.crystalmagic.items.ModItems;
 import com.clausgames.crystalmagic.items.tool.ModTools;
 import com.clausgames.crystalmagic.lib.LibMisc;
+import com.clausgames.crystalmagic.lib.LibNames;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -21,7 +22,7 @@ public class BlockCrystalOre extends BlockContainer
     protected BlockCrystalOre(Material material)
     {
         super(material);
-        this.setBlockName("BlockCrystalOre");
+        this.setBlockName(LibNames.Blocks.CRYSTAL_ORE);
         this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
         this.setHardness(2.0f); // Sets how long it takes to break blocks (Default: Depends on material; stone:1.5f; obsidian:50.0f)
         this.setResistance(6.0f); // Sets blocks's resistance to explosions (TNT, Creeper, Etc) (Default: Depends on material; stone:10.0f; obsidian:2000.0f)

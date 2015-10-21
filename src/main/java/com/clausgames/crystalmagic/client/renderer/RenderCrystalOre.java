@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderCrystalOre extends TileEntitySpecialRenderer
 {
-    private static final ResourceLocation texture = new ResourceLocation(LibMisc.MODID + ":" + "textures/model/ModelCrystalOre.png");
+    private static final ResourceLocation texture = new ResourceLocation(LibMisc.MODID + ":" + "textures/model/crystalOre.png");
 
     private ModelCrystalOre model;
 
