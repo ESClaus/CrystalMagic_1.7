@@ -5,6 +5,7 @@ import com.clausgames.crystalmagic.items.tool.ModTools;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class SocketBenchRecipeManager
 {
@@ -15,6 +16,7 @@ public class SocketBenchRecipeManager
     public Item itemTop;
     public Item itemMid;
     public Item itemBottom;
+    public World world;
 
     public static final SocketBenchRecipeManager getInstance()
     {
@@ -24,13 +26,14 @@ public class SocketBenchRecipeManager
 
     public SocketBenchRecipeManager() {}
 
-    public ItemStack getSocketResults(ItemStack inputInventory1x1, ItemStack inputInventoryTop, ItemStack inputInventoryMid, ItemStack inputInventoryBottom)
+    public ItemStack getSocketResults(ItemStack inputInventory1x1, ItemStack inputInventoryTop, ItemStack inputInventoryMid, ItemStack inputInventoryBottom, World worldObj)
     {
         // Allow recipes for some vanilla items that normally don't have recipes
         item1x1 = inputInventory1x1 == null ? null : inputInventory1x1.getItem();
         itemTop = inputInventoryTop == null ? null : inputInventoryTop.getItem();
         itemMid = inputInventoryMid == null ? null : inputInventoryMid.getItem();
         itemBottom = inputInventoryBottom == null ? null : inputInventoryBottom.getItem();
+        world = worldObj;
 
         // DEBUG
         System.out.println("Looking for deconstructing a recipe for " + (item1x1 == null ? "empty1x1" : item1x1.getUnlocalizedName()) + " with Top Input of " + (itemTop == null ? "emptyTop" : itemTop.getUnlocalizedName()) + ", with Mid Input of " + (itemMid == null ? "emptyMid" : itemMid.getUnlocalizedName()) + ", with Bottom Input of " + (itemBottom == null ? "emptyBottom" : itemBottom.getUnlocalizedName()));

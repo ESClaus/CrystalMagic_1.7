@@ -2,15 +2,10 @@ package com.clausgames.crystalmagic.crafting.slots;
 
 import com.clausgames.crystalmagic.container.SocketBenchContainer;
 import com.clausgames.crystalmagic.crafting.Inventories.InventorySocketBenchResult;
-import com.clausgames.crystalmagic.items.sockets.ItemSocket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 
 public class SlotSocketBenchOutput extends Slot
@@ -36,7 +31,7 @@ public class SlotSocketBenchOutput extends Slot
     @Override
     public void onPickupFromSlot(EntityPlayer player, ItemStack itemStack)
     {
-        if(!world.isRemote)
+        if(!world.isRemote && inventory.getStackInSlot(0) != null)
         {
             socketBench.onCraftMatrixChanged(socketBench.outputInventory);
         }
@@ -45,6 +40,10 @@ public class SlotSocketBenchOutput extends Slot
     @Override
     public void onSlotChanged()
     {
-        this.inventory.markDirty();
+        //this.inventory.markDirty();
+        if(!world.isRemote && inventory.getStackInSlot(0) != null)
+        {
+            socketBench.onCraftMatrixChanged(socketBench.outputInventory);
+        }
     }
 }

@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 public class InventorySocketBenchResult implements IInventory
 {
     private final ItemStack[] stackResult = new ItemStack[1];
-    public String customName;
 
     /*
     SLOTS
@@ -75,7 +74,7 @@ public class InventorySocketBenchResult implements IInventory
     @Override
     public void setInventorySlotContents(int par1, ItemStack par2ItemStack) // Sets the given item stack to the specified slot in the inventory
     {
-        stackResult[0] = par2ItemStack;
+        this.stackResult[0] = par2ItemStack;
     }
 
     @Override

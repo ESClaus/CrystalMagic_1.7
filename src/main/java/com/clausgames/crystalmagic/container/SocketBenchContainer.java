@@ -6,7 +6,6 @@ import com.clausgames.crystalmagic.crafting.SocketBenchRecipeManager;
 import com.clausgames.crystalmagic.crafting.slots.SlotSocketBenchInput;
 import com.clausgames.crystalmagic.crafting.slots.SlotSocketBenchOutput;
 import com.clausgames.crystalmagic.items.sockets.ItemSocket;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -48,13 +47,13 @@ public class SocketBenchContainer extends Container
 
         //Start Drawing Custom Slots
 
-        this.addSlotToContainer(new SlotSocketBenchInput(inputInventory1x1, inputSlotNumber1x1, 20, 35)); //Draws our slot for 1x1 Tool/Armor/Weapon Slot
+        this.addSlotToContainer(new SlotSocketBenchInput(inputInventory1x1, this, this.inputSlotNumber1x1, 20, 35)); //Draws our slot for 1x1 Tool/Armor/Weapon Slot
 
         for (int inputSlotIndexX = 0; inputSlotIndexX < 1; ++inputSlotIndexX) //Draws our slots for 1x3 Socket Slots
         {
             for (int inputSlotIndexY = 0; inputSlotIndexY < 3; ++inputSlotIndexY)
             {
-                addSlotToContainer(new SlotSocketBenchInput(inputInventory1x3, inputSlotIndexY + inputSlotIndexX + 1, 78, 18 * (inputSlotIndexY + 1) - 1));
+                addSlotToContainer(new SlotSocketBenchInput(inputInventory1x3, this, inputSlotIndexY + inputSlotIndexX + 1, 78, 18 * (inputSlotIndexY + 1) - 1));
             }
         }
 
@@ -86,61 +85,18 @@ public class SocketBenchContainer extends Container
     @Override
     public void onCraftMatrixChanged(IInventory parInventory)
     {
-        //Gets ItemStack for output based on what's in each slot
-        ItemStack outputItemStackResult = SocketBenchRecipeManager.getInstance().getSocketResults(inputInventory1x1.getStackInSlot(inputSlotNumber1x1), inputInventory1x3.getStackInSlot(inputSlotNumberSocketTop), inputInventory1x3.getStackInSlot(inputSlotNumberSocketMid), inputInventory1x3.getStackInSlot(inputSlotNumberSocketBottom));
-
-        if (outputItemStackResult == null)
+        ItemStack result = SocketBenchRecipeManager.getInstance().getSocketResults(inputInventory1x1.getStackInSlot(inputSlotNumber1x1), inputInventory1x3.getStackInSlot(inputSlotNumberSocketTop), inputInventory1x3.getStackInSlot(inputSlotNumberSocketMid), inputInventory1x3.getStackInSlot(inputSlotNumberSocketBottom), this.worldObj);
+        if (parInventory != outputInventory) // && result != null
         {
-            return;
-        }
-        if (!outputInventory.isEmpty())
+            //Gets ItemStack for output based on what's in each slot
+            this.outputInventory.setInventorySlotContents(0, result);
+        }else if(parInventory == outputInventory)
         {
-            ItemStack itemStackInOutputSlot = outputInventory.getStackInSlot(outputSlotNumber);
-            if (itemStackInOutputSlot != null && outputItemStackResult != null)
-            {
-                if (!itemStackInOutputSlot.isItemEqual(outputItemStackResult))
-                {
-                    if (!playerInventory.addItemStackToInventory(itemStackInOutputSlot))
-                    {
-                        EntityItem entityItem = playerInventory.player.entityDropItem(itemStackInOutputSlot, 0.5f);
-                        entityItem.posX = playerInventory.player.posX;
-                        entityItem.posY = playerInventory.player.posY;
-                        entityItem.posZ = playerInventory.player.posZ;
-                    }
-                    outputInventory.setInventorySlotContents(outputSlotNumber, null);
-                }
-            }
+            inputInventory1x1.decrStackSize(inputSlotNumber1x1, 1);
+            inputInventory1x3.decrStackSize(inputSlotNumberSocketTop, 1);
+            inputInventory1x3.decrStackSize(inputSlotNumberSocketMid, 1);
+            inputInventory1x3.decrStackSize(inputSlotNumberSocketBottom, 1);
         }
-
-        ItemStack currentStack = outputInventory.getStackInSlot(outputSlotNumber);
-        if (outputItemStackResult != null)
-        {
-            int metadata = outputItemStackResult.getItemDamage();
-            if (metadata == 32767)
-            {
-                metadata = 0;
-            }
-            ItemStack newStack = null;
-            if (currentStack != null && 1 + currentStack.stackSize <= outputItemStackResult.getMaxStackSize())
-            {
-                newStack = new ItemStack(outputItemStackResult.getItem(), 1 + currentStack.stackSize, metadata);
-            } else
-            {
-                if (currentStack != null && !playerInventory.addItemStackToInventory(currentStack))
-                {
-                    EntityItem entityItem = playerInventory.player.entityDropItem(currentStack, 0.5f);
-                    entityItem.posX = playerInventory.player.posX;
-                    entityItem.posY = playerInventory.player.posY;
-                    entityItem.posZ = playerInventory.player.posZ;
-                }
-                newStack = new ItemStack(outputItemStackResult.getItem(), 1, metadata);
-            }
-            outputInventory.setInventorySlotContents(outputSlotNumber, newStack);
-        }
-        inputInventory1x1.decrStackSize(inputSlotNumber1x1, 1);
-        inputInventory1x3.decrStackSize(inputSlotNumberSocketTop, 1);
-        inputInventory1x3.decrStackSize(inputSlotNumberSocketMid, 1);
-        inputInventory1x3.decrStackSize(inputSlotNumberSocketBottom, 1);
     }
 
     @Override
