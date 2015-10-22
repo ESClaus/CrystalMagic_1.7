@@ -1,12 +1,11 @@
 package com.clausgames.crystalmagic.crafting;
 
-import net.minecraft.inventory.InventoryCrafting;
+import com.clausgames.crystalmagic.crafting.Inventories.InventorySocketBenchInput;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-public class SocketBenchShapedRecipes implements IRecipe
+public class SocketBenchShapedRecipes implements IRecipeSocketBench
 {
     /** How many horizontal slots this recipe is wide. */
     public final int recipeWidth;
@@ -35,7 +34,7 @@ public class SocketBenchShapedRecipes implements IRecipe
     /**
      * Used to check if a recipe matches current crafting inventory
      */
-    public boolean matches(InventoryCrafting p_77569_1_, World p_77569_2_)
+    public boolean matches(InventorySocketBenchInput p_77569_1_, World p_77569_2_)
     {
         for (int i = 0; i <= 2 - this.recipeWidth; ++i)
         {
@@ -59,7 +58,7 @@ public class SocketBenchShapedRecipes implements IRecipe
     /**
      * Checks if the region of a crafting inventory is match for the recipe.
      */
-    private boolean checkMatch(InventoryCrafting p_77573_1_, int p_77573_2_, int p_77573_3_, boolean p_77573_4_)
+    private boolean checkMatch(InventorySocketBenchInput p_77573_1_, int p_77573_2_, int p_77573_3_, boolean p_77573_4_)
     {
         for (int k = 0; k < 2; ++k)
         {
@@ -109,7 +108,7 @@ public class SocketBenchShapedRecipes implements IRecipe
     /**
      * Returns an Item that is the result of this recipe
      */
-    public ItemStack getCraftingResult(InventoryCrafting p_77572_1_)
+    public ItemStack getCraftingResult(InventorySocketBenchInput p_77572_1_)
     {
         ItemStack itemstack = this.getRecipeOutput().copy();
 

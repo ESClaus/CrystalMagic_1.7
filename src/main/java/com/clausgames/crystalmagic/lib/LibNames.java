@@ -2,6 +2,7 @@ package com.clausgames.crystalmagic.lib;
 
 public class LibNames
 {
+    public static final String MOD_ID = LibMisc.MODID;
     public static final class Blocks
     {
         public static final String CRYSTAL_ORE = "crystalOre";

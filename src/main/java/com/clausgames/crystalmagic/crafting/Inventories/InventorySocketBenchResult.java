@@ -6,17 +6,8 @@ import net.minecraft.item.ItemStack;
 
 public class InventorySocketBenchResult implements IInventory
 {
-    private final ItemStack[] stackResult = new ItemStack[1];
-
-    /*
-    SLOTS
-
-    Slot {0}; //Input Slot where Tool/Armor go
-    Slot {1, 2, 3}; //Input Slots where sockets go
-    Slot {4}; //Result Slot - InventorySocketBenchResult
-
-    END SLOTS
-    */
+    /** A list of one item containing the result of the crafting formula */
+    private ItemStack[] stackResult = new ItemStack[1];
 
     @Override
     public int getSizeInventory() // Returns the number of slots in the inventory.
@@ -30,34 +21,42 @@ public class InventorySocketBenchResult implements IInventory
         return stackResult[0];
     }
 
-    public ItemStack decrStackSize(int index, int count)
+    @Override
+    public String getInventoryName()
     {
-        if (this.getStackInSlot(index) != null) {
-            ItemStack itemstack;
+        return "Result";
+    }// Returns the name of the inventory
 
-            if (this.getStackInSlot(index).stackSize <= count) {
-                itemstack = this.getStackInSlot(index);
-                this.setInventorySlotContents(index, null);
-                this.markDirty();
-                return itemstack;
-            } else {
-                itemstack = this.getStackInSlot(index).splitStack(count);
+    @Override
+    public boolean hasCustomInventoryName()
+    {
+        return false;
+    }// Returns if the inventory is named
 
-                if (this.getStackInSlot(index).stackSize <= 0) {
-                    this.setInventorySlotContents(index, null);
-                } else {
-                    this.setInventorySlotContents(index, this.getStackInSlot(index));
-                }
-                this.markDirty();
-                return itemstack;
-            }
-        } else {
+    /**
+     * Removes from an inventory slot (first arg) up to a specified number (second arg) of items and returns them in a
+     * new stack.
+     */
+    @Override
+    public ItemStack decrStackSize(int slotIndex, int count)
+    {
+        if (this.stackResult[0] != null)
+        {
+            ItemStack itemstack = this.stackResult[0];
+            this.stackResult[0] = null;
+            return itemstack;
+        }
+        else
+        {
             return null;
         }
     }
-
+    /**
+     * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
+     * like when you close a workbench GUI.
+     */
     @Override
-    public ItemStack getStackInSlotOnClosing(int par1) //Spits items in slot out like when you close crafting table.
+    public ItemStack getStackInSlotOnClosing(int slotIndex)
     {
         if (this.stackResult[0] != null)
         {
@@ -71,54 +70,38 @@ public class InventorySocketBenchResult implements IInventory
         }
     }
 
+    /**
+     * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
+     */
     @Override
-    public void setInventorySlotContents(int par1, ItemStack par2ItemStack) // Sets the given item stack to the specified slot in the inventory
+    public void setInventorySlotContents(int slotIndex, ItemStack itemStack)
     {
-        this.stackResult[0] = par2ItemStack;
+        this.stackResult[0] = itemStack;
     }
 
+    /**
+     * Returns the maximum stack size for a inventory slot.
+     */
     @Override
-    public int getInventoryStackLimit() //Returns the maximum stack size for a inventory slot.
+    public int getInventoryStackLimit()
     {
         return 64;
     }
 
-    @Override
-    public boolean isUseableByPlayer(EntityPlayer par1EntityPlayer)
-    {
-        return true;
-    }
-
-    @Override
-    public boolean isItemValidForSlot(int par1, ItemStack par2ItemStack)
-    {
-        return true;
-    }
-
-    public boolean isEmpty() //Checks if result slots is empty
-    {
-        if(stackResult[0] != null)
-        {
-            return false;
-        } else
-        {
-            return true;
-        }
-    }
-
+    /**
+     * For tile entities, ensures the chunk containing the tile entity is saved to disk later - the game won't think it
+     * hasn't changed and skip it.
+     */
     @Override
     public void markDirty() {}
 
+    /**
+     * Do not make give this method the name canInteractWith because it clashes with Container
+     */
     @Override
-    public boolean hasCustomInventoryName()
+    public boolean isUseableByPlayer(EntityPlayer p_70300_1_)
     {
-        return false;
-    }
-
-    @Override
-    public String getInventoryName()
-    {
-        return "Result";
+        return true;
     }
 
     @Override
@@ -126,4 +109,13 @@ public class InventorySocketBenchResult implements IInventory
 
     @Override
     public void closeInventory() {}
+
+    /**
+     * Returns true if automation is allowed to insert the given stack (ignoring stack size) into the given slot.
+     */
+    @Override
+    public boolean isItemValidForSlot(int slotIndex, ItemStack itemStack)
+    {
+        return true;
+    }
 }
