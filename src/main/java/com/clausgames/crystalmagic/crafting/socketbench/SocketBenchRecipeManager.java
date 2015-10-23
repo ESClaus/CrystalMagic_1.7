@@ -1,6 +1,6 @@
-package com.clausgames.crystalmagic.crafting;
+package com.clausgames.crystalmagic.crafting.socketbench;
 
-import com.clausgames.crystalmagic.crafting.Inventories.InventorySocketBenchInput;
+import com.clausgames.crystalmagic.crafting.socketbench.inventories.InventorySocketBenchInput;
 import com.clausgames.crystalmagic.items.sockets.ModSockets;
 import com.clausgames.crystalmagic.items.tool.ModTools;
 import net.minecraft.block.Block;
@@ -24,10 +24,10 @@ public class SocketBenchRecipeManager
     /** The static instance of this class */
     public static final SocketBenchRecipeManager getInstance() { return instance; }
 
-    public SocketBenchRecipeManager()
+    public SocketBenchRecipeManager() //TODO add recipes properly with socketed tools and such
     {
         this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), new Object[] {"  ", "PE", "  ", 'P', (new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemEmptySocket});
-        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), new Object[] {" E", "PE", " E", 'P', (new ItemStack(Items.diamond_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemEmptySocket});
+        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), new Object[] {" E", "PE", " E", 'P', (new ItemStack(Items.diamond_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemCrystalizedSocket});
         this.addRecipe(new ItemStack(Items.nether_star, 1), new Object[] {" F", "PL", " S", 'P', (new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'F', ModSockets.itemFierySocket, 'L', ModSockets.itemLuckySocket, 'S', ModSockets.itemSpeedySocket});
     }
 

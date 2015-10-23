@@ -1,6 +1,6 @@
-package com.clausgames.crystalmagic.crafting;
+package com.clausgames.crystalmagic.crafting.socketbench;
 
-import com.clausgames.crystalmagic.crafting.Inventories.InventorySocketBenchInput;
+import com.clausgames.crystalmagic.crafting.socketbench.inventories.InventorySocketBenchInput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 

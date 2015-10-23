@@ -1,4 +1,4 @@
-package com.clausgames.crystalmagic.crafting.Inventories;
+package com.clausgames.crystalmagic.crafting.socketbench.inventories;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

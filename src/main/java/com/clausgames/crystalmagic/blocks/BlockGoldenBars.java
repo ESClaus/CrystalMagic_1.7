@@ -16,9 +16,9 @@ public class BlockGoldenBars extends BlockPane implements ICraftAchievement
 {
     public BlockGoldenBars()
     {
-        super(LibMisc.MODID + ":" + "goldenBars", LibMisc.MODID + ":" + "goldenBars", Material.iron, true); //Sets the texture and sidetexture(if any)
+        super(LibMisc.MODID + ":" + LibNames.Blocks.GOLDEN_BARS, LibMisc.MODID + ":" + LibNames.Blocks.GOLDEN_BARS, Material.iron, true); //Sets the texture and sidetexture(if any)
         this.setBlockName(LibNames.Blocks.GOLDEN_BARS);
-        this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
+        this.setBlockTextureName(LibMisc.MODID + ":" + LibNames.Blocks.GOLDEN_BARS);
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setStepSound(soundTypeMetal); // Sets sound of stepping on blocks. (Default: depends on material type chosen)

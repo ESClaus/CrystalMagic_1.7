@@ -21,6 +21,8 @@ item.ItemDarkCrystal.name=Dark Crystal
 
 # Sockets
 item.ItemEmptySocket.name=Empty Socket
+item.ItemCrystalizedSocket.name=Crystalized Socket
+item.ItemTerraSocket.name=Terra Socket
 item.ItemLuckySocket.name=Lucky Socket
 item.ItemSpeedySocket.name=Speedy Socket
 item.ItemFierySocket.name=Fiery Socket

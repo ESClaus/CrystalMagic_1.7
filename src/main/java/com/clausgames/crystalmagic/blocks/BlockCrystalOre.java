@@ -23,7 +23,7 @@ public class BlockCrystalOre extends BlockContainer
     {
         super(material);
         this.setBlockName(LibNames.Blocks.CRYSTAL_ORE);
-        this.setBlockTextureName(LibMisc.MODID + ":" + this.getUnlocalizedName().substring(5));
+        this.setBlockTextureName(LibMisc.MODID + ":" + LibNames.Blocks.CRYSTAL_ORE);
         this.setHardness(2.0f); // Sets how long it takes to break blocks (Default: Depends on material; stone:1.5f; obsidian:50.0f)
         this.setResistance(6.0f); // Sets blocks's resistance to explosions (TNT, Creeper, Etc) (Default: Depends on material; stone:10.0f; obsidian:2000.0f)
         this.setLightLevel(0.3f); // Sets how much light is emitted from blocks (Default: 0.0f (nothing); maximum 1.0f(full sunlight))

@@ -1,11 +1,11 @@
 package com.clausgames.crystalmagic.container;
 
 import com.clausgames.crystalmagic.blocks.ModBlocks;
-import com.clausgames.crystalmagic.crafting.Inventories.InventorySocketBenchInput;
-import com.clausgames.crystalmagic.crafting.Inventories.InventorySocketBenchResult;
-import com.clausgames.crystalmagic.crafting.SocketBenchRecipeManager;
-import com.clausgames.crystalmagic.crafting.slots.SlotSocketBenchInput;
-import com.clausgames.crystalmagic.crafting.slots.SlotSocketBenchOutput;
+import com.clausgames.crystalmagic.crafting.socketbench.inventories.InventorySocketBenchInput;
+import com.clausgames.crystalmagic.crafting.socketbench.inventories.InventorySocketBenchResult;
+import com.clausgames.crystalmagic.crafting.socketbench.SocketBenchRecipeManager;
+import com.clausgames.crystalmagic.crafting.socketbench.inventories.slots.SlotSocketBenchInput;
+import com.clausgames.crystalmagic.crafting.socketbench.inventories.slots.SlotSocketBenchOutput;
 import com.clausgames.crystalmagic.items.sockets.ItemSocket;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -77,8 +77,7 @@ public class SocketBenchContainer extends Container
 
         for (int hotbarSlotIndex = 0; hotbarSlotIndex < 9; ++hotbarSlotIndex) //Created player hotbar
         {
-            addSlotToContainer(new Slot(parPlayerInventory, hotbarSlotIndex,
-                    8 + hotbarSlotIndex * 18, 142));
+            addSlotToContainer(new Slot(parPlayerInventory, hotbarSlotIndex, 8 + hotbarSlotIndex * 18, 142));
         }
 
         this.onCraftMatrixChanged(this.inputInventory);
@@ -469,7 +468,7 @@ public class SocketBenchContainer extends Container
 
         if (!this.worldObj.isRemote)
         {
-            for (int i = inputSlotNumber1x1; i < outputSlotNumber; ++i)
+            for (int i = 0; i < 6; ++i)
             {
                 ItemStack itemstack = this.inputInventory.getStackInSlotOnClosing(i);
 
@@ -491,47 +490,41 @@ public class SocketBenchContainer extends Container
     public ItemStack transferStackInSlot(EntityPlayer player, int fromSlot) // Called when a player shift-clicks on a slots. You must override this or you will crash when someone does that.
     {
         ItemStack previous = null;
-        Slot slot = (Slot)this.inventorySlots.get(fromSlot); //Slot shift-clicked on
+        Slot slot = (Slot) this.inventorySlots.get(fromSlot);
 
-        if (slot != null && slot.getHasStack()) //Slot isn't empty and has an ItemStack
+        if (slot != null && slot.getHasStack())
         {
-            ItemStack current = slot.getStack(); //gets current item in slots.
+            ItemStack current = slot.getStack();
             previous = current.copy();
-            boolean slot2Valid = (current.getItem() instanceof ItemTool || current.getItem() instanceof ItemArmor || current.getItem() instanceof ItemHoe); //Checks if item going to slot 2 is Tool or Armor (or Hoe)
+            boolean slot2Valid = (current.getItem() instanceof ItemTool || current.getItem() instanceof ItemArmor || current.getItem() instanceof ItemHoe); //Checks if item going to slots 0 is Tool or Armor (or Hoe)
             boolean slot135Valid = (current.getItem() instanceof ItemSocket); //Checks if item going to slots 1, 3, or 5 is a Socket
 
-            // From Container Inventory to Player Inventory
-            if (fromSlot <= 7) {
-                if (!this.mergeItemStack(current, 7, 41, true))
-                    return null;
-                // From Player Inventory to Container Inventory Input Slot 0
-            } else if(fromSlot > 7 && slot2Valid) {
-                if (!this.mergeItemStack(current, 0, 7, false))
-                    return null;
-                // From Player Inventory to Container Inventory Socket Slots 3/4/5
-            } else if(fromSlot > 7 && slot135Valid)
+            if (fromSlot < 5)
             {
-                if (!this.mergeItemStack(current, 0, 7, false))
+                // From TE Inventory to Player Inventory
+                if (!this.mergeItemStack(current, 5, 41, true))
+                    return null;
+            } else if(fromSlot > 4 && slot2Valid)
+            {
+                // From Player Inventory to TE Inventory (not including output of course)
+                if (!this.mergeItemStack(current, 0, 1, false))
+                    return null;
+            } else if(fromSlot > 4 && slot135Valid)
+            {
+                // From Player Inventory to TE Inventory (not including output of course)
+                if (!this.mergeItemStack(current, 1, 4, false))
                     return null;
             }
 
             if (current.stackSize == 0)
-            {
-                slot.putStack((ItemStack)null);
-            }
+                slot.putStack((ItemStack) null);
             else
-            {
                 slot.onSlotChanged();
-            }
 
             if (current.stackSize == previous.stackSize)
-            {
                 return null;
-            }
-
             slot.onPickupFromSlot(player, current);
         }
-
         return previous;
     }
 
