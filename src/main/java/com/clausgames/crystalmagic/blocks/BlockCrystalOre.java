@@ -7,6 +7,7 @@ import com.clausgames.crystalmagic.lib.LibMisc;
 import com.clausgames.crystalmagic.lib.LibNames;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

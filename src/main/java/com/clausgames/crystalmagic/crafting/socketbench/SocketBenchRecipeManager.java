@@ -1,6 +1,7 @@
 package com.clausgames.crystalmagic.crafting.socketbench;
 
 import com.clausgames.crystalmagic.crafting.socketbench.inventories.InventorySocketBenchInput;
+import com.clausgames.crystalmagic.items.ModItems;
 import com.clausgames.crystalmagic.items.sockets.ModSockets;
 import com.clausgames.crystalmagic.items.tool.ModTools;
 import net.minecraft.block.Block;
@@ -10,9 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class SocketBenchRecipeManager
 {
@@ -26,9 +25,25 @@ public class SocketBenchRecipeManager
 
     public SocketBenchRecipeManager() //TODO add recipes properly with socketed tools and such
     {
-        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), new Object[] {"  ", "PE", "  ", 'P', (new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemEmptySocket});
-        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), new Object[] {" E", "PE", " E", 'P', (new ItemStack(Items.diamond_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemCrystalizedSocket});
-        this.addRecipe(new ItemStack(Items.nether_star, 1), new Object[] {" F", "PL", " S", 'P', (new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'F', ModSockets.itemFierySocket, 'L', ModSockets.itemLuckySocket, 'S', ModSockets.itemSpeedySocket});
+        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), "  ", "PE", "  ", 'P', (new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemEmptySocket);
+        this.addRecipe(new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1), " E", "PE", " E", 'P', (new ItemStack(Items.diamond_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'E', ModSockets.itemCrystalizedSocket);
+        this.addRecipe(new ItemStack(Items.nether_star, 1), " F", "PL", " S", 'P', (new ItemStack(ModTools.itemCrystalEdgedPickaxe, 1, OreDictionary.WILDCARD_VALUE)), 'F', ModSockets.itemFierySocket, 'L', ModSockets.itemLuckySocket, 'S', ModSockets.itemSpeedySocket);
+        this.addShapelessRecipe(new ItemStack(ModItems.itemCrystalCodex, 1), (new ItemStack(Items.iron_pickaxe, 1, OreDictionary.WILDCARD_VALUE)), ModSockets.itemFierySocket, ModSockets.itemLuckySocket, ModSockets.itemSpeedySocket);
+
+        Collections.sort(this.recipes, new Comparator()
+        {
+            private static final String __OBFID = "CL_00000091";
+
+            public int compare(IRecipeSocketBench p_compare_1_, IRecipeSocketBench p_compare_2_)
+            {
+                return p_compare_1_ instanceof SocketBenchShapelessRecipes && p_compare_2_ instanceof SocketBenchShapedRecipes ? 1 : (p_compare_2_ instanceof SocketBenchShapelessRecipes && p_compare_1_ instanceof SocketBenchShapedRecipes ? -1 : (p_compare_2_.getRecipeSize() < p_compare_1_.getRecipeSize() ? -1 : (p_compare_2_.getRecipeSize() > p_compare_1_.getRecipeSize() ? 1 : 0)));
+            }
+
+            public int compare(Object p_compare_1_, Object p_compare_2_)
+            {
+                return this.compare((IRecipeSocketBench) p_compare_1_, (IRecipeSocketBench) p_compare_2_);
+            }
+        });
     }
 
     public SocketBenchShapedRecipes addRecipe(ItemStack outputItems, Object ... inputItems)
@@ -103,6 +118,38 @@ public class SocketBenchRecipeManager
         SocketBenchShapedRecipes shapedrecipes = new SocketBenchShapedRecipes(j, k, aitemstack, outputItems);
         this.recipes.add(shapedrecipes);
         return shapedrecipes;
+    }
+
+    public void addShapelessRecipe(ItemStack itemStack, Object ... recipe)
+    {
+        ArrayList arraylist = new ArrayList();
+        Object[] aobject = recipe;
+        int i = recipe.length;
+
+        for (int j = 0; j < i; ++j)
+        {
+            Object object1 = aobject[j];
+
+            if (object1 instanceof ItemStack)
+            {
+                arraylist.add(((ItemStack)object1).copy());
+            }
+            else if (object1 instanceof Item)
+            {
+                arraylist.add(new ItemStack((Item)object1));
+            }
+            else
+            {
+                if (!(object1 instanceof Block))
+                {
+                    throw new RuntimeException("Invalid shapeless recipe!");
+                }
+
+                arraylist.add(new ItemStack((Block)object1));
+            }
+        }
+
+        this.recipes.add(new SocketBenchShapelessRecipes(itemStack, arraylist));
     }
 
     public ItemStack findMatchingRecipe(InventorySocketBenchInput inputInventory, World worldObj)

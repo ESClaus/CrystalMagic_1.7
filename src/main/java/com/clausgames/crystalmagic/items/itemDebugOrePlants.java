@@ -20,12 +20,12 @@ public class itemDebugOrePlants extends ItemCrystalMagic
         this.setTextureName(textureName);
     }
 
-    /*@SideOnly(Side.CLIENT)
+    @Override
+    @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean bool)
     {
-        list.add(EnumChatFormatting.LIGHT_PURPLE + "Debug tool to test OreCrystalPlants");
         list.add("Right click to increase grow, shift + right click to decrease growth.");
-    }*/
+    }
 
     @Override
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int worldX, int worldY, int worldZ, int blockSide, float p_77648_8_, float p_77648_9_, float p_77648_10_)

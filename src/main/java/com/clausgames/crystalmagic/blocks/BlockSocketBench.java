@@ -45,6 +45,7 @@ public class BlockSocketBench extends BlockCrystalMagic
         return true;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
@@ -53,6 +54,7 @@ public class BlockSocketBench extends BlockCrystalMagic
         this.socketBenchTop = iconRegister.registerIcon(LibMisc.MODID + ":socketBenchTop");
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata)
     {
@@ -74,6 +76,7 @@ public class BlockSocketBench extends BlockCrystalMagic
         }
     }
 
+    @Override
     public void onBlockAdded(World world, int x, int y, int z)
     {
         super.onBlockAdded(world, x, y, z);
@@ -112,6 +115,7 @@ public class BlockSocketBench extends BlockCrystalMagic
         }
     }
 
+    @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemStack) //Sets metadata based on where player is so block faces player.
     {
         int i = MathHelper.floor_double((double) (entityPlayer.rotationYaw * 4.0f / 360f) + 0.5d) & 3;

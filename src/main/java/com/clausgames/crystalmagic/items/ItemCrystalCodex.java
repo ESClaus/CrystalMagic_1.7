@@ -1,9 +1,14 @@
 package com.clausgames.crystalmagic.items;
 
 import com.clausgames.crystalmagic.CrystalMagic;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class ItemCrystalCodex extends ItemCrystalMagic
 {
@@ -26,5 +31,12 @@ public class ItemCrystalCodex extends ItemCrystalMagic
             player.openGui(CrystalMagic.instance, CrystalMagic.GUI_ENUM.CRYSTALCODEX.ordinal(), world, (int) player.posX, (int) player.posY, (int) player.posZ);
         }
         return super.onItemRightClick(item, world, player);
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean bool)
+    {
+        list.add(EnumChatFormatting.LIGHT_PURPLE + "What magical teachings does this hold?");
     }
 }
